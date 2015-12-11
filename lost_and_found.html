@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Lost and Found - so finden verlorene Gegenstände ihren Besitzer wieder</title>
+
+    <!-- Custom styles -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/cover.css" rel="stylesheet">
+    <link href="css/sign_in.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-switch.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-switch.js"></script>
+	<script type="text/javascript">
+		function setup(){
+		$('#label-switch').bootstrapSwitch('setOnClass', 'info');
+		$('#label-switch').bootstrapSwitch('setOffClass', 'info');
+	}
+	</script>
+	
+
+
+  </head>
+  <body onload="setup();">
+  	</div>
+    <div id="label-switch" class="make-switch switch-large" data-on-label="Verloren" data-off-label="Gefunden">
+    <input type="checkbox" checked>
+</div>
+
+  </body>
+</html>

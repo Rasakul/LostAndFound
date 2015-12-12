@@ -1,5 +1,6 @@
 #card{
   transition: all 1s ease-in-out;
+  padding-bottom: 450px;
 }
 
 #card .front{
@@ -34,11 +35,149 @@ backface-visibility: hidden;
 backface-visibility: hidden;
 }
 
-@media (max-width: 768px){
+#so_funktionierts, #example_wrapper h1{
+  padding-top: 65px;
+}
+
+#myrow .col-xs-12{
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+
+#myrow .background_wrapper{
+  background-color:#558C89;
+  border-radius:10px;
+  padding: 20px 0;
+}
+
+#form_wrapper h1 {
+  padding-top: 20px;
+}
+
+#description1, #description2, #description3{
+  text-align: justify;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#description1, #description2, #description3, #myrow p{
+  font-size: 1.2em;
+}
+
+#example_wrapper .col-xs-8{
+  font-size: 1.2em;
+}
+
+/*
+@media only screen (-moz-min-device-pixel-ratio: 2), 
+only screen and (-o-min-device-pixel-ratio: 2/1), 
+only screen and (-webkit-min-device-pixel-ratio: 2), 
+only screen and (min-device-pixel-ratio: 2) {
+
   #registerForm, #loginForm{
     padding-top:250px;
   }
-}
+
+  #hat{
+    font-size: 7em;
+  }
+
+  #hat_lead{
+    font-size: 4em;
+  }
+
+  #sign-form{
+    display: inline-block;
+    text-align: center;
+    margin: 5px 236px;
+  }
+
+  #signInBtn{
+    font-size: 3.5em;
+    border-radius: 20px;
+  }
+
+  #navbarForm{
+    text-align: center;
+  }
+
+  #navigationBar{
+    text-align: center;
+  }
+
+  #so_funktionierts{
+    font-size: 2em;
+    padding-top: 540px;
+  }
+
+  #description1, #description2, #description3{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    text-align: justify;
+    font-size: 3em;
+  }
+
+  #myrow .img-circle{
+    width: 400px;
+    height: 400px;
+  }
+
+  #myrow h3 {
+    font-size: 4em;
+  }
+
+  #myrow p {
+    font-size: 2em;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 50px;
+  }
+
+  #example_wrapper{
+    padding-bottom: 60px;
+  }
+
+  #example_wrapper h1{
+    padding-top: 110px;
+    padding-bottom: 20px;
+    font-size: 6em;
+  }
+
+  #example_wrapper .row {
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+
+  #example_wrapper .row .col-xs-8 {
+    font-size: 3em;
+  }
+
+  #example_wrapper .row .col-xs-4 {
+    font-size: 2.5em;
+  }
+
+  #example_wrapper .row .glyphicon-option-vertical{
+    padding-top: 0px;
+    padding-bottom: 20px;
+  }
+
+  #form_wrapper h1{
+    margin-top: -700px;
+    font-size: 6em;
+  }
+
+  #card label{
+    font-size: 3em;
+  }
+
+  #card input{
+    font-size: 2em;
+    height: 50px;
+  }
+}*/
 
 @media (max-width: 600px){
   #myrow p {
@@ -201,7 +340,7 @@ backface-visibility: hidden;
   right: 1em;
   padding: 0 1px;
   font-family: FontAwesome;
-  font-size: 2em;
+  font-size: 2.5em;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }

@@ -1,5 +1,6 @@
 var atSignin = false;
 var is_chrome;
+var hasBeenViewed = false;
 function scroll(){
 			$('html,body').animate({
        		 scrollTop: $("#howto").offset().top+1},
@@ -62,29 +63,30 @@ $(document).ready(function(){
        } else {
           $('#navigationBar').css('background-color', 'transparent');
        }
-       /*
+       
        if(isScrolledIntoView(signInBtnBottom)){
+          hasBeenViewed = true;
           $('#navigationBar').removeClass("swingInX");
+          $('#navigationBar').addClass("animated");
           $('#navigationBar').addClass("swingOutX");
+          $
        }else{
+        if(hasBeenViewed){
           $('#navigationBar').removeClass("swingOutX");
+          $('#navigationBar').addClass("animated");
           $('#navigationBar').addClass("swingInX");
-       }*/
+        }else{
+
+        }
+        
+       }
    });
     }
 
     (function() {
     var header = document.querySelector("#navigationBar");
-    
 
-    new Headroom(header, {
-        offset: 2700,
-        classes: {
-          "initial": "animated",
-          "pinned": "swingInX",
-          "unpinned": "swingOutX"
-        }
-    }).init();
+    new Headroom(header).init();
 
 
     $("#card").flip({

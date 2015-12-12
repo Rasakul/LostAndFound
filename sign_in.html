@@ -2,6 +2,7 @@
 <html lang="de" style="background-color:#FFFFFF">
   <head>
     <meta charset="utf-8">
+    <meta name='viewport' content="width=device-width, initial-scale=1" />
 
     <title>Lost and Found - so finden verlorene Gegenstände ihren Besitzer wieder</title>
 
@@ -27,9 +28,9 @@
   	<nav class="navbar navbar-transparent navbar-fixed-top" id="navigationBar">
   		<div class="navbar-inner">
   		<div class="container" style="background:transparent">
-  			<form class="navbar-form navbar-right">
+  			<form class="navbar-form navbar-right" id="navbarForm">
   				<div id="sign-form">
-	      			<button type="button" class="btn signIn-btn btn-md" onclick="scrollToSignIn()" style="font-size:16px">Anmelden</button>
+	      			<button type="button" class="btn btn-md signIn-btn" id="signInBtn" onclick="scrollToSignIn()">Anmelden</button>
 	    		</div>
   			</form>
   		</div>
@@ -40,8 +41,8 @@
   			<div class="cover-container">
   				<div class="inner cover">
   					<h1 class="cover-heading" id="hat">Lost and Found</h1>
-  					<p class="lead">Finden Sie Ihre verlorenen Gegenst&auml;nde einfach wieder!</p>
-  					<span style="padding-left:53px;cursor:pointer" class="hvr-icon-hang" id="prestudy_btn_icon" onclick="scroll()"></span> 
+  					<p class="lead" id="hat_lead">Finden Sie Ihre verlorenen Gegenst&auml;nde einfach wieder!</p>
+  					<span style="padding-left:79px;cursor:pointer" class="hvr-icon-hang" id="prestudy_btn_icon" onclick="scroll()"></span> 
   				</div>
   			</div>
   		</div>
@@ -52,26 +53,34 @@
   		<div class="site-wrapper-inner">
   			<div class="cover-container">
   				<div class="inner cover">
-  		<h1 style="padding-top:90px">So funktioniert es</h1>
+  		<h1 id="so_funktionierts">So funktioniert es</h1>
   		<br>
-  		<p style="font-size:16px;text-align:justify">Nach einer kostenlosen Registrierung k&ouml;nnen Sie sich anmelden und verlorenen oder von Ihnen gefundenen Gegenst&auml;nde ver&ouml;ffentlichen. Bei diesem Vorgang m&uuml;ssen Sie nur angeben, was f&uuml;r einen Gegenstand, wo und wann Sie gefunden/verloren haben. Zus&auml;tzlich k&ouml;nnen Sie auch die exakte Veranstaltung, Konzert etc. angeben, damit Ihr Beitrag von anderen Benutzern leichter gefunden werden kann.</p>
+  		<p id="description1">Nach einer kostenlosen Registrierung k&ouml;nnen Sie sich anmelden und verlorenen oder von Ihnen gefundenen Gegenst&auml;nde ver&ouml;ffentlichen.</p></br>
+      <p id="description2">Bei diesem Vorgang m&uuml;ssen Sie nur angeben, was f&uuml;r einen Gegenstand, wo und wann Sie gefunden/verloren haben.</p></br> 
+      <p id="description3">Zus&auml;tzlich k&ouml;nnen Sie auch die exakte Veranstaltung, Konzert etc. angeben, damit Ihr Beitrag von anderen Benutzern leichter gefunden werden kann.</p>
 
       <div class="row" id="myrow" style="padding-top:20px">
-        <div class="col-md-4 col-xs-12" style="padding-bottom:30px">
+        <div class="col-md-4 col-xs-12" id="col1">
+          <div class="background_wrapper">
           <img class="img-circle" src="img/what.jpg" alt="Phone" width="140" height="140">
           <h3>Was?</h3>
           <p>Handy, Geldtasche, Sonnenbrille, Tasche, Kopfh&ouml;rer, Kleidungsst&uuml;cke,..</p>
+          </div>
         </div>
         <div class="col-md-4 col-xs-12" style="padding-bottom:30px">
+          <div class="background_wrapper">
           <img class="img-circle" src="img/where.jpg" alt="Crowd" width="140" height="140">
            <h3>Wo?</h3>
            <p>An einem Konzert, Festival, auf der Stra&szlig;e - w&auml;hlen Sie aus der Liste der vorhandenen Veranstaltungen oder f&uuml;gen Sie eine neue hinzu</p>
+         </div>
         </div>
         <div class="col-md-4 col-xs-12" style="padding-bottom:60px">
+          <div class="background_wrapper">
           <img class="img-circle" src="img/when.jpg" alt="Calendar" width="140" height="140">
            <h3>Wann?</h3>
            <p>Geben Sie einfach ein Zeitintervall oder sogar das genaue Datum und den genauen Zeitpunkt an</p>
         </div>
+      </div>
       </div>
 
   	</div>
@@ -81,13 +90,13 @@
 
 <hr style="margin:0;border: 1px solid #558C89"></hr>
   	
-  	<div class="site-wrapper" style="background-color:#74AFAD;box-shadow:none;padding-bottom:60px">
+  	<div class="site-wrapper" id="example_wrapper"style="background-color:#74AFAD;box-shadow:none">
   		<div class="site-wrapper-inner">
   			<div class="cover-container">
   				<div class="inner cover">
-  		<h1 style="padding-top:100px">Sollten Sie Ihr Handy verlieren</h1>
+  		<h1 id="bla">Sollten Sie Ihr Handy verlieren</h1>
   		<br>
-  		<div class="row" style="font-size:16px;padding-bottom:10px">
+  		<div class="row" style="padding-bottom:10px">
   			<div class="col-xs-4 col-lg-6" ><span class="glyphicon glyphicon-phone" aria-hidden="true" style="font-size:2em"></span><br><br>
   				<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
   			</div>
@@ -95,7 +104,7 @@
   			
   		</div>
   	
-  		<div class="row" style="font-size:16px;padding-top:10px;padding-bottom:10px">
+  		<div class="row" style="padding-top:10px">
   			<div class="col-xs-4 col-lg-6" >
   				<span class="glyphicon glyphicon-globe" aria-hidden="true" style="font-size:2em"></span><br><br>
   				<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
@@ -103,23 +112,22 @@
   			<div class="col-xs-8 col-lg-6" style="text-align:left">Der Finder besucht unsere Website.</div>
   			
   		</div>
-  		<div class="row" style="font-size:16px;padding-top:10px;padding-bottom:10px">
+  		<div class="row" style="padding-top:10px">
   			<div class="col-xs-4 col-lg-6" ><span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size:2em"></span><br><br>
   				<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
   			</div>
   			<div class="col-xs-8 col-lg-6" style="text-align:left">Gefundenes Handy wird registriert.</div>
   			
   		</div>
-  		<div class="row" style="font-size:16px;padding-top:10px;padding-bottom:10px">
+  		<div class="row" style="padding-top:10px">
   			<div class="col-xs-4 col-lg-6" ><span class="glyphicon glyphicon-phone" aria-hidden="true" style="font-size:2em"></span><span class="glyphicon glyphicon-plus" aria-hidden="true" style="font-size:1.5em;padding-left:7px"></span><span class="glyphicon glyphicon-user" aria-hidden="true" style="font-size:2em"></span><br><br>
-  				<br>
   				<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
   			</div>
   			<div class="col-xs-8 col-lg-6" style="text-align:left">&Uuml;bereinstimmung zwischen verlorenem und gefundenem Handy wird erkannt.</div>
   			
   		</div>
 
-  		<div class="row" style="font-size:16px;padding-top:10px;padding-bottom:10px">
+  		<div class="row" style="padding-top:10px">
   			<div class="col-xs-4 col-lg-6" ><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="font-size:2em"></span><br><br>
   				<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
   			</div>
@@ -127,10 +135,10 @@
   			
   		</div>
 
-  		<div class="row" style="font-size:16px;padding-top:10px">
+  		<div class="row" style="padding-top:10px">
   			<div class="col-xs-4 col-lg-6" ><span class="glyphicon glyphicon-ok" aria-hidden="true" style="font-size:2em"></span>
   			</div>
-  			<div class="col-xs-8 col-lg-6" style="text-align:left">Sie bekommen Ihr Handy zur&uuml;ck!</div>
+  			<div class="col-xs-8 col-lg-6" style="text-align:left;padding-bottom:40px">Sie bekommen Ihr Handy zur&uuml;ck!</div>
   			
   		</div>
   		</div>
@@ -141,12 +149,12 @@
   		  <hr style="margin:0;border: 1px solid #558C89"></hr>
 
 
-  		 <div class="site-wrapper" style="background-color:#74AFAD;box-shadow:none">
+  		 <div class="site-wrapper" style="background-color:#74AFAD;box-shadow:none" id="form_wrapper">
   		<div class="site-wrapper-inner">
         <h1 class="cover-heading">Start</h1>
   			<div class="cover-container" id="sign_in_form">
   				<div class="inner cover"> 
-            <div id="card" style="margin-top:-200px">
+            <div id="card">
               <div class="front" id="frontF">
   					<form class="form-signin" id="loginForm" action="lost_and_found.html">
               <div style="background-color:#558C89;border-radius:10px">
@@ -166,7 +174,7 @@
           				</label>
         </div>
         </div>
-        <button class="btn btn-lg signIn-btn btn-block" type="submit">Anmelden</button>
+        <button class="btn btn-lg signIn-btn btn-block" id="signInBtnBottom" type="submit">Anmelden</button>
         </div>
         <div class="login_register_switch_area">
         <p class="login_register_switch_paragraph">Noch kein Mitglied? <span class="btn btn-md register-btn" id="registerBtn" onclick="flipToRegister()" href="" style="border-color:#C9D6D6;text-shadow:none">Treten Sie bei!</span></p>

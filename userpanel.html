@@ -12,93 +12,109 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/iid3.js"></script>
+    <script src="js/lk_iid.js"></script>
+
     <script src="js/headroom.js"></script>
-    <script  type="text/javascript"  src="js/jQuery.headroom.js"></script>
+    <script type="text/javascript" src="js/jQuery.headroom.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
 
-    <title>Userbereich</title>
+    <title>Lost and Found - Profil</title>
 </head>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-            <A href="edit.html" >Profil editieren</A>
+<body style="color:#ffffff;">
 
-            <A href="edit.html" >Abmelden</A>
-            <br>
-            <p class=" text-info">12. Dezember 2015 </p>
-        </div>
-        <a class="btn btn-default btn-info" data-toggle="collapse" data-target="#demo" href="lost_and_found.html" role="button">
-            <span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:2em"></span>
-        </a>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-
-
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Lukas Kathrein</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="img/testpic.png" class="img-circle img-responsive"> </div>
-                        <div class=" col-md-9 col-lg-9 ">
-                            <table class="table table-user-information">
-                                <tbody>
-                                <tr>
-                                    <td>Email:</td>
-                                    <td><a href="mailto:"> kalu_reg@gmx.at</a></td>
-                                </tr>
-                                <td>Telefonnummer:</td>
-                                <td>
-                                    <a href="tel:+436507631877">+43 (0)650 763 18 77</a>
-                                </td>
-
-                                </tr>
-
-                                </tbody>
-                            </table>
+<div class="site-wrapper" style="background-color:#74AFAD;box-shadow:none">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="inner cover">
+                <div class="row toppad">
+                    <div class="col-xs-9 col-md-7 col-lg-10">
+                        <h1 style="color:#ffffff">Profil</h1>
+                    </div>
+                    <div class="col-xs-3 col-md-5 col-lg-2 pull-right " data-toggle="collapse" data-target="#more"
+                         style="padding-top:1.5em">
+                        <button type="button" class="btn signIn-btn" data-toggle="collapse" data-target="#more">...
+                        </button>
+                        <div id="more" class="collapse">
+                            <a class="btn signIn-btn" href="lost_and_found.html"
+                               role="button">
+                                <span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:1em"></span>
+                            </a>
+                            <a class="btn signIn-btn" href="userpanel_edit.html"
+                               role="button">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"
+                                      style="font-size:1em"></span>
+                            </a>
+                            <a class="btn signIn-btn" href="sign_in.html"
+                               role="button">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em"></span>
+                            </a>
                         </div>
                     </div>
                 </div>
+                <div id="myrow" class="row toppad" style="padding-top:20px">
+                    <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
+                        <div class="background_wrapper">
+                            <img class="img-circle" src="img/testpic.png" alt="user Bild" width="140" height="140">
+
+                            <h3 id="username">Lukas Kathrein</h3>
+
+                            <div class="row" style="padding-left:0.5em">
+                                <div class="col-xs-2 col-md-2 col-lg-6 ">
+                                    <h4>E-Mail</h4>
+                                </div>
+                                <div class="col-xs-10 col-md-10 col-lg-6 ">
+                                    <h4 id="email">kalu_reg@gmx.at</h4>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-left:0.5em">
+                                <div class="col-xs-2 col-md-2 col-lg-6 ">
+                                    <h4>Telefon</h4>
+                                </div>
+                                <div class="col-xs-10 col-md-10 col-lg-6 ">
+                                    <h4 id="phone">0650 763 18 77</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="btn signIn-btn" id='edit' style="margin-top: 1em;"role="button">Profil
+                            bearbeiten</a>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </div>
 </div>
+<div id="includedContent"></div>
 <script>
-    $(document).ready(function() {
-        var panels = $('.user-infos');
-        var panelsButton = $('.dropdown-user');
-        panels.hide();
 
-        //Click dropdown
-        panelsButton.click(function() {
-            //get data-for attribute
-            var dataFor = $(this).attr('data-for');
-            var idFor = $(dataFor);
+    $(function(){
+        $("#includedContent").load("footer.html");
+    });
 
-            //current button
-            var currentButton = $(this);
-            idFor.slideToggle(400, function() {
-                //Completed slidetoggle
-                if(idFor.is(':visible'))
-                {
-                    currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
-                }
-                else
-                {
-                    currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
-                }
-            })
-        });
+    $(document).ready(function(){
+        var username = getUrlParameter('username');
+        var email = getUrlParameter('email');
+        var phone = getUrlParameter('phone');
+
+        if (username !== undefined)
+            document.getElementById('username').innerHTML = username;
+
+        if (email !== undefined)
+            document.getElementById('email').innerHTML = email;
+
+        if (phone !== undefined)
+            document.getElementById('phone').innerHTML = phone;
+    });
 
 
-        $('[data-toggle="tooltip"]').tooltip();
-
-        $('button').click(function(e) {
-            e.preventDefault();
-            alert("This is a demo.\n :-)");
-        });
+    $('#edit').click(function(){
+        var username = document.getElementById('username').innerHTML.trim();
+        var email = document.getElementById('email').innerHTML.trim();
+        var telephone = document.getElementById('phone').innerHTML.trim();
+        $('#edit').attr("href", "userpanel_edit.html?username="+username+"&email="+email+"&phone="+telephone);
     });
 </script>
 </body>

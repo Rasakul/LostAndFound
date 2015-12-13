@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/cover.css" rel="stylesheet">
+    <link href="css/sign_in.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/userpanel.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/iid3.js"></script>
+    <script src="js/headroom.js"></script>
+    <script type="text/javascript" src="js/jQuery.headroom.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
+
+    <title>AGB - Allgemeine Geschäftsbedingungen</title>
+</head>
+<body style="color:#ffffff;">
+<div class="site-wrapper" style="background-color:#74AFAD;box-shadow:none">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="inner cover">
+                <div class="row toppad">
+                    <div class="col-xs-9 col-md-7 col-lg-10">
+                        <h1 style="color:#ffffff">AGB</h1>
+                    </div>
+                    <div class="col-xs-3 col-md-5  toppad pull-right" data-toggle="collapse" data-target="#more"
+                         style="padding-top:1.5em">
+                        <button type="button" class="btn signIn-btn" data-toggle="collapse" data-target="#more">...
+                        </button>
+                        <div id="more" class="collapse">
+                            <a class="btn signIn-btn" href="lost_and_found.html"
+                               role="button">
+                                <span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:1em"></span>
+                            </a>
+                            <a class="btn signIn-btn" href="sign_in.html"
+                               role="button">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="myrow" class="row toppad" style="padding-top:20px">
+                        <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
+                            <div class="background_wrapper" style="margin-top: 2em">
+                                <img class="img-circle" src="img/agb.png" alt="agb" width="140" height="140">
+                                <h3>Bedingungen</h3>
+                                Für den auf dieser Seite angebotenen Service wird weder vom Betreiber noch von den Entwicklern eine Garantie für das Wiederfinden verlorener Gegenstände gegeben. Es kann sich auch nicht an diesen schadlos gehalten werden.
+                                <br/>
+                                Der hier angebotene Service soll rein eine Möglichkeit darstellen mit potentiellen Findern/Verlieren in Kontakt treten zu können.
+                                <br/>
+                                Da wir diesen Service ständig verbessern wollen fruen wir ims über Feedback unter:
+                                <h4>info@laf.com</h4>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="includedContent"></div>
+<script>
+
+
+    $(function(){
+        $("#includedContent").load("footer.html");
+    });
+
+    $(document).ready(function () {
+        var panels = $('.user-infos');
+        var panelsButton = $('.dropdown-user');
+        panels.hide();
+
+        //Click dropdown
+        panelsButton.click(function () {
+            //get data-for attribute
+            var dataFor = $(this).attr('data-for');
+            var idFor = $(dataFor);
+
+            //current button
+            var currentButton = $(this);
+            idFor.slideToggle(400, function () {
+                //Completed slidetoggle
+                if (idFor.is(':visible')) {
+                    currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
+                }
+                else {
+                    currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
+                }
+            })
+        });
+
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('button').click(function (e) {
+            e.preventDefault();
+            alert("This is a demo.\n :-)");
+        });
+    });
+</script>
+</body>
+</html>

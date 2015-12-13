@@ -13,6 +13,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/iid3.js"></script>
     <script src="js/lk_iid.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
 
     <script src="js/headroom.js"></script>
     <script type="text/javascript" src="js/jQuery.headroom.js"></script>
@@ -27,32 +28,38 @@
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="inner cover">
+
                 <div class="row toppad">
-                    <div class="col-xs-9 col-md-7 col-lg-10">
-                        <h1 style="color:#ffffff">Profil</h1>
+                    <div class="col-md-7 col-lg-10">
+                        <h1 style="color:#ffffff; width:60%; float:left">Profil</h1>
                     </div>
-                    <div class="col-xs-3 col-md-5 col-lg-2 pull-right " data-toggle="collapse" data-target="#more"
-                         style="padding-top:1.5em">
-                        <button type="button" class="btn signIn-btn" data-toggle="collapse" data-target="#more">...
-                        </button>
-                        <div id="more" class="collapse">
-                            <a class="btn signIn-btn" href="lost_and_found.html"
-                               role="button">
+                    <div class="col-md-5 col-lg-2 pull-right" style="padding-top:1.5em">
+                        <a class="btn btn-md signIn-btn own-btn " data-toggle="collapse" id="moreBtn"
+                           data-target="#more"
+                           style="font-size:1.2em;">...
+                        </a>
+                        <br/>
+
+                        <div id="more" class="collapse pull-right">
+                            <a class="btn btn-md signIn-btn own-btn" href="lost_and_found.html"
+                               role="button" style="margin-top: 0.3em">
                                 <span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:1em"></span>
                             </a>
-                            <a class="btn signIn-btn" href="userpanel_edit.html"
-                               role="button">
+                            <br/>
+                            <a class="btn btn-md signIn-btn own-btn" href="userpanel_edit.html"
+                               role="button" style="margin-top: 0.3em">
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"
                                       style="font-size:1em"></span>
                             </a>
-                            <a class="btn signIn-btn" href="sign_in.html"
-                               role="button">
-                                <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em"></span>
+                            <br/>
+                            <a class="btn btn-md signIn-btn own-btn" id="logoutBtn" href="sign_in.html"
+                               role="button" style="margin-top: 0.3em">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em;"></span>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div id="myrow" class="row toppad" style="padding-top:20px">
+                <div id="myrow" class="row toppad" style="margin-top:3em">
                     <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
                         <div class="background_wrapper">
                             <img class="img-circle" src="img/testpic.png" alt="user Bild" width="140" height="140">
@@ -60,41 +67,52 @@
                             <h3 id="username">Lukas Kathrein</h3>
 
                             <div class="row" style="padding-left:0.5em">
-                                <div class="col-xs-2 col-md-2 col-lg-6 ">
-                                    <h4>E-Mail</h4>
+                                <div class="col-md-offset-4 col-md-2 col-lg-6 ">
+                                    <h3>E-Mail:</h3>
                                 </div>
-                                <div class="col-xs-10 col-md-10 col-lg-6 ">
-                                    <h4 id="email">kalu_reg@gmx.at</h4>
+                                <div class=" col-md-6 col-lg-6 ">
+                                    <h4 id="email"style="color:#000000;">kalu_reg@gmx.at</h4>
                                 </div>
                             </div>
                             <div class="row" style="padding-left:0.5em">
-                                <div class="col-xs-2 col-md-2 col-lg-6 ">
-                                    <h4>Telefon</h4>
+                                <div class="col-md-offset-4 col-md-2 col-lg-6 ">
+                                    <h3>Telefon:</h3>
                                 </div>
-                                <div class="col-xs-10 col-md-10 col-lg-6 ">
-                                    <h4 id="phone">0650 763 18 77</h4>
+                                <div class="col-md-10 col-lg-6 ">
+                                    <h4 id="phone" style="color:#000000;">0650 763 18 77</h4>
                                 </div>
                             </div>
                         </div>
-                        <a class="btn signIn-btn" id='edit' style="margin-top: 1em;"role="button">Profil
-                            bearbeiten</a>
+                        <a type="button" class="btn btn-lg signIn-btn btn-block" id='edit'
+                           style="margin-top: 1em;">
+                            Profil
+                            bearbeiten
+                        </a>
+                        <div id="includedContent"></div>
 
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
 </div>
-<div id="includedContent"></div>
+<!--<div id="includedContent"></div>-->
 <script>
 
-    $(function(){
+    $(function () {
         $("#includedContent").load("footer.html");
     });
 
-    $(document).ready(function(){
+    $(document).on('click', '#moreBtn', function (e) {
+        if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
+            $(this).collapse('hide');
+        }
+    });
+
+
+    $(document).ready(function () {
+
+
         var username = getUrlParameter('username');
         var email = getUrlParameter('email');
         var phone = getUrlParameter('phone');
@@ -110,11 +128,11 @@
     });
 
 
-    $('#edit').click(function(){
+    $('#edit').click(function () {
         var username = document.getElementById('username').innerHTML.trim();
         var email = document.getElementById('email').innerHTML.trim();
         var telephone = document.getElementById('phone').innerHTML.trim();
-        $('#edit').attr("href", "userpanel_edit.html?username="+username+"&email="+email+"&phone="+telephone);
+        $('#edit').attr("href", "userpanel_edit.html?username=" + username + "&email=" + email + "&phone=" + telephone);
     });
 </script>
 </body>

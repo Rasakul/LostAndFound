@@ -31,3 +31,19 @@
 .toppad
 {margin-top:20px;
 }
+
+
+@media (max-width: 361px){
+    .own-btn{
+        font-size: 1.5em !important;
+    }
+
+    #logoutBtn, #moreBtn, #edit, #save, #picinput{
+        font-size: 1.5em;
+    }
+
+}
+
+a:hover{
+    text-decoration: none;
+}

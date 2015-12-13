@@ -16,3 +16,4 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
+$('#more').collapse('hide');

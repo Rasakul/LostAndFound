@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name='viewport' content="width=device-width, initial-scale=1"/>
+
+
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/cover.css" rel="stylesheet">
     <link href="css/sign_in.css" rel="stylesheet" type="text/css">
@@ -43,46 +46,54 @@
                             </a>
                         </div>
                     </div>
-                    <div id="myrow" class="row toppad" style="padding-top:20px">
-                        <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
-                            <div class="background_wrapper" style="margin-top: 2em">
-                                <img class="img-circle" src="img/tu_logo.png" alt="tulogo" width="140" height="140">
-                                <h3>Motivation</h3>
-                                Diese Website wurde im Rahmen der LVA Interface und Interaciton Design (183.289) an der TU-Wien                                     entwickelt. Ziel dieses hier angebotenen Services ist es, User welche Gegenstände auf Festivals
-                                verlieren oder finden, mit den Eigentümern in Kontakt zu brinen.<br/><br/>
-                            </div>
-                            <div class="background_wrapper" style="margin-top: 2em">
-                                <div class="row">
-                                    <img class="img-circle" src="img/targetgroup.jpg" alt="zielgruppe" width="140" height="140">
-                                    <h3>Zielgruppe</h3>
-                                        16 - 50 Jahre <br/>
-                                        Festivalbesucher <br/>
-                                        Smartphonebesitzer
-                                </div>
-                            </div>
-                            <div class="background_wrapper" style="margin-top: 2em">
-                                <div class="row">
-                                    <img class="img-circle" src="img/developer.jpg" alt="entwickler" width="140" height="140">
-                                    <h3>Entwickler</h3></div>
-                                        Daniel Füvesi (1326576) <br/>
-                                        David Molnar (1326891) <br/>
-                                        Lukas Baronyai (1326526)<br/>
-                                        Lukas Kathrein (1325082)<br/>
-                                </div>
+                </div>
+                <div id="myrow" class="row toppad" style="padding-top:20px">
+                    <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
+                        <div class="background_wrapper" style="margin-top: 2em">
+                            <img class="img-circle" src="img/tu_logo.png" alt="tulogo" width="140" height="140">
+
+                            <h3>Motivation</h3>
+                            Diese Website wurde im Rahmen der LVA Interface und Interaciton Design (183.289) an der
+                            TU-Wien entwickelt. Ziel dieses hier angebotenen Services ist es, User welche
+                            Gegenstände auf Festivals
+                            verlieren oder finden, mit den Eigentümern in Kontakt zu brinen.<br/><br/>
+                        </div>
+                        <div class="background_wrapper" style="margin-top: 2em">
+                            <div class="row">
+                                <img class="img-circle" src="img/targetgroup.jpg" alt="zielgruppe" width="140"
+                                     height="140">
+
+                                <h3>Zielgruppe</h3>
+                                16 - 50 Jahre <br/>
+                                Festivalbesucher <br/>
+                                Smartphonebesitzer
                             </div>
                         </div>
+                        <div class="background_wrapper" style="margin-top: 2em">
+                            <div class="row">
+                                <img class="img-circle" src="img/developer.jpg" alt="entwickler" width="140"
+                                     height="140">
+
+                                <h3>Entwickler</h3></div>
+                            Daniel Füvesi (1326576) <br/>
+                            David Molnar (1326891) <br/>
+                            Lukas Baronyai (1326526)<br/>
+                            Lukas Kathrein (1325082)<br/>
+                        </div>
+                        <div id="includedContent"></div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div id="includedContent"></div>
+
 
 <script>
 
 
-    $(function(){
+    $(function () {
         $("#includedContent").load("footer.html");
     });
 

@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name='viewport' content="width=device-width, initial-scale=1"/>
+
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/cover.css" rel="stylesheet">
     <link href="css/sign_in.css" rel="stylesheet" type="text/css">
@@ -43,31 +45,34 @@
                             </a>
                         </div>
                     </div>
-                    <div id="myrow" class="row toppad" style="padding-top:20px">
-                        <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
-                            <div class="background_wrapper" style="margin-top: 2em">
-                                <img class="img-circle" src="img/agb.png" alt="agb" width="140" height="140">
-                                <h3>Bedingungen</h3>
-                                Für den auf dieser Seite angebotenen Service wird weder vom Betreiber noch von den Entwicklern eine Garantie für das Wiederfinden verlorener Gegenstände gegeben. Es kann sich auch nicht an diesen schadlos gehalten werden.
-                                <br/>
-                                Der hier angebotene Service soll rein eine Möglichkeit darstellen mit potentiellen Findern/Verlieren in Kontakt treten zu können.
-                                <br/>
-                                Da wir diesen Service ständig verbessern wollen fruen wir ims über Feedback unter:
-                                <h4>info@laf.com</h4>
-                            </div>
-                            </div>
+                </div>
+                <div id="myrow" class="row toppad" style="padding-top:20px">
+                    <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
+                        <div class="background_wrapper" style="margin-top: 2em">
+                            <img class="img-circle" src="img/agb.png" alt="agb" width="140" height="140">
+
+                            <h3>Bedingungen</h3>
+                            Für den auf dieser Seite angebotenen Service wird weder vom Betreiber noch von den
+                            Entwicklern eine Garantie für das Wiederfinden verlorener Gegenstände gegeben. Es kann
+                            sich auch nicht an diesen schadlos gehalten werden.
+                            <br/>
+                            Der hier angebotene Service soll rein eine Möglichkeit darstellen mit potentiellen
+                            Findern/Verlieren in Kontakt treten zu können.
+                            <br/>
+                            Da wir diesen Service ständig verbessern wollen fruen wir ims über Feedback unter:
+                            <h4>info@laf.com</h4>
                         </div>
+                        <div id="includedContent"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div id="includedContent"></div>
 <script>
 
 
-    $(function(){
+    $(function () {
         $("#includedContent").load("footer.html");
     });
 

@@ -122,26 +122,14 @@
         </div>
     </div>
 </div>
-<!--<div id="includedContent"></div>-->
 <script>
-
     $(function () {
         $("#includedContent").load("footer.html");
     });
 
-    var expanded = false;
-    $(document).on('click', '#moreBtn', function (e) {
-        expanded = !expanded;
-        if (expanded === true) {
-            $("#arrow").removeClass(" glyphicon-triangle-top").addClass(" glyphicon-triangle-bottom");
-            $(this).collapse('hide');
-        } else {
-            $("#arrow").removeClass(" glyphicon-triangle-bottom").addClass(" glyphicon-triangle-top");
-        }
-    });
-
-
     $(document).ready(function () {
+
+        toggleMenu();
 
         var username = getUrlParameter('username');
         var email = getUrlParameter('email');
@@ -155,14 +143,13 @@
 
         if (phone !== undefined)
             document.getElementById('phone').innerHTML = phone;
-    });
 
-
-    $('#edit').click(function () {
-        var username = document.getElementById('username').innerHTML.trim();
-        var email = document.getElementById('email').innerHTML.trim();
-        var telephone = document.getElementById('phone').innerHTML.trim();
-        $('#edit').attr("href", "userpanel_edit.html?username=" + username + "&email=" + email + "&phone=" + telephone);
+        $('#edit').click(function () {
+            var username = document.getElementById('username').innerHTML.trim();
+            var email = document.getElementById('email').innerHTML.trim();
+            var telephone = document.getElementById('phone').innerHTML.trim();
+            $('#edit').attr("href", "userpanel_edit.html?username=" + username + "&email=" + email + "&phone=" + telephone);
+        });
     });
 </script>
 </body>

@@ -16,4 +16,12 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
-$('#more').collapse('hide');
+
+var toggleMenu = function () {
+    $(document).on('click', '#moreBtn', function (e) {
+            $("#arrow").toggleClass("glyphicon-triangle-bottom");
+        $("#arrow").toggleClass("glyphicon-triangle-top");
+        $("#more").collapse('toggle');
+
+    });
+}

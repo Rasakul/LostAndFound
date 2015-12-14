@@ -132,19 +132,10 @@
         $("#includedContent").load("footer.html");
     });
 
-    var expanded = false;
-    $(document).on('click', '#moreBtn', function (e) {
-        expanded = !expanded;
-        if (expanded === true) {
-            $("#arrow").removeClass(" glyphicon-triangle-top").addClass(" glyphicon-triangle-bottom");
-            $(this).collapse('hide');
-        } else {
-            $("#arrow").removeClass(" glyphicon-triangle-bottom").addClass(" glyphicon-triangle-top");
-        }
-    });
 
     $(document).ready(function () {
 
+        toggleMenu();
 
         var username = getUrlParameter('username');
         var email = getUrlParameter('email');
@@ -158,27 +149,31 @@
 
         if (phone !== undefined)
             document.getElementById('phone').value = phone;
+
+
+        $('#save').click(function () {
+            var username = $('#username').val();
+            var email = $('#email').val();
+            var telephone = $('#phone').val();
+            $('#save').attr("href", "userpanel.html?username=" + username + "&email=" + email + "&phone=" + telephone);
+
+        });
+
+        var wrapper = $('<div/>').css({height: 0, width: 0, 'overflow': 'hidden'});
+        var fileInput = $(':file').wrap(wrapper);
+        fileInput.change(function () {
+            $this = $(this);
+            $('#picinput').text($this.val());
+        });
+
+        $('#picinput').click(function () {
+            fileInput.click();
+        }).show();
+
     });
 
 
-    $('#save').click(function () {
-        var username = $('#username').val();
-        var email = $('#email').val();
-        var telephone = $('#phone').val();
-        $('#save').attr("href", "userpanel.html?username=" + username + "&email=" + email + "&phone=" + telephone);
 
-    });
-
-    var wrapper = $('<div/>').css({height: 0, width: 0, 'overflow': 'hidden'});
-    var fileInput = $(':file').wrap(wrapper);
-    fileInput.change(function () {
-        $this = $(this);
-        $('#picinput').text($this.val());
-    });
-
-    $('#picinput').click(function () {
-        fileInput.click();
-    }).show();
 </script>
 </body>
 </html>

@@ -35,7 +35,7 @@
 
 
 @media (max-width: 361px){
-    #logoutBtn, #moreBtn, #edit, #save, #picinput{
+    #moreBtn, #edit, #save, #picinput{
         font-size: 1.5em;
     }
 

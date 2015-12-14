@@ -27,25 +27,31 @@
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="inner cover">
-                <div class="row toppad">
-                    <div class="col-xs-9 col-md-7 col-lg-10">
-                        <h1 style="color:#ffffff">Impressum</h1>
-                    </div>
-                    <div class="col-xs-3 col-md-5  toppad pull-right" data-toggle="collapse" data-target="#more"
-                         style="padding-top:1.5em">
-                        <button type="button" class="btn signIn-btn" data-toggle="collapse" data-target="#more">...
-                        </button>
-                        <div id="more" class="collapse">
-                            <a class="btn signIn-btn" href="lost_and_found.html"
-                               role="button">
-                                <span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:1em"></span>
-                            </a>
-                            <a class="btn signIn-btn" href="sign_in.html"
-                               role="button">
-                                <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em"></span>
-                            </a>
+                <div class="row">
+                    <div class="toppad">
+                        <div class="col-md-7 col-lg-10">
+                            <h1 style="color:#ffffff; width:50%; float:left">Profil</h1>
                         </div>
                     </div>
+                    <div class="toppad">
+                        <p>
+                            <a class="btn btn-md signIn-btn own-btn pull-right " data-toggle="collapse" id="moreBtn"
+                               data-target="#more" style="font-size:1em;">
+                                <i id="arrow" class="glyphicon glyphicon-triangle-bottom"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div id="more" class="collapse row" style="float: right;margin-bottom: 1em;">
+                    <a class="btn btn-md signIn-btn own-btn" href="lost_and_found.html"
+                       role="button" style="margin-top: 0.3em">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:1em"></span>
+                    </a>
+                    <a class="btn btn-md signIn-btn own-btn" id="logoutBtn" href="sign_in.html"
+                       role="button" style="margin-top: 0.3em">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em;"></span>
+                    </a>
+                    <br/>
                 </div>
                 <div id="myrow" class="row toppad" style="padding-top:20px">
                     <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
@@ -91,6 +97,17 @@
 
 
 <script>
+
+    var expanded = false;
+    $(document).on('click', '#moreBtn', function (e) {
+        expanded = !expanded;
+        if (expanded === true) {
+            $("#arrow").removeClass(" glyphicon-triangle-top").addClass(" glyphicon-triangle-bottom");
+            $(this).collapse('hide');
+        } else {
+            $("#arrow").removeClass(" glyphicon-triangle-bottom").addClass(" glyphicon-triangle-top");
+        }
+    });
 
 
     $(function () {

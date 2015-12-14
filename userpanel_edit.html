@@ -30,102 +30,116 @@
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="inner cover">
-                <div class="row toppad">
-                    <div class="col-md-7 col-lg-10">
-                        <h1 style="color:#ffffff; width:60%; float:left">Bearbeiten</h1>
+                <div class="inner cover">
+                    <div class="row">
+                        <div class="toppad">
+                            <div class="col-md-7 col-lg-10">
+                                <h1 style="color:#ffffff; width:50%; float:left">Profil</h1>
+                            </div>
+                        </div>
+                        <div class="toppad">
+                            <p>
+                                <a class="btn btn-md signIn-btn own-btn pull-right " data-toggle="collapse" id="moreBtn"
+                                   data-target="#more" style="font-size:1em;">
+                                    <i id="arrow" class="glyphicon glyphicon-triangle-bottom"></i>
+                                </a>
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-md-5 col-lg-2 pull-right" style="padding-top:1.5em">
-                        <a class="btn btn-md signIn-btn  own-btn" data-toggle="collapse" id="moreBtn"
-                           data-target="#more"
-                           style="font-size:1.2em;">...
+                    <div id="more" class="collapse row" style="float: right;margin-bottom: 1em;">
+                        <a class="btn btn-md signIn-btn own-btn" href="lost_and_found.html"
+                           role="button" style="margin-top: 0.3em">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:1em"></span>
+                        </a>
+                        <a class="btn btn-md signIn-btn own-btn" id="logoutBtn" href="sign_in.html"
+                           role="button" style="margin-top: 0.3em">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em;"></span>
                         </a>
                         <br/>
-
-                        <div id="more" class="collapse pull-right">
-                            <a class="btn btn-md signIn-btn own-btn" href="lost_and_found.html"
-                               role="button" style="margin-top: 0.3em">
-                                <span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:1em"></span>
-                            </a>
-                            <br/>
-                            <a class="btn btn-md signIn-btn own-btn" id="logoutBtn" href="sign_in.html"
-                               role="button" style="margin-top: 0.3em">
-                                <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em;"></span>
-                            </a>
-                        </div>
                     </div>
-                </div>
-                <div id="myrow" class="row toppad" style="padding-top:20px">
-                    <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
-                        <div class="background_wrapper">
-                            <img class="img-circle" src="img/testpic.png" alt="user Bild" width="140" height="140">
+                    <div id="myrow" class="row toppad" style="padding-top:20px">
+                        <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
+                            <div class="background_wrapper">
+                                <img class="img-circle" src="img/testpic.png" alt="user Bild" width="140" height="140">
 
-                            <div class="row" style="padding-left:0.5em; padding-top:1.5em;">
-                                <div class="  col-lg-6 ">
-                                    <h4>Bild:</h4>
-                                </div>
-                                <div class=" col-lg-6" style="padding-left:0.5em;">
-                                    <a class="own-btn btn btn-md signIn-btn  " id="picinput" role="button">Durchsuchen</a>
-                                    <br/>
-                                </div>
-                            </div>
-                            <div class="row" style="padding-left:1.5em;margin-top:1.5em;">
-                                <div class=" col-lg-6 ">
-                                    <h4>Name</h4>
-                                </div>
-                                <div class=" col-lg-6 ">
-                                    <input id="username" type="text" style="color:#000000;margin-top:0.4em;"
-                                           value="Lukas Kathrein"/></div>
-                            </div>
-                            <div class="row" style="padding-left:1.5em;padding-top:1.5em;">
-                                <div class=" col-lg-6 " >
-                                    <h4>E-Mail</h4>
-                                </div>
-                                <div class="  col-lg-6 ">
-                                    <input id="email" type="email" value="kalu_reg@gmx.at"
-                                           style="color:#000000;margin-top:0.4em;"/>
-                                </div>
-                            </div>
-                            <div class="row" style="padding-left:1.5em;">
-                                <div class=" col-lg-6 "style="padding-top:1.5em;">
-                                    <h4>Telefon</h4>
-                                </div>
-                                <div class="  col-lg-6 ">
-                                    <input id="phone" type="tel" value="06507631870"
-                                           style="color:#000000;margin-top:0.4em;"/>
-                                </div>
-                            </div>
-                            <div class="row" style="padding-left:1.5em;">
-                                <div class="col-lg-6 " style="padding-top:1.5em;">
-                                    <h4>Passwort</h4>
-                                </div>
-                                <div class=" col-lg-6 ">
-                                    <input id="password" type="password"
-                                           style="color:#000000;margin-top:0.4em;"/>
-                                </div>
-                            </div>
+                                <div style="text-align: left" class="col-xs-offset-2">
+                                    <div class="row" style="padding-left:1.5em; padding-top:1.5em;">
+                                        <div class="  col-lg-6 ">
+                                            <h4>Bild:</h4>
+                                        </div>
+                                        <div class=" col-lg-6">
+                                            <a class="own-btn btn btn-md signIn-btn  " id="picinput"
+                                               role="button">Durchsuchen</a>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding-left:1.5em;margin-top:1.5em;">
+                                        <div class=" col-lg-6 ">
+                                            <h4>Name</h4>
+                                        </div>
+                                        <div class=" col-lg-6 ">
+                                            <input id="username" type="text" style="color:#000000;margin-top:0.4em;"
+                                                   value="Lukas Kathrein"/></div>
+                                    </div>
+                                    <div class="row" style="padding-left:1.5em;padding-top:1.5em;">
+                                        <div class=" col-lg-6 ">
+                                            <h4>E-Mail</h4>
+                                        </div>
+                                        <div class="  col-lg-6 ">
+                                            <input id="email" type="email" value="kalu_reg@gmx.at"
+                                                   style="color:#000000;margin-top:0.4em;"/>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding-left:1.5em;">
+                                        <div class=" col-lg-6 " style="padding-top:1.5em;">
+                                            <h4>Telefon</h4>
+                                        </div>
+                                        <div class="  col-lg-6 ">
+                                            <input id="phone" type="tel" value="06507631870"
+                                                   style="color:#000000;margin-top:0.4em;"/>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding-left:1.5em;">
+                                        <div class="col-lg-6 " style="padding-top:1.5em;">
+                                            <h4>Passwort</h4>
+                                        </div>
+                                        <div class=" col-lg-6 ">
+                                            <input id="password" type="password"
+                                                   style="color:#000000;margin-top:0.4em;"/>
+                                        </div>
+                                    </div>
 
+                                </div>
+
+                            </div>
+                            <a id='save' class="own-btn btn btn-lg signIn-btn btn-block" style="margin-top: 1em"
+                               role="button">Profil
+                                speichern</a>
+
+                            <div id="includedContent"></div>
                         </div>
-                        <a id='save' class="own-btn btn btn-lg signIn-btn btn-block" style="margin-top: 1em" role="button">Profil
-                            speichern</a>
-                        <div id="includedContent"></div>
                     </div>
                 </div>
             </div>
         </div>
+        <input type="file" name="file" style="display:none;" accept="image/*"/>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+
     </div>
-    <input type="file" name="file" style="display:none;" accept="image/*"/>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
-
 </div>
-
 <script>
 
     $(function () {
         $("#includedContent").load("footer.html");
     });
 
-    $(document).on('click','#moreBtn',function(e) {
-        if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+    var expanded = false;
+    $(document).on('click', '#moreBtn', function (e) {
+        expanded = !expanded;
+        if (expanded === true) {
+            $("#arrow").removeClass(" glyphicon-triangle-top").addClass(" glyphicon-triangle-bottom");
             $(this).collapse('hide');
+        } else {
+            $("#arrow").removeClass(" glyphicon-triangle-bottom").addClass(" glyphicon-triangle-top");
         }
     });
 

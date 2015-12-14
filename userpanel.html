@@ -31,34 +31,38 @@
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="inner cover">
-
-                <div class="row toppad">
-                    <div class="col-md-7 col-lg-10">
-                        <h1 style="color:#ffffff; width:60%; float:left">Profil</h1>
-                    </div>
-                    <div class="col-md-5 col-lg-2 pull-right" style="padding-top:1.5em">
-                        <button class="btn btn-md signIn-btn own-btn " data-toggle="collapse" id="moreBtn" data-target="#more" style="font-size:1.2em;">... </button>
-                        <br/>
-                        <div id="more" class="collapse pull-right">
-                            <button class="btn btn-md signIn-btn own-btn" href="lost_and_found.html"
-                               role="button" style="margin-top: 0.3em">
-                                <span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:1em"></span>
-                            </button>
-                            <br/>
-                            <button class="btn btn-md signIn-btn own-btn" href="userpanel_edit.html"
-                               role="button" style="margin-top: 0.3em">
-                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"
-                                      style="font-size:1em"></span>
-                            </button>
-                            <br/>
-                            <a class="btn btn-md signIn-btn own-btn" id="logoutBtn" href="sign_in.html"
-                               role="button" style="margin-top: 0.3em">
-                                <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em;"></span>
-                            </a>
+                <div class="row">
+                    <div class="toppad">
+                        <div class="col-md-7 col-lg-10">
+                            <h1 style="color:#ffffff; width:50%; float:left">Profil</h1>
                         </div>
                     </div>
+                    <div class="toppad">
+                        <p>
+                            <a class="btn btn-md signIn-btn own-btn pull-right " data-toggle="collapse" id="moreBtn"
+                               data-target="#more" style="font-size:1em;">
+                                <i id="arrow" class="glyphicon glyphicon-triangle-bottom"></i>
+                            </a>
+                        </p>
+                    </div>
                 </div>
-                <div id="myrow" class="row toppad" style="margin-top:3em">
+                <div id="more" class="collapse row" style="float: right;margin-bottom: 1em;">
+                    <a class="btn btn-md signIn-btn own-btn" href="lost_and_found.html"
+                       role="button" style="margin-top: 0.3em">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:1em"></span>
+                    </a>
+                    <a class="btn btn-md signIn-btn own-btn" href="userpanel_edit.html"
+                       role="button" style="margin-top: 0.3em">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"
+                                      style="font-size:1em"></span>
+                    </a>
+                    <a class="btn btn-md signIn-btn own-btn" id="logoutBtn" href="sign_in.html"
+                       role="button" style="margin-top: 0.3em">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em;"></span>
+                    </a>
+                    <br/>
+                </div>
+                <div id="myrow" class="row toppad" style="margin-top:3em;">
                     <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
                         <div class="background_wrapper">
                             <img class="img-circle" src="img/testpic.png" alt="user Bild" width="140" height="140">
@@ -70,12 +74,12 @@
                                     <h3>E-Mail:</h3>
                                 </div>
                                 <div class="col-md-offset-3 col-md-4 ">
-                                    <h3 id="email"style="color:#000000;">kalu_reg@gmx.at</h3>
+                                    <h3 id="email" style="color:#000000;">kalu_reg@gmx.at</h3>
                                 </div>
                             </div>
                             <div class="row" style="padding-left:0.5em">
                                 <div class="col-md-offset-1 col-md-1 ">
-                                    <h3 >Telefon:</h3>
+                                    <h3>Telefon:</h3>
                                 </div>
                                 <div class="col-md-offset-3 col-md-4  ">
                                     <h3 id="phone" style="color:#000000;">0650 763 18 77</h3>
@@ -101,15 +105,19 @@
         $("#includedContent").load("footer.html");
     });
 
+    var expanded = false;
     $(document).on('click', '#moreBtn', function (e) {
-        if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
+        expanded = !expanded;
+        if (expanded === true) {
+            $("#arrow").removeClass(" glyphicon-triangle-top").addClass(" glyphicon-triangle-bottom");
             $(this).collapse('hide');
+        } else {
+            $("#arrow").removeClass(" glyphicon-triangle-bottom").addClass(" glyphicon-triangle-top");
         }
     });
 
 
     $(document).ready(function () {
-
 
         var username = getUrlParameter('username');
         var email = getUrlParameter('email');

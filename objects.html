@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="css/userpanel.css" rel="stylesheet">
     <link href="css/details.css" rel="stylesheet">
+    <link href="css/messages_offcanvas.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -20,217 +21,267 @@
     <script type="text/javascript" src="js/jQuery.headroom.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
+    <script src="js/offcanvas.js"></script>
     <style type="text/css">
-      a.back-to-top {
-  display: none;
-  width: 40px;
-  height: 40px;
-  text-indent: -9999px;
-  position: fixed;
-  z-index: 999;
-  right: 10px;
-  bottom: 20px;
-  background: #D9853B url("img/up_arrow.png") no-repeat center center;
-  background-size: contain;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
-}
+        a.back-to-top {
+            display: none;
+            width: 40px;
+            height: 40px;
+            text-indent: -9999px;
+            position: fixed;
+            z-index: 999;
+            right: 10px;
+            bottom: 20px;
+            background: #D9853B url("img/up_arrow.png") no-repeat center center;
+            background-size: contain;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+        }
 
-  #objectsRow .background-wrapper{
-    background-color:#558C89;
-  border-radius:10px;
-  padding: 0 0;
-  }
+        #objectsRow .background-wrapper {
+            background-color: #558C89;
+            border-radius: 10px;
+            padding: 0 0;
+        }
     </style>
     <title>Impressum</title>
 </head>
-    
+
 <body style="color:#ffffff;">
-  <a href="#" class="back-to-top">Back to Top</a>
-  <nav class="navbar navbar-transparent navbar-fixed-top" style="background-color:#558C89">
-      <div class="container">
+<a href="#" class="back-to-top">Back to Top</a>
+<nav class="navbar navbar-transparent navbar-fixed-top" style="background-color:#558C89">
+    <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" style="border-radius:10px solid;border-color:#D9853B;background-color:#D9853B"data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only" style="background-color:#000000">Toggle navigation</span>
-            <span class="icon-bar" style="background-color:#FFFFFF;"></span>
-            <span class="icon-bar" style="background-color:#FFFFFF;"></span>
-            <span class="icon-bar" style="background-color:#FFFFFF;"></span>
-          </button>
-          <a class="navbar-brand" href="#" style="font-size:1em;color:#FFFFFF">Lost and Found</a>
+            <div class="btn-group " role="group" style="float: right">
+                <button type="button" class="btn btn-primary " data-toggle="offcanvas"
+                        style="border-radius:10px; margin: 8px 0 8px 15px ">
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    <span class="badge">1</span>
+                </button>
+                <button type="button" class="navbar-toggle collapsed"
+                        style="border-radius:10px solid;border-color:#D9853B;background-color:#D9853B"
+                        data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only" style="background-color:#000000">Toggle navigation</span>
+                    <span class="icon-bar" style="background-color:#FFFFFF;"></span>
+                    <span class="icon-bar" style="background-color:#FFFFFF;"></span>
+                    <span class="icon-bar" style="background-color:#FFFFFF;"></span>
+                </button>
+            </div>
+            <a class="navbar-brand" href="#" style="font-size:1em;color:#FFFFFF">Lost and Found</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active" style="text-align:right;"><a href="lost_and_found.html" style="color:#FFFFFF"><span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:1em;color:#FFFFFF">&nbsp;</span>Zentrale&nbsp;&nbsp;&nbsp;</a></li>
-            <li class="active" style="text-align:right;"><a href="userpanel.html" style="color:#FFFFFF"><span class="glyphicon glyphicon-user" aria-hidden="true" style="font-size:1em;color:#FFFFFF">&nbsp;</span>Profil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-            <li style="text-align:right;color:#FFFFFF"><a href="sign_in.html" style="color:#FFFFFF"><span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em">&nbsp;</span>Abmelden</a></li>
-          </ul>
+            <ul class="nav navbar-nav">
+                <li class="active" style="text-align:right;"><a href="lost_and_found.html" style="color:#FFFFFF"><span
+                        class="glyphicon glyphicon-home" aria-hidden="true"
+                        style="font-size:1em;color:#FFFFFF">&nbsp;</span>Zentrale&nbsp;&nbsp;&nbsp;</a></li>
+                <li class="active" style="text-align:right;"><a href="userpanel.html" style="color:#FFFFFF"><span
+                        class="glyphicon glyphicon-user" aria-hidden="true"
+                        style="font-size:1em;color:#FFFFFF">&nbsp;</span>Profil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </a></li>
+                <li style="text-align:right;color:#FFFFFF"><a href="sign_in.html" style="color:#FFFFFF"><span
+                        class="glyphicon glyphicon-off" aria-hidden="true"
+                        style="font-size:1em">&nbsp;</span>Abmelden</a></li>
+            </ul>
         </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-  <div class="site-wrapper" id="howto" style="background-color:#74AFAD;box-shadow:none">
+    </div>
+</nav>
+<div class="site-wrapper row-offcanvas row-offcanvas-right" id="howto" style="background-color:#74AFAD;box-shadow:none">
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="inner cover">
-              <h3 style="padding-top:40px">Liste der gefundenen Gegenst&auml;nde</h3>
- <div class="container">
-    <div class="row" id="objectsRow">
-      
-        <div class="col-xs-12 col-lg-12" style="border-radius:4px;">
-          <div class="background-wrapper">
-          <h4 style="padding-top:10px">Armbanduhr</h4>
-            <div style="padding: 0 10px">
-            <img src="img/uhr.jpg" class="img-responsive img-thumbnail imagge"/></div>
-              <ul class="list-group" style="padding: 0 10px;padding-top:10px">
-                          <li class="list-group-item xx" style="text-shadow:none">Kaum getragene Armbanduhr wurde gestern gefunden.</li>
-                          <li class="list-group-item xx" style="text-shadow:none">9.6.2015</li>
-                          <li class="list-group-item xx" style="text-shadow:none"> Novarock - Linkin Park</li>
-                          <li class="list-group-item xx" style="text-shadow:none">Nickelsdorf, Austria</li>
-                        </ul>
-                        <button type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
-            <!--
-            <div class="panel panel-default" style="background-color:#74AFAD;">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Gefundene Gegenstände</h3>
-                  </div>
-                <div class="panel panel-default" style="margin: 10px;">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Armbanduhr</h3>
-                  </div>
-                  <div class="panel-body">
-                    <img src="img/uhr.jpg" class="img-responsive img-thumbnail imagge" />
-                      <ul class="list-group">
-                          <li class="list-group-item xx">Kaum getragene Armbanduhr wurde gestern gefunden.</li>
-                          <li class="list-group-item xx">9.6.2015</li>
-                          <li class="list-group-item xx">Novarock - Linkin Park</li>
-                          <li class="list-group-item xx">Nickelsdorf, Austria</li>
-                        </ul>
-                      <button type="button" class="btn btn-primary">Nachricht senden</button>
-                  </div>
-                </div>
+                <h3 style="padding-top:40px">Liste der gefundenen Gegenst&auml;nde</h3>
+                <div class="container">
+                    <div class="row" id="objectsRow">
 
-                <div class="panel panel-default" style="margin: 10px;">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Handy</h3>
-                  </div>
-                  <div class="panel-body">
-                    <img src="img/handy.jpg" class="img-responsive img-thumbnail imagge" />
-                      <ul class="list-group">
-                          <li class="list-group-item xx">Brand new iPhone 5 während dem Konzert gefunden.</li>
-                          <li class="list-group-item xx">9.6.2015</li>
-                          <li class="list-group-item xx">Novarock - Rammstein</li>
-                          <li class="list-group-item xx">Nickelsdorf, Austria</li>
-                        </ul>
-                      <button type="button" class="btn btn-primary">Nachricht senden</button>
-                  </div>
-                </div>
-                <div class="panel panel-default" style="margin: 10px;">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Geldbörse</h3>
-                  </div>
-                  <div class="panel-body">
-                    <img src="img/geld.jpg" class="img-responsive img-thumbnail imagge" />
-                      <ul class="list-group">
-                          <li class="list-group-item xx">Geldbörse mit viel Geld und ohne Ausweis gefunden.</li>
-                          <li class="list-group-item xx">16.8.2015</li>
-                          <li class="list-group-item xx">Tomorrowland - Steve Aoki</li>
-                          <li class="list-group-item xx">Boom, Belgium</li>
-                        </ul>
-                      <button type="button" class="btn btn-primary">Nachricht senden</button>
-                  </div>
-                </div>
-                
-                <div class="panel panel-default" style="margin: 10px;">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Neuen Eintrag erstellen</h3>
-                  </div>
-                  <div class="panel-body">
-                      <form role="form"  action="objects.html" method="post">
-                          <div class="form-group xx " style="text-align: left;">
-                             <span >Titel*</span>
+                        <div class="col-xs-12 col-lg-12" style="border-radius:4px;">
+                            <div class="background-wrapper">
+                                <h4 style="padding-top:10px">Armbanduhr</h4>
+                                <div style="padding: 0 10px">
+                                    <img src="img/uhr.jpg" class="img-responsive img-thumbnail imagge"/></div>
+                                <ul class="list-group" style="padding: 0 10px;padding-top:10px">
+                                    <li class="list-group-item xx" style="text-shadow:none">Kaum getragene Armbanduhr
+                                        wurde gestern gefunden.
+                                    </li>
+                                    <li class="list-group-item xx" style="text-shadow:none">9.6.2015</li>
+                                    <li class="list-group-item xx" style="text-shadow:none"> Novarock - Linkin Park</li>
+                                    <li class="list-group-item xx" style="text-shadow:none">Nickelsdorf, Austria</li>
+                                </ul>
+                                <button type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
+                                    senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                </button>
+                                <!--
+                                <div class="panel panel-default" style="background-color:#74AFAD;">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Gefundene Gegenstände</h3>
+                                      </div>
+                                    <div class="panel panel-default" style="margin: 10px;">
+                                      <div class="panel-heading">
+                                        <h3 class="panel-title">Armbanduhr</h3>
+                                      </div>
+                                      <div class="panel-body">
+                                        <img src="img/uhr.jpg" class="img-responsive img-thumbnail imagge" />
+                                          <ul class="list-group">
+                                              <li class="list-group-item xx">Kaum getragene Armbanduhr wurde gestern gefunden.</li>
+                                              <li class="list-group-item xx">9.6.2015</li>
+                                              <li class="list-group-item xx">Novarock - Linkin Park</li>
+                                              <li class="list-group-item xx">Nickelsdorf, Austria</li>
+                                            </ul>
+                                          <button type="button" class="btn btn-primary">Nachricht senden</button>
+                                      </div>
+                                    </div>
+
+                                    <div class="panel panel-default" style="margin: 10px;">
+                                      <div class="panel-heading">
+                                        <h3 class="panel-title">Handy</h3>
+                                      </div>
+                                      <div class="panel-body">
+                                        <img src="img/handy.jpg" class="img-responsive img-thumbnail imagge" />
+                                          <ul class="list-group">
+                                              <li class="list-group-item xx">Brand new iPhone 5 während dem Konzert gefunden.</li>
+                                              <li class="list-group-item xx">9.6.2015</li>
+                                              <li class="list-group-item xx">Novarock - Rammstein</li>
+                                              <li class="list-group-item xx">Nickelsdorf, Austria</li>
+                                            </ul>
+                                          <button type="button" class="btn btn-primary">Nachricht senden</button>
+                                      </div>
+                                    </div>
+                                    <div class="panel panel-default" style="margin: 10px;">
+                                      <div class="panel-heading">
+                                        <h3 class="panel-title">Geldbörse</h3>
+                                      </div>
+                                      <div class="panel-body">
+                                        <img src="img/geld.jpg" class="img-responsive img-thumbnail imagge" />
+                                          <ul class="list-group">
+                                              <li class="list-group-item xx">Geldbörse mit viel Geld und ohne Ausweis gefunden.</li>
+                                              <li class="list-group-item xx">16.8.2015</li>
+                                              <li class="list-group-item xx">Tomorrowland - Steve Aoki</li>
+                                              <li class="list-group-item xx">Boom, Belgium</li>
+                                            </ul>
+                                          <button type="button" class="btn btn-primary">Nachricht senden</button>
+                                      </div>
+                                    </div>
+
+                                    <div class="panel panel-default" style="margin: 10px;">
+                                      <div class="panel-heading">
+                                        <h3 class="panel-title">Neuen Eintrag erstellen</h3>
+                                      </div>
+                                      <div class="panel-body">
+                                          <form role="form"  action="objects.html" method="post">
+                                              <div class="form-group xx " style="text-align: left;">
+                                                 <span >Titel*</span>
+                                                    <input class="form-control" required placeholder="Titel..."/>
+                                             </div>
+                                             <div class="form-group xx " style="text-align: left;">
+                                                 <span >Beschreibung*</span>
+                                                    <input class="form-control" required placeholder="Beschreibung..."/>
+                                             </div>
+
+
+                                            <button type="button" class="btn btn-primary">Eintrag erstellen</button>
+
+                                       </form>
+
+
+                                      </div>
+                                    </div>
+
+                                </div>-->
+                            </div>
+                        </div>
+
+
+                        <div class="col-xs-12 col-lg-12" style="border-radius:4px;padding-top:30px">
+                            <div class="background-wrapper">
+                                <h4>Handy</h4>
+                                <div style="padding: 0 10px">
+                                    <img src="img/handy.jpg" class="img-responsive img-thumbnail imagge"/></div>
+                                <ul class="list-group" style="padding: 0 10px;padding-top:10px">
+                                    <li class="list-group-item xx" style="text-shadow:none">Brand new iPhone 5 während
+                                        dem Konzert gefunden.
+                                    </li>
+                                    <li class="list-group-item xx" style="text-shadow:none">9.6.2015</li>
+                                    <li class="list-group-item xx" style="text-shadow:none">Novarock - Rammstein</li>
+                                    <li class="list-group-item xx" style="text-shadow:none">Nickelsdorf, Austria</li>
+                                </ul>
+                                <button type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
+                                    senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="col-xs-12 col-lg-12" style="border-radius:4px;padding-top:30px">
+                            <div class="background-wrapper">
+                                <h4>Geldb&ouml;rse</h4>
+                                <div style="padding: 0 10px">
+                                    <img src="img/geld.jpg" class="img-responsive img-thumbnail imagge"/></div>
+                                <ul class="list-group" style="padding: 0 10px;padding-top:10px">
+                                    <li class="list-group-item xx" style="text-shadow:none">Geldbörse mit viel Geld und
+                                        ohne Ausweis gefunden.
+                                    </li>
+                                    <li class="list-group-item xx" style="text-shadow:none">16.8.2015</li>
+                                    <li class="list-group-item xx" style="text-shadow:none">Tomorrowland - Steve Aoki
+                                    </li>
+                                    <li class="list-group-item xx" style="text-shadow:none">Boom, Belgium</li>
+                                </ul>
+                                <button type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
+                                    senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <h3>Gesuchten Gegenstand nicht gefunden?</h3>
+                    <p class="lead">Geben Sie die Hoffnung nicht auf!</p>
+                    <div class="background-wrapper"
+                         style="padding: 10px 20px;padding-bottom:5px;background-color:#558C89;border-radius:10px;margin-bottom:30px">
+                        <form role="form" action="objects.html" method="post">
+                            <div class="form-group xx " style="text-align: left;">
+                                <label style="color:#FFFFFF">Titel*</label>
                                 <input class="form-control" required placeholder="Titel..."/>
-                         </div>
-                         <div class="form-group xx " style="text-align: left;">
-                             <span >Beschreibung*</span>
+                            </div>
+                            <div class="form-group xx " style="text-align: left;">
+                                <label style="color:#FFFFFF">Beschreibung*</label>
                                 <input class="form-control" required placeholder="Beschreibung..."/>
-                         </div>
+                            </div>
 
-                        
-                        <button type="button" class="btn btn-primary">Eintrag erstellen</button>
 
-                   </form>
-                   
-                      
-                  </div>
+                            <button type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Eintrag
+                                erstellen<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            </button>
+
+                        </form>
+                    </div>
+
                 </div>
-                
-            </div>-->
+            </div>
         </div>
-      </div>
-
-        
-        <div class="col-xs-12 col-lg-12" style="border-radius:4px;padding-top:30px"> 
-          <div class="background-wrapper">
-          <h4>Handy</h4>
-          <div style="padding: 0 10px">
-            <img src="img/handy.jpg" class="img-responsive img-thumbnail imagge"/></div>
-              <ul class="list-group" style="padding: 0 10px;padding-top:10px">
-                          <li class="list-group-item xx" style="text-shadow:none">Brand new iPhone 5 während dem Konzert gefunden.</li>
-                          <li class="list-group-item xx" style="text-shadow:none">9.6.2015</li>
-                          <li class="list-group-item xx" style="text-shadow:none">Novarock - Rammstein</li>
-                          <li class="list-group-item xx" style="text-shadow:none">Nickelsdorf, Austria</li>
-                        </ul>
-                        <button type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+    </div>
+    <div class="sidebar-offcanvas" id="sidebar" style="margin-top: 50px">
+        <div class="list-group">
+            <a href="message_view.html" class="list-group-item active">
+                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
+                <span class="badge">1</span>
+                Katze 1
+            </a>
+            <a href="message_view.html" class="list-group-item">
+                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
+                Katze 1
+            </a>
+            <a href="message_view.html" class="list-group-item">
+                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
+                Katze 1
+            </a>
         </div>
-      </div>
-
-      
-        <div class="col-xs-12 col-lg-12" style="border-radius:4px;padding-top:30px"> 
-          <div class="background-wrapper">
-          <h4>Geldb&ouml;rse</h4>
-          <div style="padding: 0 10px">
-            <img src="img/geld.jpg" class="img-responsive img-thumbnail imagge"/></div>
-              <ul class="list-group" style="padding: 0 10px;padding-top:10px">
-                          <li class="list-group-item xx" style="text-shadow:none">Geldbörse mit viel Geld und ohne Ausweis gefunden.</li>
-                          <li class="list-group-item xx" style="text-shadow:none">16.8.2015</li>
-                          <li class="list-group-item xx" style="text-shadow:none">Tomorrowland - Steve Aoki</li>
-                          <li class="list-group-item xx" style="text-shadow:none">Boom, Belgium</li>
-                        </ul>
-                        <button type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
-         </div>
-       </div>
-
-
     </div>
-    <h3>Gesuchter Gegenstand nicht gefunden?</h3>
-    <p class="lead">Geben Sie die Hoffnung nicht auf!</p>
-    <div class="background-wrapper" style="padding: 10px 20px;padding-bottom:5px;background-color:#558C89;border-radius:10px;margin-bottom:30px">
-      <form role="form"  action="objects.html" method="post">
-                          <div class="form-group xx " style="text-align: left;">
-                             <label style="color:#FFFFFF">Titel*</label>
-                                <input class="form-control" required placeholder="Titel..."/>
-                         </div>
-                         <div class="form-group xx " style="text-align: left;">
-                             <label style="color:#FFFFFF">Beschreibung*</label>
-                                <input class="form-control" required placeholder="Beschreibung..."/>
-                         </div>
+</div>
 
-                        
-                        <button type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Eintrag erstellen<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
-
-                   </form>
-    </div>
-
- </div> 
- </div> 
- </div> 
- </div> 
- </div> 
-
- <footer class="footer" style="background-color:#74AFAD;">
+<footer class="footer" style="background-color:#74AFAD;">
     <div class="container">
         <hr style="margin:0;border: 1px solid #558C89"/>
-        <div class="row" >
+        <div class="row">
             <div class="col-xs-4">
                 <a href="info.html" class="text-muted" style="text-shadow:none">Info</a>
             </div>
@@ -243,23 +294,23 @@
         </div>
     </div>
 </footer>
- <script type="text/javascript">
-  var amountScrolled = 300;
-  $(window).scroll(function() {
-  if ( $(window).scrollTop() > amountScrolled ) {
-    $('a.back-to-top').fadeIn('slow');
-  } else {
-    $('a.back-to-top').fadeOut('slow');
-  }
-});
+<script type="text/javascript">
+    var amountScrolled = 300;
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > amountScrolled) {
+            $('a.back-to-top').fadeIn('slow');
+        } else {
+            $('a.back-to-top').fadeOut('slow');
+        }
+    });
 
-  $('a.back-to-top').click(function() {
-  $('html, body').animate({
-    scrollTop: 0
-  }, 700);
-  return false;
-});
- </script>
-            
+    $('a.back-to-top').click(function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 700);
+        return false;
+    });
+</script>
+
 </body>
 </html>

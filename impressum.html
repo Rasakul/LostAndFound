@@ -11,6 +11,8 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="css/userpanel.css" rel="stylesheet">
+    <link href="css/messages_offcanvas.css" rel="stylesheet">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -22,9 +24,15 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            toggleMenu();
+        });
+    </script>
+
     <title>Impressum</title>
 </head>
-<body style="color:#ffffff;">
+<body style="color:#ffffff;background-color:#74AFAD;">
 <div class="site-wrapper" style="background-color:#74AFAD;box-shadow:none">
     <div class="site-wrapper-inner">
         <div class="cover-container">
@@ -32,7 +40,7 @@
                 <div class="row">
                     <div class="toppad">
                         <div class="col-md-7 col-lg-10">
-                            <h1 style="color:#ffffff; width:50%; float:left">Profil</h1>
+                            <h1 style="color:#ffffff; width:50%; float:left">Impressum</h1>
                         </div>
                     </div>
                     <div class="toppad">
@@ -95,47 +103,22 @@
         </div>
     </div>
 </div>
+<footer class="footer" style="background-color:#74AFAD;">
+    <div class="container">
+        <hr style="margin:0;border: 1px solid #558C89"/>
+        <div class="row" >
+            <div class="col-xs-4">
+                <a href="info.html" class="text-muted" style="text-shadow:none">Info</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="impressum.html" class="text-muted" style="text-shadow:none">Impressum</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="agb.html" class="text-muted" style="text-shadow:none">AGB</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
-
-<script>
-
-
-
-
-
-    $(document).ready(function () {
-        toggleMenu();
-        var panels = $('.user-infos');
-        var panelsButton = $('.dropdown-user');
-        panels.hide();
-
-        //Click dropdown
-        panelsButton.click(function () {
-            //get data-for attribute
-            var dataFor = $(this).attr('data-for');
-            var idFor = $(dataFor);
-
-            //current button
-            var currentButton = $(this);
-            idFor.slideToggle(400, function () {
-                //Completed slidetoggle
-                if (idFor.is(':visible')) {
-                    currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
-                }
-                else {
-                    currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
-                }
-            })
-        });
-
-
-        $('[data-toggle="tooltip"]').tooltip();
-
-        $('button').click(function (e) {
-            e.preventDefault();
-            alert("This is a demo.\n :-)");
-        });
-    });
-</script>
 </body>
 </html>

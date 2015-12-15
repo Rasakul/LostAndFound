@@ -11,6 +11,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="css/userpanel.css" rel="stylesheet">
+    <link href="css/messages_offcanvas.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -24,7 +25,7 @@
 
     <title>Userbereich - Bearbeitung</title>
 </head>
-<body style="color:#ffffff;">
+<body style="color:#ffffff;background-color:#74AFAD;">
 
 <div class="site-wrapper" style="background-color:#74AFAD;box-shadow:none">
     <div class="site-wrapper-inner">
@@ -63,48 +64,49 @@
                                 <img class="img-circle" src="img/testpic.png" alt="user Bild" width="140" height="140">
 
                                 <div style="text-align: left" class="col-xs-offset-2">
-                                    <div class="row" style="padding-left:1.5em; padding-top:1.5em;">
+                                    <div class="row" style=" padding-top:1.5em;">
                                         <div class="  col-lg-6 ">
                                             <h4>Bild:</h4>
                                         </div>
                                         <div class=" col-lg-6">
-                                            <a class="own-btn btn btn-md signIn-btn  " id="picinput"
-                                               role="button">Durchsuchen</a>
-                                            <br/>
+                                            <a class=" btn btn-md signIn-btn  " id="picinput"
+                                               role="button" style="width:90%;">
+                                                <div style="white-space: normal;">Durchsuchen</div>
+                                            </a>
                                         </div>
                                     </div>
-                                    <div class="row" style="padding-left:1.5em;margin-top:1.5em;">
+                                    <div class="row" style="margin-top:1.5em;">
                                         <div class=" col-lg-6 ">
                                             <h4>Name</h4>
                                         </div>
-                                        <div class=" col-lg-6 ">
-                                            <input id="username" type="text" style="color:#000000;margin-top:0.4em;"
+                                        <div class="owninput col-lg-6 ">
+                                            <input class="form-control" id="username" type="text" style="color:#000000;margin-top:0.4em;"
                                                    value="Lukas Kathrein"/></div>
                                     </div>
-                                    <div class="row" style="padding-left:1.5em;padding-top:1.5em;">
+                                    <div class="row" style="padding-top:1.5em;">
                                         <div class=" col-lg-6 ">
                                             <h4>E-Mail</h4>
                                         </div>
-                                        <div class="  col-lg-6 ">
-                                            <input id="email" type="email" value="kalu_reg@gmx.at"
+                                        <div class="owninput  col-lg-6 ">
+                                            <input id="email" type="email" value="kalu_reg@gmx.at" class="form-control"
                                                    style="color:#000000;margin-top:0.4em;"/>
                                         </div>
                                     </div>
-                                    <div class="row" style="padding-left:1.5em;">
+                                    <div class="row" style="">
                                         <div class=" col-lg-6 " style="padding-top:1.5em;">
                                             <h4>Telefon</h4>
                                         </div>
-                                        <div class="  col-lg-6 ">
-                                            <input id="phone" type="tel" value="06507631870"
+                                        <div class="owninput  col-lg-6 ">
+                                            <input id="phone" type="tel" value="06507631870" class="form-control"
                                                    style="color:#000000;margin-top:0.4em;"/>
                                         </div>
                                     </div>
-                                    <div class="row" style="padding-left:1.5em;">
-                                        <div class="col-lg-6 " style="padding-top:1.5em;">
+                                    <div class="row" >
+                                        <div class=" col-lg-6 " style="padding-top:1.5em;">
                                             <h4>Passwort</h4>
                                         </div>
-                                        <div class=" col-lg-6 ">
-                                            <input id="password" type="password"
+                                        <div class="owninput  col-lg-6 ">
+                                            <input id="password" type="password" class="form-control"
                                                    style="color:#000000;margin-top:0.4em;"/>
                                         </div>
                                     </div>
@@ -115,20 +117,31 @@
                             <a id='save' class="own-btn btn btn-lg signIn-btn btn-block" style="margin-top: 1em"
                                role="button">Profil
                                 speichern</a>
-
-                            <div id="includedContent"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <input type="file" name="file" style="display:none;" accept="image/*"/>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
-
     </div>
 </div>
+<footer class="footer" style="background-color:#74AFAD;">
+    <div class="container">
+        <hr style="margin:0;border: 1px solid #558C89"/>
+        <div class="row" >
+            <div class="col-xs-4">
+                <a href="info.html" class="text-muted" style="text-shadow:none">Info</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="impressum.html" class="text-muted" style="text-shadow:none">Impressum</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="agb.html" class="text-muted" style="text-shadow:none">AGB</a>
+            </div>
+        </div>
+    </div>
+</footer>
 <script>
-
-
     $(document).ready(function () {
 
         toggleMenu();
@@ -160,7 +173,7 @@
     var fileInput = $(':file').wrap(wrapper);
     fileInput.change(function () {
         $this = $(this);
-        $('#picinput').text($this.val());
+        $('#picinput').text("yourpicture.jpg");
     });
 
     $('#picinput').click(function () {

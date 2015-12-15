@@ -177,7 +177,7 @@
                                 <form role="form" style="text-align:left;" action="objects.html" method="post">
                                      <div class="form-group" style="padding-top: 10px;">
                                          <span>Wo?</span>
-                                            <input id="advanced-placepicker" class="form-control" data-map-container-id="collapseTwo" required/>
+                                            <input id="advanced-placepicker" class="form-control" data-map-container-id="collapseTwo"/>
                                      </div>
 
                                      <div id="collapseTwo" class="collapse">
@@ -185,13 +185,13 @@
                                      </div>
 
                                     <div class="form-group">
-                                        <span>Veranstaltung?</span></br>
+                                        <span>Veranstaltung*</span></br>
 
                                             <select id="veranstaltungen" class="form-control" style="width:80%;display:inline;" required>
-                                                <option value="one">Novarock - Rammstein</option>
-                                                <option value="two">Novarock - Linkin Park</option>
-                                                <option value="three">UMF - Martin Garrix</option>
-                                                <option value="four">Tomorrowland - Steve Aoki</option>   
+                                                <option value="two">Novarock</option>
+                                                <option value="three">UMF</option>
+                                                <option value="four">Sziget</option>
+                                                <option value="five">Tomorrowland</option>   
                                             </select>
 
                                         <button type="button" class="btn btn-default btn-xs" onclick="fasz();" style="height: 34px;">
@@ -202,13 +202,25 @@
                                     <input type="text" class="form-control kaki" id="togglee" style="display:none;"/>
 
                                      </div>
+                            <div class="form-group">
+                                        <span>Kategorie*</span></br>
+
+                                            <select class="form-control" required>
+                                                <option value="one">Handy</option>
+                                                <option value="two">Geldtasche</option>
+                                                <option value="three">Schlüssel</option>
+                                                <option value="four">Uhr</option>   
+                                                <option value="five">Anderes</option>   
+                                            </select>
+
+                                     </div>
                                         <span>Wann?</span>
                                             <div class="form-group">
                                                 <div class='input-group date' id='datetimepicker'>
                                                     <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
-                                                    <input type='text' class="form-control" placeholder="Geben Sie das Datum an" required/>
+                                                    <input type='text' class="form-control" placeholder="Geben Sie das Datum an"/>
 
                                                 </div>
                                             </div>
@@ -231,7 +243,7 @@
                                 <form role="form" style="text-align:left;" action="suchObjekts.html" method="post">
                                      <div class="form-group" style="padding-top: 10px;">
                                          <span>Wo?</span>
-                                            <input id="advanced-placepicker1" class="form-control" data-map-container-id="collapseOne" required/>
+                                            <input id="advanced-placepicker1" class="form-control" data-map-container-id="collapseOne"/>
                                      </div>
 
                                      <div id="collapseOne" class="collapse">
@@ -239,13 +251,13 @@
                                      </div>
 
                                     <div class="form-group">
-                                        <span>Veranstaltung?</span></br>
+                                        <span>Veranstaltung*</span></br>
 
                                             <select id="veranstaltungen1" class="form-control" style="width:80%;display:inline;" required>
-                                                <option value="one">Novarock - Rammstein</option>
-                                                <option value="two">Novarock - Linkin Park</option>
-                                                <option value="three">UMF - Martin Garrix</option>
-                                                <option value="four">Tomorrowland - Steve Aoki</option>   
+                                                <option value="two">Novarock</option>
+                                                <option value="three">UMF</option>
+                                                <option value="four">Sziget</option>
+                                                <option value="five">Tomorrowland</option> 
                                             </select>
 
                                         <button type="button" class="btn btn-default btn-xs" onclick="fasz1();" style="height: 34px;">
@@ -256,13 +268,25 @@
                                     <input type="text" class="form-control kaki" id="togglee1" style="display:none;"/>
 
                                      </div>
+                                    <div class="form-group">
+                                        <span>Kategorie*</span></br>
+
+                                            <select class="form-control" required>
+                                                <option value="one">Handy</option>
+                                                <option value="two">Geldtasche</option>
+                                                <option value="three">Schlüssel</option>
+                                                <option value="four">Uhr</option>   
+                                                <option value="five">Anderes</option> 
+                                            </select>
+
+                                     </div>
                                         <span>Wann?</span>
                                             <div class="form-group">
                                                 <div class='input-group date' id='datetimepicker1'>
                                                     <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
-                                                    <input type='text' class="form-control" placeholder="Geben Sie das Datum an" required/>
+                                                    <input type='text' class="form-control" placeholder="Geben Sie das Datum an"/>
 
                                                 </div>
                                             </div>

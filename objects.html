@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="css/userpanel.css" rel="stylesheet">
     <link href="css/details.css" rel="stylesheet">
+    <link href="css/datepicker.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -19,15 +20,101 @@
     <script type="text/javascript" src="js/jQuery.headroom.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
+    <script src="js/Moment.js"></script>    
+    <script src="js/jquery.placepicker.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    
+    <script>
+          var date = new Date();
+      var currentMonth = date.getMonth();
+      var currentDate = date.getDate();
+      var currentYear = date.getFullYear();
+      $(function () {
+        $('#datetimepicker').datetimepicker({
+            format: 'DD/MM/YYYY',
+            maxDate: new Date(currentYear, currentMonth, currentDate)
+        });
+      });
+        
+              $(document).ready(function() {
 
+       
+
+        // Advanced usage
+        $("#advanced-placepicker").each(function() {
+          var target = this;
+          var $collapse = $(this).parents('.form-group').next('.collapse');
+          var $map = $collapse.find('.another-map-class');
+
+          var placepicker = $(this).placepicker({
+            map: $map.get(0),
+            placeChanged: function(place) {
+              console.log("place changed: ", place.formatted_address, this.getLocation());
+            }
+          }).data('placepicker');
+        });
+       
+      }); // END document.ready
+        
+        function checkFilter(){
+            
+            if (document.getElementById('advanced-placepicker').value.length != 0 || document.getElementById('dateTextField').value.length != 0){
+                document.getElementById('filterButton').disabled = false;
+            } else{
+                document.getElementById('filterButton').disabled = true;
+            }
+        }
+        
+        $('#datetimepicker').datetimepicker({
+            onChange: function(dateText) {
+                    if (document.getElementById('advanced-placepicker').value.length != 0 || document.getElementById('dateTextField').value.length != 0){
+                document.getElementById('filterButton').disabled = false;
+            } else{
+                document.getElementById('filterButton').disabled = true;
+            }
+                }
+        });
+    </script>
+         
+      
     <title>Gefundene Gegenst&auml;nde</title>
 </head>
 
 <body style="color:#ffffff;">
+    
 <div class="panel panel-default" style="background-color:#74AFAD;">
     <div class="panel-heading">
         <h3 class="panel-title">Vielleicht hat jemand schon deinen Gegenstand gefunden...</h3>
     </div>
+    <div class="panel panel-default" style="margin: 10px;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Filtern</h3>
+        </div>
+        <div class="panel-body" style="text-align:right;">
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker'>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                    <input onkeypress="checkFilter();" id="dateTextField" type='text' class="form-control" placeholder="Geben Sie das Datum an"/>
+                </div>
+                
+                
+            </div>
+            <div class="form-group" style="padding-top: 10px;">
+                <input onkeypress="checkFilter();" id="advanced-placepicker" class="form-control" data-map-container-id="collapseTwo"/>
+            </div>
+
+            <div id="collapseTwo" class="collapse">
+                <div class="another-map-class thumbnail"></div>
+            </div>
+            <button id="filterButton" type="button" class="btn btn-md signIn-btn" disabled>Filtern</button>
+        </div>
+    </div>
+        
+    
+
     <div class="panel panel-default" style="margin: 10px;">
         <div class="panel-heading">
             <h3 class="panel-title">Armbanduhr</h3>

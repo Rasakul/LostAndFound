@@ -63,6 +63,13 @@ function flipToLogin(){
  * This section is the place to initialize additional scripts, listeners and event handlers.*/
 $(document).ready(function(){
 
+    /* Check if user is on iOS device*/
+    if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i)){
+      document.getElementById('coverBackground').style.backgroundAttachment = "scroll";
+    }else{
+      document.getElementById('coverBackground').style.backgroundAttachment = "fixed";
+    }
+
    var scroll_start = 0;
    var startchange = $('#howto');
    var offset = startchange.offset();

@@ -320,7 +320,7 @@ only screen and (min-device-pixel-ratio: 2) {
   }
 }
 
-.hvr-icon-hang {
+div .hvr-icon-hang {
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: translateZ(0);
@@ -334,7 +334,7 @@ only screen and (min-device-pixel-ratio: 2) {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-.hvr-icon-hang:before {
+div .hvr-icon-hang:before {
   content: "\f078";
   position: absolute;
   right: 1em;
@@ -344,7 +344,7 @@ only screen and (min-device-pixel-ratio: 2) {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
-.hvr-icon-hang:hover:before, .hvr-icon-hang:focus:before, .hvr-icon-hang:active:before {
+div .hvr-icon-hang:hover:before, .hvr-icon-hang:focus:before, .hvr-icon-hang:active:before {
   -webkit-animation-name: hvr-icon-hang-sink, hvr-icon-hang;
   animation-name: hvr-icon-hang-sink, hvr-icon-hang;
   -webkit-animation-duration: .3s, 1.5s;

@@ -3,14 +3,6 @@ var atSignin = false;       // flag to indicate if user is in the sign in form a
 var is_chrome;              // flag to indicate if chrome is used - will likely by deleted
 var hasBeenViewed = false;  // helper flag to indicate if header must be animated or not
 
-/* Scrolls to the section with "So funktioniert es"
- * Will automatically called when the arrow is pressed.*/
-function scroll(){
-			$('html,body').animate({
-       		 scrollTop: $("#howto").offset().top+1},
-        	'slow');
-		}
-
 /* Scrolls to the form section (sign in, register)
  * Will automatically called when the sign in button on header is pressed.*/
 function scrollToSignIn(){
@@ -62,6 +54,22 @@ function flipToLogin(){
 /* The following lines will be automatically executed after the page is loaded.
  * This section is the place to initialize additional scripts, listeners and event handlers.*/
 $(document).ready(function(){
+
+  /* Scrolls to the section with "So funktioniert es"
+   * Will automatically called when the arrow is pressed.*/
+  $('#prestudy_btn_icon').click(function(e){
+    e.preventDefault();
+    $('html,body').animate({
+           scrollTop: $("#howto").offset().top+1},
+          'slow');
+  })
+
+    /* Check if user is on iOS device*/
+    if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i)){
+      document.getElementById('coverBackground').style.backgroundAttachment = "scroll";
+    }else{
+      document.getElementById('coverBackground').style.backgroundAttachment = "fixed";
+    }
 
    var scroll_start = 0;
    var startchange = $('#howto');

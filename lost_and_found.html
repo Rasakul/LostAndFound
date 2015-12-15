@@ -72,11 +72,13 @@
         if(document.getElementById('togglee').style.display == 'none') {
             document.getElementById('togglee').style.display = 'inline';
             document.getElementById('toggleee').style.display = 'inline';
+            document.getElementById('toggleeee').style.display = 'inline';
             document.getElementById('plusminus').className = "glyphicon glyphicon-minus";
             document.getElementById('veranstaltungen').disabled = true;        
         } else {
             document.getElementById('togglee').style.display = 'none';
             document.getElementById('toggleee').style.display = 'none';
+            document.getElementById('toggleeee').style.display = 'none';
             document.getElementById('veranstaltungen').disabled = false;
             document.getElementById('plusminus').className = "glyphicon glyphicon-plus";
         }
@@ -97,22 +99,41 @@
 </head>
 <body>
 
+    <nav class="navbar navbar-transparent navbar-fixed-top" style="background-color:#558C89">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" style="border-radius:10px solid;border-color:#D9853B;background-color:#D9853B"data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only" style="background-color:#000000">Toggle navigation</span>
+            <span class="icon-bar" style="background-color:#FFFFFF;"></span>
+            <span class="icon-bar" style="background-color:#FFFFFF;"></span>
+            <span class="icon-bar" style="background-color:#FFFFFF;"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="font-size:1em">Lost and Found</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active" style="text-align:right;"><a href="userpanel.html"><span class="glyphicon glyphicon-user" aria-hidden="true" style="font-size:1em">&nbsp;</span>Profil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li style="text-align:right"><a href="sign_in.html"><span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em">&nbsp;</span>Abmelden</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
 <div class="site-wrapper" style="background-color:#74AFAD;box-shadow:none;padding-bottom:60px">
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="inner cover">
                 <div class="row">
-                    <h1 id="hat" style="padding-top:20px;color:#FFFFFF">Lost and Found</h1>
-                    <p  id="hat_lead" style="color:#FFFFFF;padding: 0 10px">Finden Sie Ihre verlorenen Gegenst&auml;nde einfach wieder!</p>
+                    <h2 id="hat" style="padding-top:35px;color:#FFFFFF">Willkommen, Mustermann!</h2>
                 </div>
                 <div class="row" style="font-size:10px;padding-bottom:10px">
-                    <div class="col-xs-8 col-lg-6">
+                    
                         <div id="label-switch" class="make-switch switch-large " data-on-label="Verloren"
                              data-off-label="Gefunden">
                             <input id="toggleButton" onchange="flipPunci();" type="checkbox" checked>
                             
                         </div>
-                    </div>
+                    <!--
                     <div class="col-xs-4 col-lg-6" style="text-align:left">
                         <button type="button" class="btn btn-md signIn-btn" data-toggle="collapse" data-target="#more"  style="font-size:1em">...
                         </button>
@@ -133,18 +154,18 @@
                                 <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em"></span>
                             </a>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
             <div id="card"> 
-              <div class="front"> 
+              <div class="front" style="padding-left:5px;padding-right:5px"> 
                     <div id="details" class="container">
                         <div class="row">
                             <div class="col-xs-12 col-lg-12">
-                                <span>Hast du etwas verloren? Wir helfen dir es wieder zu finden.</span>
+                                <h4>Haben Sie etwas verloren? Wir helfen Ihnen es wieder zu finden.</h4>
                                 <form role="form" style="text-align:left;" action="objects.html" method="post">
                                      <div class="form-group" style="padding-top: 10px;">
-                                         <span>Ort*</span>
+                                         <label>Ort</label>
                                             <input id="advanced-placepicker" class="form-control" data-map-container-id="collapseTwo" required/>
                                      </div>
 
@@ -153,8 +174,8 @@
                                      </div>
 
                                     <div class="form-group">
-                                        <span>Veranstaltung*</span></br>
-
+                                        <label>Veranstaltung*</label></br>
+                                            <div class="row" style="text-align:center"> 
                                             <select id="veranstaltungen" class="form-control" style="width:80%;display:inline;" required>
                                                 <option value="one">Novarock - Rammstein</option>
                                                 <option value="two">Novarock - Linkin Park</option>
@@ -162,15 +183,17 @@
                                                 <option value="four">Tomorrowland - Steve Aoki</option>   
                                             </select>
 
-                                        <button type="button" class="btn btn-default btn-xs" onclick="fasz();" style="height: 34px;">
+                                        <button type="button" class="btn btn-default btn-xs" onclick="fasz();" style="height:34px;">
                                               <span id="plusminus" class="glyphicon glyphicon-plus" ></span>
                                         </button></br>
+                                        </div>
 
-                                    <span class="kaki" id="toggleee" style="display:none;">..neue Veranstaltung hinzufuegen</span>
-                                    <input type="text" class="form-control kaki" id="togglee" style="display:none;"/>
+                                    <label class="kaki" id="toggleee" style="display:none;padding-left:1px">Neue Veranstaltung hinzuf&uuml;gen</label>
+                                    <input type="text" class="form-control kaki" id="togglee" style="display:none;margin-left:1px"/>
+                                    <button class="btn btn-sm signIn-btn" href="#" id="toggleeee" style="display:none;margin-top:5px">Speichern</button>
 
                                      </div>
-                                        <span>Zeit*</span>
+                                        <label>Zeit</label>
                                             <div class="form-group">
                                                 <div class='input-group date' id='datetimepicker'>
                                                     <span class="input-group-addon">
@@ -181,8 +204,8 @@
                                                 </div>
                                             </div>
 
-                                      <div class="form-group" style="text-align: right;">
-                                        <button type="submit" class="btn btn-md signIn-btn">Finde posts!</button>
+                                      <div class="form-group" style="text-align: center;">
+                                        <button type="submit" class="btn btn-md signIn-btn">Zu den Ergebnissen</button>
                                       </div>
 
                                </form>
@@ -191,11 +214,11 @@
                         </div>
                 </div>
               </div> 
-              <div class="back">
+              <div class="back" style="padding-left:5px;padding-right:5px">
                 <div id="details" class="container">
                         <div class="row">
                             <div class="col-xs-12 col-lg-12">
-                                <span>Hast du etwas verloren? Wir helfen dir es wieder zu finden.</span>
+                                <h4>Haben Sie etwas gefunden? Helfen Sie den Eigent&uuml;mern ihre Gegenst&auml;nde zu bekommen.</h4>
                                 <form role="form" style="text-align:left;" action="objects.html" method="post">
                                      <div class="form-group" style="padding-top: 10px;">
                                          <span>Ort*</span>

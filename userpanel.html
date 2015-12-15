@@ -112,23 +112,13 @@
 <script>
 
     $(function () {
-        $("#includedContent").load("footer.html");
         $("#messages").load("messages_overview.html");
-    });
-
-    var expanded = false;
-    $(document).on('click', '#moreBtn', function (e) {
-        expanded = !expanded;
-        if (expanded === true) {
-            $("#arrow").removeClass(" glyphicon-triangle-top").addClass(" glyphicon-triangle-bottom");
-            $(this).collapse('hide');
-        } else {
-            $("#arrow").removeClass(" glyphicon-triangle-bottom").addClass(" glyphicon-triangle-top");
-        }
     });
 
 
     $(document).ready(function () {
+
+        toggleMenu();
 
         var username = getUrlParameter('username');
         var email = getUrlParameter('email');

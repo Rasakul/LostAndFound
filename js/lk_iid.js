@@ -16,4 +16,16 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
-$('#more').collapse('hide');
+var expanded = true;
+
+var toggleMenu = function(){
+    $(document).on('click', '#moreBtn', function (e) {
+        expanded = !expanded;
+        if (expanded === true) {
+            $("#arrow").removeClass(" glyphicon-triangle-top").addClass(" glyphicon-triangle-bottom");
+            $(this).collapse('hide');
+        } else {
+            $("#arrow").removeClass(" glyphicon-triangle-bottom").addClass(" glyphicon-triangle-top");
+        }
+    });
+}

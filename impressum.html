@@ -15,6 +15,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/iid3.js"></script>
+    <script src="js/lk_iid.js"></script>
+
     <script src="js/headroom.js"></script>
     <script type="text/javascript" src="js/jQuery.headroom.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -86,7 +88,6 @@
                             Lukas Baronyai (1326526)<br/>
                             Lukas Kathrein (1325082)<br/>
                         </div>
-                        <div id="includedContent"></div>
 
                     </div>
                 </div>
@@ -98,23 +99,12 @@
 
 <script>
 
-    var expanded = false;
-    $(document).on('click', '#moreBtn', function (e) {
-        expanded = !expanded;
-        if (expanded === true) {
-            $("#arrow").removeClass(" glyphicon-triangle-top").addClass(" glyphicon-triangle-bottom");
-            $(this).collapse('hide');
-        } else {
-            $("#arrow").removeClass(" glyphicon-triangle-bottom").addClass(" glyphicon-triangle-top");
-        }
-    });
 
 
-    $(function () {
-        $("#includedContent").load("footer.html");
-    });
+
 
     $(document).ready(function () {
+        toggleMenu();
         var panels = $('.user-infos');
         var panelsButton = $('.dropdown-user');
         panels.hide();

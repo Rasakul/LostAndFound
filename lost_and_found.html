@@ -7,27 +7,86 @@
     <title>Lost and Found - so finden verlorene Gegenstände ihren Besitzer wieder</title>
 
     <!-- Custom styles -->
-    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/bootstrap-switch.css" rel="stylesheet">
-    <link href="css/sign_in.css" rel="stylesheet" type="text/css">
+    <link href="css/details.css" rel="stylesheet">
+    <link href="css/datepicker.css" rel="stylesheet">
 
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">-->
-
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-switch.js"></script>
-    <script type="text/javascript">
-        function setup() {
-            $('#label-switch').bootstrapSwitch('setOnClass', 'info');
-            $('#label-switch').bootstrapSwitch('setOffClass', 'info');
+    <script src="js/Moment.js"></script>    
+    <script src="js/jquery.placepicker.js"></script>
+    
+    <script src="js/bootstrap-datepicker.js"></script>  
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    
+    
+ 
+    <script>
+      $(document).ready(function() {
+
+        // Advanced usage
+        $("#advanced-placepicker").each(function() {
+          var target = this;
+          var $collapse = $(this).parents('.form-group').next('.collapse');
+          var $map = $collapse.find('.another-map-class');
+
+          var placepicker = $(this).placepicker({
+            map: $map.get(0),
+            placeChanged: function(place) {
+              console.log("place changed: ", place.formatted_address, this.getLocation());
+            }
+          }).data('placepicker');
+        });
+          
+          
+        $('#label-switch').bootstrapSwitch('setOnClass', 'info');
+        $('#label-switch').bootstrapSwitch('setOffClass', 'info');
+          
+        $("#card").flip({
+  		    trigger: 'manual'
+        });
+       
+      }); // END document.ready
+         
+      var date = new Date();
+      var currentMonth = date.getMonth();
+      var currentDate = date.getDate();
+      var currentYear = date.getFullYear();
+      $(function () {
+        $('#datetimepicker').datetimepicker({
+            format: 'DD/MM/YYYY',
+            maxDate: new Date(currentYear, currentMonth, currentDate)
+        });
+      });
+         
+      function fasz() {  
+        if(document.getElementById('togglee').style.display == 'none') {
+            document.getElementById('togglee').style.display = 'inline';
+            document.getElementById('toggleee').style.display = 'inline';
+            document.getElementById('plusminus').className = "glyphicon glyphicon-minus";
+            document.getElementById('veranstaltungen').disabled = true;        
+        } else {
+            document.getElementById('togglee').style.display = 'none';
+            document.getElementById('toggleee').style.display = 'none';
+            document.getElementById('veranstaltungen').disabled = false;
+            document.getElementById('plusminus').className = "glyphicon glyphicon-plus";
         }
+      }
+        
+        function flipPunci() {
+            $("#card").flip();
+        }
+
+    
     </script>
-
-
+    
 </head>
-<body onload="setup();">
+<body>
 
 <div class="site-wrapper" style="background-color:#74AFAD;box-shadow:none;padding-bottom:60px">
     <div class="site-wrapper-inner">
@@ -41,7 +100,7 @@
                     <div class="col-xs-8 col-lg-6">
                         <div id="label-switch" class="make-switch switch-large " data-on-label="Verloren"
                              data-off-label="Gefunden">
-                            <input type="checkbox" checked>
+                            <input onchange="flipPunci();" type="checkbox" checked>
                         </div>
                     </div>
                     <div class="col-xs-4 col-lg-6" style="text-align:left">
@@ -67,7 +126,117 @@
                     </div>
                 </div>
             </div>
-            <div id="includeForm"></div>
+            <div id="card"> 
+              <div class="front"> 
+                    <div id="details" class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-12">
+                                <span>Hast du etwas verloren? Wir helfen dir es wieder zu finden.</span>
+                                <form role="form" style="text-align:left;" action="objects.html" method="post">
+                                     <div class="form-group" style="padding-top: 10px;">
+                                         <span>Ort*</span>
+                                            <input id="advanced-placepicker" class="form-control" data-map-container-id="collapseTwo" required/>
+                                     </div>
+
+                                     <div id="collapseTwo" class="collapse">
+                                       <div class="another-map-class thumbnail"></div>
+                                     </div>
+
+                                    <div class="form-group">
+                                        <span>Veranstaltung*</span></br>
+
+                                            <select id="veranstaltungen" class="form-control" style="width:80%;display:inline;" required>
+                                                <option value="one">Novarock - Rammstein</option>
+                                                <option value="two">Novarock - Linkin Park</option>
+                                                <option value="three">UMF - Martin Garrix</option>
+                                                <option value="four">Tomorrowland - Steve Aoki</option>   
+                                            </select>
+
+                                        <button type="button" class="btn btn-default btn-xs" onclick="fasz();" style="height: 34px;">
+                                              <span id="plusminus" class="glyphicon glyphicon-plus" ></span>
+                                        </button></br>
+
+                                    <span class="kaki" id="toggleee" style="display:none;">..neue Veranstaltung hinzufuegen</span>
+                                    <input type="text" class="form-control kaki" id="togglee" style="display:none;"/>
+
+                                     </div>
+                                        <span>Zeit*</span>
+                                            <div class="form-group">
+                                                <div class='input-group date' id='datetimepicker'>
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                    <input type='text' class="form-control" placeholder="Geben Sie das Datum an" required/>
+
+                                                </div>
+                                            </div>
+
+                                      <div class="form-group" style="text-align: right;">
+                                        <button type="submit" class="btn btn-md signIn-btn">Finde posts!</button>
+                                      </div>
+
+                               </form>
+
+                            </div>
+                        </div>
+                </div>
+              </div> 
+              <div class="back">
+                <div id="details" class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-12">
+                                <span>Hast du etwas verloren? Wir helfen dir es wieder zu finden.</span>
+                                <form role="form" style="text-align:left;" action="objects.html" method="post">
+                                     <div class="form-group" style="padding-top: 10px;">
+                                         <span>Ort*</span>
+                                            <input id="advanced-placepicker" class="form-control" data-map-container-id="collapseTwo" required/>
+                                     </div>
+
+                                     <div id="collapseTwo" class="collapse">
+                                       <div class="another-map-class thumbnail"></div>
+                                     </div>
+
+                                    <div class="form-group">
+                                        <span>Veranstaltung*</span></br>
+
+                                            <select id="veranstaltungen" class="form-control" style="width:80%;display:inline;" required>
+                                                <option value="one">Novarock - Rammstein</option>
+                                                <option value="two">Novarock - Linkin Park</option>
+                                                <option value="three">UMF - Martin Garrix</option>
+                                                <option value="four">Tomorrowland - Steve Aoki</option>   
+                                            </select>
+
+                                        <button type="button" class="btn btn-default btn-xs" onclick="fasz();" style="height: 34px;">
+                                              <span id="plusminus" class="glyphicon glyphicon-plus" ></span>
+                                        </button></br>
+
+                                    <span class="kaki" id="toggleee" style="display:none;">..neue Veranstaltung hinzufuegen</span>
+                                    <input type="text" class="form-control kaki" id="togglee" style="display:none;"/>
+
+                                     </div>
+                                        <span>Zeit*</span>
+                                            <div class="form-group">
+                                                <div class='input-group date' id='datetimepicker'>
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                    <input type='text' class="form-control" placeholder="Geben Sie das Datum an" required/>
+
+                                                </div>
+                                            </div>
+
+                                      <div class="form-group" style="text-align: right;">
+                                        <button type="submit" class="btn btn-md signIn-btn">Finde posts!</button>
+                                      </div>
+
+                               </form>
+
+                            </div>
+                        </div>
+                </div>
+              </div> 
+            </div>
+
         </div>
     </div>
 </div>
@@ -77,7 +246,6 @@
 <script>
     $(function(){
         $("#includedContent").load("footer.html");
-        $("#includeForm").load("laf.html");
     });
 </script>
     

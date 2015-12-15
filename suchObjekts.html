@@ -19,106 +19,134 @@
     <script type="text/javascript" src="js/jQuery.headroom.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
-    
 
 
     <title>Gesuchte Gegenst&auml;nde</title>
 </head>
-    
+
 <body style="color:#ffffff;">
-            <div class="panel panel-default" style="background-color:#74AFAD;">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Vielleicht sucht jemand schon diesen Gegenstand...</h3>
-                  </div>
-                <div class="panel panel-default" style="margin: 10px;">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Taschenmesser</h3>
-                  </div>
-                  <div class="panel-body">
-                      <ul class="list-group">
-                          <li class="list-group-item xx">Ich habe mein Taschenmesser beim Toten Hosen Konzert verloren. Ich würde es gerne wieder haben.</li>
-                          <li class="list-group-item xx">8.6.2015</li>
-                          <li class="list-group-item xx">Novarock - Toten Hosen</li>
-                          <li class="list-group-item xx">Nickelsdorf, Austria</li>
-                        </ul>
-                      <button type="button" class="btn btn-md signIn-btn" onClick="window.open('message_view.html','_self');">Nachricht senden</button>
-                  </div>
+<div class="panel panel-default" style="background-color:#74AFAD;">
+    <div class="panel-heading">
+        <h3 class="panel-title">Vielleicht sucht jemand schon diesen Gegenstand...</h3>
+    </div>
+    <div class="panel panel-default" style="margin: 10px;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Taschenmesser</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <li class="list-group-item xx">Ich habe mein Taschenmesser beim Toten Hosen Konzert verloren. Ich würde
+                    es gerne wieder haben.
+                </li>
+                <li class="list-group-item xx">8.6.2015</li>
+                <li class="list-group-item xx">Novarock - Toten Hosen</li>
+                <li class="list-group-item xx">Nickelsdorf, Austria</li>
+            </ul>
+            <button type="button" class="btn btn-md signIn-btn" onClick="window.open('message_view.html','_self');">
+                Nachricht senden
+            </button>
+        </div>
+    </div>
+
+    <div class="panel panel-default" style="margin: 10px;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Handy</h3>
+        </div>
+        <div class="panel-body">
+
+            <ul class="list-group">
+                <li class="list-group-item xx">Kaum gebrauchtes iPhone6 ist gestern Abend verloren worden. 100€ fürs
+                    Rückerstatten.
+                </li>
+                <li class="list-group-item xx">9.6.2015</li>
+                <li class="list-group-item xx">Novarock - Rammstein</li>
+                <li class="list-group-item xx">Nickelsdorf, Austria</li>
+            </ul>
+            <button type="button" class="btn btn-md signIn-btn" onClick="window.open('message_view.html','_self');">
+                Nachricht senden
+            </button>
+        </div>
+    </div>
+    <div class="panel panel-default" style="margin: 10px;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Schlüssel</h3>
+        </div>
+        <div class="panel-body">
+
+            <ul class="list-group">
+                <li class="list-group-item xx">Ich habe mein Schlüssel heute Nachmittag beim Steve Aoki Konzert irgendwo
+                    verloren. Bitte hilft mir!
+                </li>
+                <li class="list-group-item xx">16.8.2015</li>
+                <li class="list-group-item xx">Tomorrowland - Steve Aoki</li>
+                <li class="list-group-item xx">Boom, Belgium</li>
+            </ul>
+            <button type="button" class="btn btn-md signIn-btn" onClick="window.open('message_view.html','_self');">
+                Nachricht senden
+            </button>
+        </div>
+    </div>
+
+    <div class="panel panel-default" style="margin: 10px;">
+        <div class="panel-heading">
+            <h3 class="panel-title">...oder erstelle einen neuen Eintrag!</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" action="objects.html" method="post">
+                <div class="form-group xx " style="text-align: left;">
+                    <span>Titel</span>
+                    <input class="form-control" required placeholder="Titel..."/>
+                </div>
+                <div class="form-group xx " style="text-align: left;">
+                    <span>Beschreibung</span>
+                    <input class="form-control" required placeholder="Beschreibung..."/>
+                </div>
+                <div class="form-group xx " style="text-align: left;">
+                    <a class="btn btn-xs signIn-btn" id="picinputt"
+                       role="button">Bild auswählen</a>
+                    <input type="file" name="file" style="display:none;" accept="image/*"/>
                 </div>
 
-                <div class="panel panel-default" style="margin: 10px;">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Handy</h3>
-                  </div>
-                  <div class="panel-body">
-                    
-                      <ul class="list-group">
-                          <li class="list-group-item xx">Kaum gebrauchtes iPhone6 ist gestern Abend verloren worden. 100€ fürs Rückerstatten.</li>
-                          <li class="list-group-item xx">9.6.2015</li>
-                          <li class="list-group-item xx">Novarock - Rammstein</li>
-                          <li class="list-group-item xx">Nickelsdorf, Austria</li>
-                        </ul>
-                      <button type="button" class="btn btn-md signIn-btn" onClick="window.open('message_view.html','_self');">Nachricht senden</button>
-                  </div>
-                </div>
-                <div class="panel panel-default" style="margin: 10px;">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Schlüssel</h3>
-                  </div>
-                  <div class="panel-body">
-                    
-                      <ul class="list-group">
-                          <li class="list-group-item xx">Ich habe mein Schlüssel heute Nachmittag beim Steve Aoki Konzert irgendwo verloren. Bitte hilft mir!</li>
-                          <li class="list-group-item xx">16.8.2015</li>
-                          <li class="list-group-item xx">Tomorrowland - Steve Aoki</li>
-                          <li class="list-group-item xx">Boom, Belgium</li>
-                        </ul>
-                      <button type="button" class="btn btn-md signIn-btn" onClick="window.open('message_view.html','_self');">Nachricht senden</button>
-                  </div>
-                </div>
-                
-                <div class="panel panel-default" style="margin: 10px;">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">...oder erstelle einen neuen Eintrag!</h3>
-                  </div>
-                  <div class="panel-body">
-                      <form role="form"  action="objects.html" method="post">
-                          <div class="form-group xx " style="text-align: left;">
-                             <span >Titel</span>
-                                <input class="form-control" required placeholder="Titel..."/>
-                         </div>
-                         <div class="form-group xx " style="text-align: left;">
-                             <span >Beschreibung</span>
-                                <input class="form-control" required placeholder="Beschreibung..."/>
-                         </div>
-                          <div class="form-group xx " style="text-align: left;">
-                              <a class="btn btn-xs signIn-btn" id="picinputt"
-                                               role="button">Bild auswählen</a>
-                                <input type="file" name="file" style="display:none;" accept="image/*"/>
-                         </div>
 
-                        
-                        <button type="button" class="btn btn-md signIn-btn">Eintrag erstellen</button>
+                <button type="button" class="btn btn-md signIn-btn">Eintrag erstellen</button>
 
-                   </form>
-                   
-                      
-                  </div>
-                </div>
-                
-            </div> 
-    
-    <script>
-        var wrapper = $('<div/>').css({height: 0, width: 0, 'overflow': 'hidden'});
-        var fileInput = $(':file').wrap(wrapper);
-        fileInput.change(function () {
-            $this = $(this);
-             $('#picinputt').text("yourpicture.jpg");
-        });
+            </form>
 
-        $('#picinputt').click(function () {
-            fileInput.click();
-        }).show();
-    </script>
-            
+
+        </div>
+    </div>
+
+</div>
+<footer class="footer" style="background-color:#74AFAD;">
+    <div class="container">
+        <hr style="margin:0;border: 1px solid #558C89"/>
+        <div class="row" >
+            <div class="col-xs-4">
+                <a href="info.html" class="text-muted" style="text-shadow:none">Info</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="impressum.html" class="text-muted" style="text-shadow:none">Impressum</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="agb.html" class="text-muted" style="text-shadow:none">AGB</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    var wrapper = $('<div/>').css({height: 0, width: 0, 'overflow': 'hidden'});
+    var fileInput = $(':file').wrap(wrapper);
+    fileInput.change(function () {
+        $this = $(this);
+        $('#picinputt').text("yourpicture.jpg");
+    });
+
+    $('#picinputt').click(function () {
+        fileInput.click();
+    }).show();
+</script>
+
 </body>
 </html>

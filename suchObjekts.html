@@ -19,25 +19,26 @@
     <script type="text/javascript" src="js/jQuery.headroom.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
+    
 
-    <title>Gefundene Gegenst&auml;nde</title>
+
+    <title>Gesuchte Gegenst&auml;nde</title>
 </head>
     
 <body style="color:#ffffff;">
             <div class="panel panel-default" style="background-color:#74AFAD;">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Vielleicht hat jemand schon deinen Gegenstand gefunden...</h3>
+                    <h3 class="panel-title">Vielleicht sucht jemand schon diesen Gegenstand...</h3>
                   </div>
                 <div class="panel panel-default" style="margin: 10px;">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Armbanduhr</h3>
+                    <h3 class="panel-title">Taschenmesser</h3>
                   </div>
                   <div class="panel-body">
-                    <img src="img/uhr.jpg" class="img-responsive img-thumbnail imagge" />
                       <ul class="list-group">
-                          <li class="list-group-item xx">Kaum getragene Armbanduhr wurde gestern gefunden.</li>
-                          <li class="list-group-item xx">9.6.2015</li>
-                          <li class="list-group-item xx">Novarock - Linkin Park</li>
+                          <li class="list-group-item xx">Ich habe mein Taschenmesser beim Toten Hosen Konzert verloren. Ich würde es gerne wieder haben.</li>
+                          <li class="list-group-item xx">8.6.2015</li>
+                          <li class="list-group-item xx">Novarock - Toten Hosen</li>
                           <li class="list-group-item xx">Nickelsdorf, Austria</li>
                         </ul>
                       <button type="button" class="btn btn-md signIn-btn" onClick="window.open('message_view.html','_self');">Nachricht senden</button>
@@ -49,9 +50,9 @@
                     <h3 class="panel-title">Handy</h3>
                   </div>
                   <div class="panel-body">
-                    <img src="img/handy.jpg" class="img-responsive img-thumbnail imagge" />
+                    
                       <ul class="list-group">
-                          <li class="list-group-item xx">Brand new iPhone 5 während dem Konzert gefunden.</li>
+                          <li class="list-group-item xx">Kaum gebrauchtes iPhone6 ist gestern Abend verloren worden. 100€ fürs Rückerstatten.</li>
                           <li class="list-group-item xx">9.6.2015</li>
                           <li class="list-group-item xx">Novarock - Rammstein</li>
                           <li class="list-group-item xx">Nickelsdorf, Austria</li>
@@ -61,12 +62,12 @@
                 </div>
                 <div class="panel panel-default" style="margin: 10px;">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Geldbörse</h3>
+                    <h3 class="panel-title">Schlüssel</h3>
                   </div>
                   <div class="panel-body">
-                    <img src="img/geld.jpg" class="img-responsive img-thumbnail imagge" />
+                    
                       <ul class="list-group">
-                          <li class="list-group-item xx">Geldbörse mit viel Geld und ohne Ausweis gefunden.</li>
+                          <li class="list-group-item xx">Ich habe mein Schlüssel heute Nachmittag beim Steve Aoki Konzert irgendwo verloren. Bitte hilft mir!</li>
                           <li class="list-group-item xx">16.8.2015</li>
                           <li class="list-group-item xx">Tomorrowland - Steve Aoki</li>
                           <li class="list-group-item xx">Boom, Belgium</li>
@@ -77,7 +78,7 @@
                 
                 <div class="panel panel-default" style="margin: 10px;">
                   <div class="panel-heading">
-                    <h3 class="panel-title">...oder erstelle einen neuen Eintrag</h3>
+                    <h3 class="panel-title">...oder erstelle einen neuen Eintrag!</h3>
                   </div>
                   <div class="panel-body">
                       <form role="form"  action="objects.html" method="post">
@@ -89,6 +90,11 @@
                              <span >Beschreibung</span>
                                 <input class="form-control" required placeholder="Beschreibung..."/>
                          </div>
+                          <div class="form-group xx " style="text-align: left;">
+                              <a class="btn btn-xs signIn-btn" id="picinputt"
+                                               role="button">Bild auswählen</a>
+                                <input type="file" name="file" style="display:none;" accept="image/*"/>
+                         </div>
 
                         
                         <button type="button" class="btn btn-md signIn-btn">Eintrag erstellen</button>
@@ -99,7 +105,20 @@
                   </div>
                 </div>
                 
-            </div>     
+            </div> 
+    
+    <script>
+        var wrapper = $('<div/>').css({height: 0, width: 0, 'overflow': 'hidden'});
+        var fileInput = $(':file').wrap(wrapper);
+        fileInput.change(function () {
+            $this = $(this);
+             $('#picinputt').text("yourpicture.jpg");
+        });
+
+        $('#picinputt').click(function () {
+            fileInput.click();
+        }).show();
+    </script>
             
 </body>
 </html>

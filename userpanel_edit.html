@@ -69,25 +69,26 @@
                                             <h4>Bild:</h4>
                                         </div>
                                         <div class=" col-lg-6">
-                                            <a class="own-btn btn btn-md signIn-btn  " id="picinput"
-                                               role="button">Durchsuchen</a>
-                                            <br/>
+                                            <a class=" btn btn-md signIn-btn  " id="picinput"
+                                               role="button" style="width:90%;">
+                                                <div style="white-space: normal;">Durchsuchen</div>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top:1.5em;">
                                         <div class=" col-lg-6 ">
                                             <h4>Name</h4>
                                         </div>
-                                        <div class=" col-lg-6 ">
-                                            <input id="username" type="text" style="color:#000000;margin-top:0.4em;"
+                                        <div class="owninput col-lg-6 ">
+                                            <input class="form-control" id="username" type="text" style="color:#000000;margin-top:0.4em;"
                                                    value="Lukas Kathrein"/></div>
                                     </div>
                                     <div class="row" style="padding-top:1.5em;">
                                         <div class=" col-lg-6 ">
                                             <h4>E-Mail</h4>
                                         </div>
-                                        <div class="  col-lg-6 ">
-                                            <input id="email" type="email" value="kalu_reg@gmx.at"
+                                        <div class="owninput  col-lg-6 ">
+                                            <input id="email" type="email" value="kalu_reg@gmx.at" class="form-control"
                                                    style="color:#000000;margin-top:0.4em;"/>
                                         </div>
                                     </div>
@@ -95,17 +96,17 @@
                                         <div class=" col-lg-6 " style="padding-top:1.5em;">
                                             <h4>Telefon</h4>
                                         </div>
-                                        <div class="  col-lg-6 ">
-                                            <input id="phone" type="tel" value="06507631870"
+                                        <div class="owninput  col-lg-6 ">
+                                            <input id="phone" type="tel" value="06507631870" class="form-control"
                                                    style="color:#000000;margin-top:0.4em;"/>
                                         </div>
                                     </div>
                                     <div class="row" >
-                                        <div class="col-lg-6 " style="padding-top:1.5em;">
+                                        <div class=" col-lg-6 " style="padding-top:1.5em;">
                                             <h4>Passwort</h4>
                                         </div>
-                                        <div class=" col-lg-6 ">
-                                            <input id="password" type="password"
+                                        <div class="owninput  col-lg-6 ">
+                                            <input id="password" type="password" class="form-control"
                                                    style="color:#000000;margin-top:0.4em;"/>
                                         </div>
                                     </div>
@@ -124,7 +125,7 @@
         <input type="file" name="file" style="display:none;" accept="image/*"/>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
     </div>
 </div>
-<footer class="footer" style="margin-bottom:10px;">
+<footer class="footer" style="background-color:#74AFAD;">
     <div class="container">
         <hr style="margin:0;border: 1px solid #558C89"/>
         <div class="row" >
@@ -172,7 +173,7 @@
     var fileInput = $(':file').wrap(wrapper);
     fileInput.change(function () {
         $this = $(this);
-        $('#picinput').text($this.val());
+        $('#picinput').text("yourpicture.jpg");
     });
 
     $('#picinput').click(function () {

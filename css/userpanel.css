@@ -24,29 +24,26 @@
     border-top: 0;
 }
 
-
 .table-user-information > tbody > tr > td {
     border-top: 0;
 }
-.toppad
-{margin-top:20px;
+
+.toppad {
+    margin-top: 20px;
 }
 
-
-
-@media (max-width: 361px){
-    #moreBtn, #edit, #save, #picinput{
+@media (max-width: 361px) {
+    #moreBtn, #edit, #save, #picinput {
         font-size: 1.5em;
     }
 
 }
 
-a:hover{
+a:hover {
     text-decoration: none;
 }
 
-
-.owninput{
-    width:90%;
+.owninput {
+    width: 90%;
 
 }

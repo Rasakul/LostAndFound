@@ -18,7 +18,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 var expanded = true;
 
-var toggleMenu = function(){
+var toggleMenu = function () {
     $(document).on('click', '#moreBtn', function (e) {
         expanded = !expanded;
         if (expanded === true) {

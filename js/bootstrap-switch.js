@@ -1,11 +1,11 @@
-!function($) {
-    $.fn["bootstrapSwitch"] = function(method) {
+!function ($) {
+    $.fn["bootstrapSwitch"] = function (method) {
         var inputSelector = 'input[type!="hidden"]';
         var methods = {
-            init: function() {
-                return this.each(function() {
+            init: function () {
+                return this.each(function () {
                     var $element = $(this), $div, $switchLeft, $switchRight, $label, $form = $element.closest("form"), myClasses = "", classes = $element.attr("class"), color, moving, onLabel = "ON", offLabel = "OFF", icon = false, textLabel = false;
-                    $.each(["switch-mini", "switch-small", "switch-large"], function(i, el) {
+                    $.each(["switch-mini", "switch-small", "switch-large"], function (i, el) {
                         if (classes.indexOf(el) >= 0) {
                             myClasses = el;
                         }
@@ -48,25 +48,26 @@
                     if ($element.find(inputSelector).is(":disabled")) {
                         $(this).addClass("deactivate");
                     }
-                    var changeStatus = function($this) {
-                        if ($element.parent("label").is(".label-change-switch")) {} else {
+                    var changeStatus = function ($this) {
+                        if ($element.parent("label").is(".label-change-switch")) {
+                        } else {
                             $this.siblings("label").trigger("mousedown").trigger("mouseup").trigger("click");
                         }
                     };
-                    $element.on("keydown", function(e) {
+                    $element.on("keydown", function (e) {
                         if (e.keyCode === 32) {
                             e.stopImmediatePropagation();
                             e.preventDefault();
                             changeStatus($(e.target).find("span:first"));
                         }
                     });
-                    $switchLeft.on("click", function(e) {
+                    $switchLeft.on("click", function (e) {
                         changeStatus($(this));
                     });
-                    $switchRight.on("click", function(e) {
+                    $switchRight.on("click", function (e) {
                         changeStatus($(this));
                     });
-                    $element.find(inputSelector).on("change", function(e, skipOnChange) {
+                    $element.find(inputSelector).on("change", function (e, skipOnChange) {
                         var $this = $(this), $element = $this.parent(), thisState = $this.is(":checked"), state = $element.is(".switch-off");
                         e.preventDefault();
                         $element.css("left", "");
@@ -88,7 +89,7 @@
                             });
                         }
                     });
-                    $element.find("label").on("mousedown touchstart", function(e) {
+                    $element.find("label").on("mousedown touchstart", function (e) {
                         var $this = $(this);
                         moving = false;
                         e.preventDefault();
@@ -100,7 +101,7 @@
                             if ($this.closest(".switch-on").parent().is(".radio-no-uncheck")) {
                                 $this.unbind("click");
                             } else {
-                                $this.on("mousemove touchmove", function(e) {
+                                $this.on("mousemove touchmove", function (e) {
                                     var $element = $(this).closest(".make-switch"), relativeX = (e.pageX || e.originalEvent.targetTouches[0].pageX) - $element.offset().left, percent = (relativeX / $element.width()) * 100, left = 25, right = 75;
                                     moving = true;
                                     if (percent < left) {
@@ -112,28 +113,28 @@
                                     }
                                     $element.find(">div").css("left", (percent - right) + "%");
                                 });
-                                $this.on("click touchend", function(e) {
+                                $this.on("click touchend", function (e) {
                                     var $this = $(this), $myInputBox = $this.siblings("input");
                                     e.stopImmediatePropagation();
                                     e.preventDefault();
                                     $this.unbind("mouseleave");
                                     if (moving) {
-                                        $myInputBox.prop("checked", !(parseInt($this.parent().css("left"))<-25));
+                                        $myInputBox.prop("checked", !(parseInt($this.parent().css("left")) < -25));
                                     } else {
                                         $myInputBox.prop("checked", !$myInputBox.is(":checked"));
                                     }
                                     moving = false;
                                     $myInputBox.trigger("change");
                                 });
-                                $this.on("mouseleave", function(e) {
+                                $this.on("mouseleave", function (e) {
                                     var $this = $(this), $myInputBox = $this.siblings("input");
                                     e.preventDefault();
                                     e.stopImmediatePropagation();
                                     $this.unbind("mouseleave mousemove");
                                     $this.trigger("mouseup");
-                                    $myInputBox.prop("checked", !(parseInt($this.parent().css("left"))<-25)).trigger("change");
+                                    $myInputBox.prop("checked", !(parseInt($this.parent().css("left")) < -25)).trigger("change");
                                 });
-                                $this.on("mouseup", function(e) {
+                                $this.on("mouseup", function (e) {
                                     e.stopImmediatePropagation();
                                     e.preventDefault();
                                     $(this).trigger("mouseleave");
@@ -142,9 +143,9 @@
                         }
                     });
                     if ($form.data("bootstrapSwitch") !== "injected") {
-                        $form.bind("reset", function() {
-                            setTimeout(function() {
-                                $form.find(".make-switch").each(function() {
+                        $form.bind("reset", function () {
+                            setTimeout(function () {
+                                $form.find(".make-switch").each(function () {
                                     var $input = $(this).find(inputSelector);
                                     $input.prop("checked", $input.is(":checked")).trigger("change");
                                 });
@@ -154,15 +155,15 @@
                     }
                 });
             },
-            toggleActivation: function() {
+            toggleActivation: function () {
                 var $this = $(this);
                 $this.toggleClass("deactivate");
                 $this.find(inputSelector).prop("disabled", $this.is(".deactivate"));
             },
-            isActive: function() {
+            isActive: function () {
                 return !$(this).hasClass("deactivate");
             },
-            setActive: function(active) {
+            setActive: function (active) {
                 var $this = $(this);
                 if (active) {
                     $this.removeClass("deactivate");
@@ -172,15 +173,15 @@
                     $this.find(inputSelector).attr("disabled", "disabled");
                 }
             },
-            toggleState: function(skipOnChange) {
+            toggleState: function (skipOnChange) {
                 var $input = $(this).find(":checkbox");
                 $input.prop("checked", !$input.is(":checked")).trigger("change", skipOnChange);
             },
-            toggleRadioState: function(skipOnChange) {
+            toggleRadioState: function (skipOnChange) {
                 var $radioinput = $(this).find(":radio");
                 $radioinput.not(":checked").prop("checked", !$radioinput.is(":checked")).trigger("change", skipOnChange);
             },
-            toggleRadioStateAllowUncheck: function(uncheck, skipOnChange) {
+            toggleRadioStateAllowUncheck: function (uncheck, skipOnChange) {
                 var $radioinput = $(this).find(":radio");
                 if (uncheck) {
                     $radioinput.not(":checked").trigger("change", skipOnChange);
@@ -188,18 +189,18 @@
                     $radioinput.not(":checked").prop("checked", !$radioinput.is(":checked")).trigger("change", skipOnChange);
                 }
             },
-            setState: function(value, skipOnChange) {
+            setState: function (value, skipOnChange) {
                 $(this).find(inputSelector).prop("checked", value).trigger("change", skipOnChange);
             },
-            setOnLabel: function(value) {
+            setOnLabel: function (value) {
                 var $switchLeft = $(this).find(".switch-left");
                 $switchLeft.html(value);
             },
-            setOffLabel: function(value) {
+            setOffLabel: function (value) {
                 var $switchRight = $(this).find(".switch-right");
                 $switchRight.html(value);
             },
-            setOnClass: function(value) {
+            setOnClass: function (value) {
                 var $switchLeft = $(this).find(".switch-left");
                 var color = "";
                 if (value !== undefined) {
@@ -211,7 +212,7 @@
                     $switchLeft.addClass(color);
                 }
             },
-            setOffClass: function(value) {
+            setOffClass: function (value) {
                 var $switchRight = $(this).find(".switch-right");
                 var color = "";
                 if (value !== undefined) {
@@ -223,7 +224,7 @@
                     $switchRight.addClass(color);
                 }
             },
-            setAnimated: function(value) {
+            setAnimated: function (value) {
                 var $element = $(this).find(inputSelector).parent();
                 if (value === undefined) {
                     value = false;
@@ -236,12 +237,12 @@
                     $element.removeClass("switch-animate");
                 }
             },
-            setSizeClass: function(value) {
+            setSizeClass: function (value) {
                 var $element = $(this);
                 var $switchLeft = $element.find(".switch-left");
                 var $switchRight = $element.find(".switch-right");
                 var $label = $element.find("label");
-                $.each(["switch-mini", "switch-small", "switch-large"], function(i, el) {
+                $.each(["switch-mini", "switch-small", "switch-large"], function (i, el) {
                     if (el !== value) {
                         $switchLeft.removeClass(el);
                         $switchRight.removeClass(el);
@@ -253,10 +254,10 @@
                     }
                 });
             },
-            status: function() {
+            status: function () {
                 return $(this).find(inputSelector).is(":checked");
             },
-            destroy: function() {
+            destroy: function () {
                 var $element = $(this), $div = $element.find("div"), $form = $element.closest("form"), $inputbox;
                 $div.find(":not(input)").remove();
                 $inputbox = $div.children();
@@ -272,7 +273,7 @@
         if (methods[method]) {
             return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
         } else {
-            if (typeof method === "object" ||!method) {
+            if (typeof method === "object" || !method) {
                 return methods.init.apply(this, arguments);
             } else {
                 $.error("Method " + method + " does not exist!");
@@ -280,8 +281,8 @@
         }
     };
 }(jQuery);
-(function($) {
-    $(function() {
+(function ($) {
+    $(function () {
         $(".make-switch")["bootstrapSwitch"]();
     });
 })(jQuery);

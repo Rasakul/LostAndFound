@@ -129,18 +129,18 @@
     background-image: -o-linear-gradient(top, #fff, #e6e6e6);
     background-image: linear-gradient(to bottom, #fff, #e6e6e6);
     background-repeat: repeat-x;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    * background-color: #e6e6e6;
-    filter: progid: DXImageTransform.Microsoft.gradient(enabled= false)
+    *background-color: #e6e6e6;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
 }
 
 .has-switch label:hover, .has-switch label:focus, .has-switch label:active,
 .has-switch label.active, .has-switch label.disabled, .has-switch label[disabled] {
     color: #333;
     background-color: #e6e6e6;
-    * background-color: #d9d9d9
+    *background-color: #d9d9d9
 }
 
 .has-switch label:active, .has-switch label.active {
@@ -179,11 +179,11 @@
     background-image: -o-linear-gradient(top, #e6e6e6, #fff);
     background-image: linear-gradient(to bottom, #e6e6e6, #fff);
     background-repeat: repeat-x;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffe6e6e6', endColorstr='#ffffffff', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe6e6e6', endColorstr='#ffffffff', GradientType=0);
     border-color: #fff #ffffff #d9d9d9;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    * background-color: #fff;
-    filter: progid: DXImageTransform.Microsoft.gradient(enabled= false)
+    *background-color: #fff;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
 }
 
 .has-switch span.switch-right:hover, .has-switch span.switch-right:focus,
@@ -191,7 +191,7 @@
 .has-switch span.switch-right.disabled, .has-switch span.switch-right[disabled] {
     color: #333;
     background-color: #fff;
-    * background-color: #f2f2f2
+    *background-color: #f2f2f2
 }
 
 .has-switch span.switch-right:active, .has-switch span.switch-right.active {
@@ -208,11 +208,11 @@
     background-image: -o-linear-gradient(top, #04c, #08c);
     background-image: linear-gradient(to bottom, #04c, #08c);
     background-repeat: repeat-x;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff0044cc', endColorstr='#ff0088cc', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0044cc', endColorstr='#ff0088cc', GradientType=0);
     border-color: #08c #0088cc #005580;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    * background-color: #08c;
-    filter: progid: DXImageTransform.Microsoft.gradient(enabled= false)
+    *background-color: #08c;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
 }
 
 .has-switch span.switch-primary:hover, .has-switch span.switch-left:hover,
@@ -223,7 +223,7 @@
 .has-switch span.switch-primary[disabled], .has-switch span.switch-left[disabled] {
     color: #fff;
     background-color: #08c;
-    * background-color: #0077b3
+    *background-color: #0077b3
 }
 
 .has-switch span.switch-primary:active, .has-switch span.switch-left:active,
@@ -241,11 +241,11 @@
     background-image: -o-linear-gradient(top, #2f96b4, #5bc0de);
     background-image: linear-gradient(to bottom, #2f96b4, #5bc0de);
     background-repeat: repeat-x;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff2f96b4', endColorstr='#ff5bc0de', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2f96b4', endColorstr='#ff5bc0de', GradientType=0);
     border-color: #5bc0de #5bc0de #28a1c5;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    * background-color: #5bc0de;
-    filter: progid: DXImageTransform.Microsoft.gradient(enabled= false)
+    *background-color: #5bc0de;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
 }
 
 .has-switch span.switch-info:hover, .has-switch span.switch-info:focus,
@@ -253,7 +253,7 @@
 .has-switch span.switch-info.disabled, .has-switch span.switch-info[disabled] {
     color: #fff;
     background-color: #5bc0de;
-    * background-color: #46b8da
+    *background-color: #46b8da
 }
 
 .has-switch span.switch-info:active, .has-switch span.switch-info.active {
@@ -270,11 +270,11 @@
     background-image: -o-linear-gradient(top, #51a351, #62c462);
     background-image: linear-gradient(to bottom, #51a351, #62c462);
     background-repeat: repeat-x;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff51a351', endColorstr='#ff62c462', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff51a351', endColorstr='#ff62c462', GradientType=0);
     border-color: #62c462 #62c462 #3b9e3b;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    * background-color: #62c462;
-    filter: progid: DXImageTransform.Microsoft.gradient(enabled= false)
+    *background-color: #62c462;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
 }
 
 .has-switch span.switch-success:hover, .has-switch span.switch-success:focus,
@@ -282,7 +282,7 @@
 .has-switch span.switch-success.disabled, .has-switch span.switch-success[disabled] {
     color: #fff;
     background-color: #62c462;
-    * background-color: #4fbd4f
+    *background-color: #4fbd4f
 }
 
 .has-switch span.switch-success:active, .has-switch span.switch-success.active {
@@ -299,11 +299,11 @@
     background-image: -o-linear-gradient(top, #f89406, #fbb450);
     background-image: linear-gradient(to bottom, #f89406, #fbb450);
     background-repeat: repeat-x;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#fff89406', endColorstr='#fffbb450', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff89406', endColorstr='#fffbb450', GradientType=0);
     border-color: #fbb450 #fbb450 #f89406;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    * background-color: #fbb450;
-    filter: progid: DXImageTransform.Microsoft.gradient(enabled= false)
+    *background-color: #fbb450;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
 }
 
 .has-switch span.switch-warning:hover, .has-switch span.switch-warning:focus,
@@ -311,7 +311,7 @@
 .has-switch span.switch-warning.disabled, .has-switch span.switch-warning[disabled] {
     color: #fff;
     background-color: #fbb450;
-    * background-color: #faa937
+    *background-color: #faa937
 }
 
 .has-switch span.switch-warning:active, .has-switch span.switch-warning.active {
@@ -328,11 +328,11 @@
     background-image: -o-linear-gradient(top, #bd362f, #ee5f5b);
     background-image: linear-gradient(to bottom, #bd362f, #ee5f5b);
     background-repeat: repeat-x;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffbd362f', endColorstr='#ffee5f5b', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbd362f', endColorstr='#ffee5f5b', GradientType=0);
     border-color: #ee5f5b #ee5f5b #e51d18;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    * background-color: #ee5f5b;
-    filter: progid: DXImageTransform.Microsoft.gradient(enabled= false)
+    *background-color: #ee5f5b;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
 }
 
 .has-switch span.switch-danger:hover, .has-switch span.switch-danger:focus,
@@ -340,7 +340,7 @@
 .has-switch span.switch-danger.disabled, .has-switch span.switch-danger[disabled] {
     color: #fff;
     background-color: #ee5f5b;
-    * background-color: #ec4844
+    *background-color: #ec4844
 }
 
 .has-switch span.switch-danger:active, .has-switch span.switch-danger.active {
@@ -357,11 +357,11 @@
     background-image: -o-linear-gradient(top, #e6e6e6, #fff);
     background-image: linear-gradient(to bottom, #e6e6e6, #fff);
     background-repeat: repeat-x;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffe6e6e6', endColorstr='#ffffffff', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe6e6e6', endColorstr='#ffffffff', GradientType=0);
     border-color: #fff #ffffff #d9d9d9;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    * background-color: #fff;
-    filter: progid: DXImageTransform.Microsoft.gradient(enabled= false)
+    *background-color: #fff;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
 }
 
 .has-switch span.switch-default:hover, .has-switch span.switch-default:focus,
@@ -369,7 +369,7 @@
 .has-switch span.switch-default.disabled, .has-switch span.switch-default[disabled] {
     color: #333;
     background-color: #fff;
-    * background-color: #f2f2f2
+    *background-color: #f2f2f2
 }
 
 .has-switch span.switch-default:active, .has-switch span.switch-default.active {

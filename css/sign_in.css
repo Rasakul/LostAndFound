@@ -1,73 +1,73 @@
-#card{
-  transition: all 1s ease-in-out;
-  padding-bottom: 450px;
+#card {
+    transition: all 1s ease-in-out;
+    padding-bottom: 450px;
 }
 
-#card .front{
- -webkit-transform:rotateY(0deg);
-  -webkit-backface-visibility: visible;
-  -webkit-backface-visibility: hidden;
--moz-backface-visibility: hidden;
--ms-backface-visibility: hidden;
--o-backface-visibility: hidden;
-backface-visibility: hidden;
+#card .front {
+    -webkit-transform: rotateY(0deg);
+    -webkit-backface-visibility: visible;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
-#card .back{
-   -webkit-transform:rotateY(0deg);
-  -webkit-backface-visibility: visible;
-  -webkit-backface-visibility: hidden;
--moz-backface-visibility: hidden;
--ms-backface-visibility: hidden;
--o-backface-visibility: hidden;
-backface-visibility: hidden;
+#card .back {
+    -webkit-transform: rotateY(0deg);
+    -webkit-backface-visibility: visible;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
-#frontF, #backF{
-  position: absolute;
-  overflow: visible;
-  -webkit-transform:rotateY(0deg);
-  -webkit-backface-visibility: visible;
-  -webkit-backface-visibility: hidden;
--moz-backface-visibility: hidden;
--ms-backface-visibility: hidden;
--o-backface-visibility: hidden;
-backface-visibility: hidden;
+#frontF, #backF {
+    position: absolute;
+    overflow: visible;
+    -webkit-transform: rotateY(0deg);
+    -webkit-backface-visibility: visible;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
-#so_funktionierts, #example_wrapper h1{
-  padding-top: 65px;
+#so_funktionierts, #example_wrapper h1 {
+    padding-top: 65px;
 }
 
-#myrow .col-xs-12{
-  padding-bottom: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
+#myrow .col-xs-12 {
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 
 }
 
-#myrow .background_wrapper{
-  background-color:#558C89;
-  border-radius:10px;
-  padding: 20px 0;
+#myrow .background_wrapper {
+    background-color: #558C89;
+    border-radius: 10px;
+    padding: 20px 0;
 }
 
 #form_wrapper h1 {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 
-#description1, #description2, #description3{
-  text-align: justify;
-  padding-left: 10px;
-  padding-right: 10px;
+#description1, #description2, #description3 {
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-#description1, #description2, #description3, #myrow p{
-  font-size: 1.2em;
+#description1, #description2, #description3, #myrow p {
+    font-size: 1.2em;
 }
 
-#example_wrapper .col-xs-8{
-  font-size: 1.2em;
+#example_wrapper .col-xs-8 {
+    font-size: 1.2em;
 }
 
 /*
@@ -179,284 +179,298 @@ only screen and (min-device-pixel-ratio: 2) {
   }
 }*/
 
-@media (max-width: 600px){
-  #myrow p {
-    margin: 0 40px;
-  }
+@media (max-width: 600px) {
+    #myrow p {
+        margin: 0 40px;
+    }
 }
 
+@media (max-width: 361px) {
+    .login_register_switch_paragraph {
+        font-size: 14px !important;
+    }
 
-@media (max-width: 361px){
-  .login_register_switch_paragraph{
-    font-size: 14px !important;
-  }
-
-  #registerBtn, #loginBtn{
-  font-size: 14px !important;
-}
+    #registerBtn, #loginBtn {
+        font-size: 14px !important;
+    }
 
 }
 
 ::-webkit-input-placeholder {
-   font-style: italic;
+    font-style: italic;
 }
+
 :-moz-placeholder {
-   font-style: italic;  
+    font-style: italic;
 }
+
 ::-moz-placeholder {
-   font-style: italic;  
-}
-:-ms-input-placeholder {  
-   font-style: italic; 
+    font-style: italic;
 }
 
-.login_register_switch_area{
+:-ms-input-placeholder {
+    font-style: italic;
 }
 
-#registerDiv{
-  margin: 0 -20px;
-  margin-bottom: -30px;
+.login_register_switch_area {
 }
 
-#registerBtn,#loginBtn{
-  font-size: 16px;
+#registerDiv {
+    margin: 0 -20px;
+    margin-bottom: -30px;
 }
 
+#registerBtn, #loginBtn {
+    font-size: 16px;
+}
 
-.login_register_switch_paragraph{
-  
-  line-height: 35px;
-  color: rgb(127, 124, 124);
-  left: 0px;
-  height: 50px;
-  /*height: 20px;
-  width: 440px;
-  padding: 17px 30px 20px 30px;*/
-  padding: 5px;
-  padding-right: 20px;
-  font-size: 16px ;
-  text-align: right;
-  border-top: 1px solid rgb(219, 229, 232);
-  -webkit-border-radius: 0 0  5px 5px;
-     -moz-border-radius: 0 0  5px 5px;
-          border-radius: 0 0  5px 5px;
-  background: rgb(225, 234, 235);
-  background: -moz-repeating-linear-gradient(-45deg, 
-  rgb(247, 247, 247) , 
-  rgb(247, 247, 247) 15px, 
-  rgb(225, 234, 235) 15px, 
-  rgb(225, 234, 235) 30px, 
-  rgb(247, 247, 247) 30px
-  );
-  background: -webkit-repeating-linear-gradient(-45deg, 
-  rgb(247, 247, 247) , 
-  rgb(247, 247, 247) 15px, 
-  rgb(225, 234, 235) 15px, 
-  rgb(225, 234, 235) 30px, 
-  rgb(247, 247, 247) 30px
-  );
-  background: -o-repeating-linear-gradient(-45deg, 
-  rgb(247, 247, 247) , 
-  rgb(247, 247, 247) 15px, 
-  rgb(225, 234, 235) 15px, 
-  rgb(225, 234, 235) 30px, 
-  rgb(247, 247, 247) 30px
-  );
-  background: repeating-linear-gradient(-45deg, 
-  rgb(247, 247, 247) , 
-  rgb(247, 247, 247) 15px, 
-  rgb(225, 234, 235) 15px, 
-  rgb(225, 234, 235) 30px, 
-  rgb(247, 247, 247) 30px
-  );
+.login_register_switch_paragraph {
+
+    line-height: 35px;
+    color: rgb(127, 124, 124);
+    left: 0px;
+    height: 50px;
+    /*height: 20px;
+    width: 440px;
+    padding: 17px 30px 20px 30px;*/
+    padding: 5px;
+    padding-right: 20px;
+    font-size: 16px;
+    text-align: right;
+    border-top: 1px solid rgb(219, 229, 232);
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+    background: rgb(225, 234, 235);
+    background: -moz-repeating-linear-gradient(-45deg,
+    rgb(247, 247, 247),
+    rgb(247, 247, 247) 15px,
+    rgb(225, 234, 235) 15px,
+    rgb(225, 234, 235) 30px,
+    rgb(247, 247, 247) 30px
+    );
+    background: -webkit-repeating-linear-gradient(-45deg,
+    rgb(247, 247, 247),
+    rgb(247, 247, 247) 15px,
+    rgb(225, 234, 235) 15px,
+    rgb(225, 234, 235) 30px,
+    rgb(247, 247, 247) 30px
+    );
+    background: -o-repeating-linear-gradient(-45deg,
+    rgb(247, 247, 247),
+    rgb(247, 247, 247) 15px,
+    rgb(225, 234, 235) 15px,
+    rgb(225, 234, 235) 30px,
+    rgb(247, 247, 247) 30px
+    );
+    background: repeating-linear-gradient(-45deg,
+    rgb(247, 247, 247),
+    rgb(247, 247, 247) 15px,
+    rgb(225, 234, 235) 15px,
+    rgb(225, 234, 235) 30px,
+    rgb(247, 247, 247) 30px
+    );
 }
 
 /* Icon Hang */
 @-webkit-keyframes hvr-icon-hang {
-  0% {
-    -webkit-transform: translateY(6px);
-    transform: translateY(6px);
-  }
+    0% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
 
-  50% {
-    -webkit-transform: translateY(2px);
-    transform: translateY(2px);
-  }
+    50% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+    }
 
-  100% {
-    -webkit-transform: translateY(6px);
-    transform: translateY(6px);
-  }
+    100% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
 }
 
 @keyframes hvr-icon-hang {
-  0% {
-    -webkit-transform: translateY(6px);
-    transform: translateY(6px);
-  }
+    0% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
 
-  50% {
-    -webkit-transform: translateY(2px);
-    transform: translateY(2px);
-  }
+    50% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+    }
 
-  100% {
-    -webkit-transform: translateY(6px);
-    transform: translateY(6px);
-  }
+    100% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
 }
 
 @-webkit-keyframes hvr-icon-hang-sink {
-  100% {
-    -webkit-transform: translateY(6px);
-    transform: translateY(6px);
-  }
+    100% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
 }
 
 @keyframes hvr-icon-hang-sink {
-  100% {
-    -webkit-transform: translateY(6px);
-    transform: translateY(6px);
-  }
+    100% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
 }
 
 div .hvr-icon-hang {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-  padding-right: 2.2em;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    padding-right: 2.2em;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
 }
+
 div .hvr-icon-hang:before {
-  content: "\f078";
-  position: absolute;
-  right: 1em;
-  padding: 0 1px;
-  font-family: FontAwesome;
-  font-size: 2.5em;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+    content: "\f078";
+    position: absolute;
+    right: 1em;
+    padding: 0 1px;
+    font-family: FontAwesome;
+    font-size: 2.5em;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
+
 div .hvr-icon-hang:hover:before, .hvr-icon-hang:focus:before, .hvr-icon-hang:active:before {
-  -webkit-animation-name: hvr-icon-hang-sink, hvr-icon-hang;
-  animation-name: hvr-icon-hang-sink, hvr-icon-hang;
-  -webkit-animation-duration: .3s, 1.5s;
-  animation-duration: .3s, 1.5s;
-  -webkit-animation-delay: 0s, .3s;
-  animation-delay: 0s, .3s;
-  -webkit-animation-timing-function: ease-out, ease-in-out;
-  animation-timing-function: ease-out, ease-in-out;
-  -webkit-animation-iteration-count: 1, infinite;
-  animation-iteration-count: 1, infinite;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-direction: normal, alternate;
-  animation-direction: normal, alternate;
+    -webkit-animation-name: hvr-icon-hang-sink, hvr-icon-hang;
+    animation-name: hvr-icon-hang-sink, hvr-icon-hang;
+    -webkit-animation-duration: .3s, 1.5s;
+    animation-duration: .3s, 1.5s;
+    -webkit-animation-delay: 0s, .3s;
+    animation-delay: 0s, .3s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+    animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+    animation-iteration-count: 1, infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-direction: normal, alternate;
+    animation-direction: normal, alternate;
 }
 
-.signIn-btn { 
-  color: #FFFFFF; 
-  background-color: #D9853B; 
-  border-color: #D9853B; 
-} 
- 
-.signIn-btn:hover, 
-.signIn-btn:focus, 
-.signIn-btn:active, 
-.signIn-btn.active, 
-.open .dropdown-toggle.signIn-btn { 
-  color: #FFFFFF; 
-  background-color: #D9853B; 
-  border-color: #D9853B; 
-} 
- 
-.signIn-btn:active, 
-.signIn-btn.active, 
-.open .dropdown-toggle.signIn-btn { 
-  background-image: none; 
-} 
- 
-.signIn-btn.disabled, 
-.signIn-btn[disabled], 
-fieldset[disabled] .signIn-btn, 
-.signIn-btn.disabled:hover, 
-.signIn-btn[disabled]:hover, 
-fieldset[disabled] .signIn-btn:hover, 
-.signIn-btn.disabled:focus, 
-.signIn-btn[disabled]:focus, 
-fieldset[disabled] .signIn-btn:focus, 
-.signIn-btn.disabled:active, 
-.signIn-btn[disabled]:active, 
-fieldset[disabled] .signIn-btn:active, 
-.signIn-btn.disabled.active, 
-.signIn-btn[disabled].active, 
-fieldset[disabled] .signIn-btn.active { 
-  background-color: #D9853B; 
-  border-color: #D9853B; 
-} 
- 
-.signIn-btn .badge { 
-  color: #D9853B; 
-  background-color: #FFFFFF; 
+.signIn-btn {
+    color: #FFFFFF;
+    background-color: #D9853B;
+    border-color: #D9853B;
 }
 
-.register-btn { 
-  color: #D9853B; 
-  background-color: #E8F0DA; 
-  border-color: #c9d6d6; 
-} 
- 
-.register-btn:hover, 
-.register-btn:focus, 
-.register-btn:active, 
-.register-btn.active, 
-.open .dropdown-toggle.register-btn { 
-  color: #D9853B; 
-  background-color: #E8F0DA; 
-  border-color: #c9d6d6; 
-} 
- 
-.register-btn:active, 
-.register-btn.active, 
-.open .dropdown-toggle.register-btn { 
-  background-image: none; 
-} 
- 
-.register-btn.disabled, 
-.register-btn[disabled], 
-fieldset[disabled] .register-btn, 
-.register-btn.disabled:hover, 
-.register-btn[disabled]:hover, 
-fieldset[disabled] .register-btn:hover, 
-.register-btn.disabled:focus, 
-.register-btn[disabled]:focus, 
-fieldset[disabled] .register-btn:focus, 
-.register-btn.disabled:active, 
-.register-btn[disabled]:active, 
-fieldset[disabled] .register-btn:active, 
-.register-btn.disabled.active, 
-.register-btn[disabled].active, 
-fieldset[disabled] .register-btn.active { 
-  background-color: #E8F0DA; 
-  border-color: #c9d6d6; 
-} 
- 
-.register-btn .badge { 
-  color: #E8F0DA; 
-  background-color: #D9853B; 
+.signIn-btn:hover,
+.signIn-btn:focus,
+.signIn-btn:active,
+.signIn-btn.active,
+.open .dropdown-toggle.signIn-btn {
+    color: #FFFFFF;
+    background-color: #D9853B;
+    border-color: #D9853B;
 }
 
-.headroom {position: fixed;top: 0;left: 0;right: 0;transition: all .2s ease-in-out;}
-.headroom--unpinned {top: -100px;}
-.headroom--pinned {top: 0;}
+.signIn-btn:active,
+.signIn-btn.active,
+.open .dropdown-toggle.signIn-btn {
+    background-image: none;
+}
 
+.signIn-btn.disabled,
+.signIn-btn[disabled],
+fieldset[disabled] .signIn-btn,
+.signIn-btn.disabled:hover,
+.signIn-btn[disabled]:hover,
+fieldset[disabled] .signIn-btn:hover,
+.signIn-btn.disabled:focus,
+.signIn-btn[disabled]:focus,
+fieldset[disabled] .signIn-btn:focus,
+.signIn-btn.disabled:active,
+.signIn-btn[disabled]:active,
+fieldset[disabled] .signIn-btn:active,
+.signIn-btn.disabled.active,
+.signIn-btn[disabled].active,
+fieldset[disabled] .signIn-btn.active {
+    background-color: #D9853B;
+    border-color: #D9853B;
+}
+
+.signIn-btn .badge {
+    color: #D9853B;
+    background-color: #FFFFFF;
+}
+
+.register-btn {
+    color: #D9853B;
+    background-color: #E8F0DA;
+    border-color: #c9d6d6;
+}
+
+.register-btn:hover,
+.register-btn:focus,
+.register-btn:active,
+.register-btn.active,
+.open .dropdown-toggle.register-btn {
+    color: #D9853B;
+    background-color: #E8F0DA;
+    border-color: #c9d6d6;
+}
+
+.register-btn:active,
+.register-btn.active,
+.open .dropdown-toggle.register-btn {
+    background-image: none;
+}
+
+.register-btn.disabled,
+.register-btn[disabled],
+fieldset[disabled] .register-btn,
+.register-btn.disabled:hover,
+.register-btn[disabled]:hover,
+fieldset[disabled] .register-btn:hover,
+.register-btn.disabled:focus,
+.register-btn[disabled]:focus,
+fieldset[disabled] .register-btn:focus,
+.register-btn.disabled:active,
+.register-btn[disabled]:active,
+fieldset[disabled] .register-btn:active,
+.register-btn.disabled.active,
+.register-btn[disabled].active,
+fieldset[disabled] .register-btn.active {
+    background-color: #E8F0DA;
+    border-color: #c9d6d6;
+}
+
+.register-btn .badge {
+    color: #E8F0DA;
+    background-color: #D9853B;
+}
+
+.headroom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all .2s ease-in-out;
+}
+
+.headroom--unpinned {
+    top: -100px;
+}
+
+.headroom--pinned {
+    top: 0;
+}
 
 .animated {
     -webkit-animation-duration: .5s;

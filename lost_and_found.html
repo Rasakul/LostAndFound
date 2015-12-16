@@ -47,6 +47,21 @@
                     }
                 }).data('placepicker');
             });
+            
+            // Advanced1 usage
+            $("#advanced-placepicker1").each(function() {
+              var target = this;
+              var $collapse = $(this).parents('.form-group').next('.collapse');
+              var $map = $collapse.find('.another-map-class');
+
+              var placepicker = $(this).placepicker({
+                map: $map.get(0),
+                placeChanged: function(place) {
+                  console.log("place changed: ", place.formatted_address, this.getLocation());
+                }
+              }).data('placepicker');
+            });
+
 
             $("#advanced-placepicker2").each(function () {
                 var target = this;
@@ -81,34 +96,51 @@
                 maxDate: new Date(currentYear, currentMonth, currentDate)
             });
         });
+        
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'DD/MM/YYYY',
+                maxDate: new Date(currentYear, currentMonth, currentDate)
+            });
+        });
 
-        function fasz() {
-            if (document.getElementById('togglee').style.display == 'none') {
+
+        function fasz() {  
+            if(document.getElementById('togglee').style.display == 'none') {
                 document.getElementById('togglee').style.display = 'inline';
                 document.getElementById('toggleee').style.display = 'inline';
-                document.getElementById('toggleeee').style.display = 'inline';
-                document.getElementById('toggleeeee').style.display = 'inline';
-                document.getElementById('toggleeeee2').style.display = 'inline';
-                document.getElementById('toggleeeee3').style.display = 'inline';
                 document.getElementById('plusminus').className = "glyphicon glyphicon-minus";
-                document.getElementById('veranstaltungen').disabled = true;
+                document.getElementById('veranstaltungen').disabled = true;        
             } else {
                 document.getElementById('togglee').style.display = 'none';
                 document.getElementById('toggleee').style.display = 'none';
-                document.getElementById('toggleeee').style.display = 'none';
-                document.getElementById('toggleeeee').style.display = 'none';
-                document.getElementById('toggleeeee2').style.display = 'none';
-                document.getElementById('toggleeeee3').style.display = 'none';
                 document.getElementById('veranstaltungen').disabled = false;
                 document.getElementById('plusminus').className = "glyphicon glyphicon-plus";
             }
         }
+        
+        function fasz1() {  
+            if(document.getElementById('togglee1').style.display == 'none') {
+                document.getElementById('togglee1').style.display = 'inline';
+                document.getElementById('toggleee1').style.display = 'inline';
+                document.getElementById('plusminus1').className = "glyphicon glyphicon-minus";
+                document.getElementById('veranstaltungen1').disabled = true;        
+            } else {
+                document.getElementById('togglee1').style.display = 'none';
+                document.getElementById('toggleee1').style.display = 'none';
+                document.getElementById('veranstaltungen1').disabled = false;
+                document.getElementById('plusminus1').className = "glyphicon glyphicon-plus";
+            }
+        }
+
 
         function flipPunci() {
             if (document.getElementById('toggleButton').checked == true) {
                 $("#card").flip(false);
+                $("#backFace").hide();
             } else {
                 $("#card").flip(true);
+                $("#backFace").show();
             }
         }
 
@@ -172,26 +204,6 @@
                         <input id="toggleButton" onchange="flipPunci();" type="checkbox" checked>
 
                     </div>
-                    <!--
-                    <div class="col-xs-4 col-lg-6" style="text-align:left">
-                        <button type="button" class="btn btn-md signIn-btn" data-toggle="collapse" data-target="#more"  style="font-size:1em">...
-                        </button>
-                        <div id="more" class="collapse">
-                            <a class="btn btn-md signIn-btn" data-toggle="collapse" data-target="#more"
->>>>>>> daniel-branch
-                               href="userpanel.html" role="button">
-                                <span class="glyphicon glyphicon-user" aria-hidden="true" style="font-size:1em"></span>
-                            </a>
-
-                            <a class="btn btn-md signIn-btn" href="sign_in.html"
-                               role="button">
-                                <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em"></span>
-                            </a>
-<<<<<<< HEAD
-                    </div>
-=======
-                        </div>
-                    </div>-->
                 </div>
             </div>
             <div id="card">
@@ -202,9 +214,9 @@
                                 <h4>Haben Sie etwas verloren? Wir helfen Ihnen es wieder zu finden.</h4>
                                 <form role="form" style="text-align:left;" action="objects.html" method="post">
                                     <div class="form-group" style="padding-top: 10px;">
-                                        <label>Ort</label>
+                                        <label>Wo?</label>
                                         <input id="advanced-placepicker" class="form-control"
-                                               data-map-container-id="collapseTwo" required/>
+                                               data-map-container-id="collapseTwo"/>
                                     </div>
 
                                     <div id="collapseTwo" class="collapse">
@@ -216,10 +228,10 @@
                                         <div class="row" style="text-align:center">
                                             <select id="veranstaltungen" class="form-control"
                                                     style="width:80%;display:inline;" required>
-                                                <option value="one">Novarock - Rammstein</option>
-                                                <option value="two">Novarock - Linkin Park</option>
-                                                <option value="three">UMF - Martin Garrix</option>
-                                                <option value="four">Tomorrowland - Steve Aoki</option>
+                                                <option value="one">Novarock</option>
+                                                <option value="two">Sziget</option>
+                                                <option value="three">UMF</option>
+                                                <option value="four">Tomorrowland</option>
                                             </select>
 
                                             <button type="button" class="btn btn-default btn-xs" onclick="fasz();"
@@ -233,9 +245,6 @@
                                             Veranstaltung hinzuf&uuml;gen</label>
                                         <input type="text" class="form-control kaki" id="togglee"
                                                style="display:none;margin-left:1px"/>
-                                        <button class="btn btn-sm signIn-btn" href="#" id="toggleeee"
-                                                style="display:none;margin-top:5px">Speichern
-                                        </button>
 
                                     </div>
                                     <div class="form-group">
@@ -251,16 +260,13 @@
 
                                     </div>
 
-                                    <label>Zeit</label>
+                                    <label>Wann?</label>
                                     <div class="form-group">
                                         <div class='input-group date' id='datetimepicker'>
                                                     <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
-                                            <input type='text' class="form-control" placeholder="Geben Sie das Datum an"
-                                                   required/>
-
-
+                                            <input type='text' class="form-control" placeholder="Geben Sie das Datum an"/>
                                         </div>
                                     </div>
 
@@ -280,42 +286,40 @@
                             <div class="col-xs-12 col-lg-12">
                                 <h4>Haben Sie etwas gefunden? Helfen Sie den Eigent&uuml;mern ihre Gegenst&auml;nde zu
                                     bekommen.</h4>
-                                <form role="form" style="text-align:left;" action="objects.html" method="post">
+                                <form id="backFace" role="form" style="text-align:left;" action="suchObjekts.html" method="post">
                                     <div class="form-group" style="padding-top: 10px;">
-                                        <label>Ort</label>
-                                        <input id="advanced-placepicker2" class="form-control"
-                                               data-map-container-id="collapseTwo" required/>
+                                        <label>Wo?</label>
+                                        <input id="advanced-placepicker1" class="form-control"
+                                               data-map-container-id="collapseOne"/>
                                     </div>
 
-                                    <div id="collapseTwo" class="collapse">
+                                    <div id="collapseOne" class="collapse">
                                         <div class="another-map-class thumbnail"></div>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Veranstaltung*</label></br>
                                         <div class="row" style="text-align:center">
-                                            <select id="veranstaltungen" class="form-control"
+                                            <select id="veranstaltungen1" class="form-control"
                                                     style="width:80%;display:inline;" required>
-                                                <option value="one">Novarock - Rammstein</option>
-                                                <option value="two">Novarock - Linkin Park</option>
-                                                <option value="three">UMF - Martin Garrix</option>
-                                                <option value="four">Tomorrowland - Steve Aoki</option>
+                                                <option value="one">Novarock</option>
+                                                <option value="two">Sziget</option>
+                                                <option value="three">UMF</option>
+                                                <option value="four">Tomorrowland</option>
                                             </select>
 
-                                            <button type="button" class="btn btn-default btn-xs" onclick="fasz();"
+                                            <button type="button" class="btn btn-default btn-xs" onclick="fasz1();"
                                                     style="height:34px;">
-                                                <span id="plusminus" class="glyphicon glyphicon-plus"></span>
+                                                <span id="plusminus1" class="glyphicon glyphicon-plus"></span>
                                             </button>
                                             </br>
                                         </div>
 
-                                        <label class="kaki" id="toggleeeee" style="display:none;padding-left:1px">Neue
+                                        <label class="kaki" id="toggleee1" style="display:none;padding-left:1px">Neue
                                             Veranstaltung hinzuf&uuml;gen</label>
-                                        <input type="text" class="form-control kaki" id="toggleeeee2"
+                                        <input type="text" class="form-control kaki" id="togglee1"
                                                style="display:none;margin-left:1px"/>
-                                        <button class="btn btn-sm signIn-btn" href="#" id="toggleeeee3"
-                                                style="display:none;margin-top:5px">Speichern
-                                        </button>
+                                        
 
                                     </div>
                                     <div class="form-group">
@@ -330,14 +334,13 @@
                                         </select>
 
                                     </div>
-                                    <label>Zeit</label>
+                                    <label>Wann?</label>
                                     <div class="form-group">
-                                        <div class='input-group date' id='datetimepicker'>
+                                        <div class='input-group date' id='datetimepicker1'>
                                                     <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
-                                            <input type='text' class="form-control" placeholder="Geben Sie das Datum an"
-                                                   required/>
+                                            <input type='text' class="form-control" placeholder="Geben Sie das Datum an"/>
 
                                         </div>
                                     </div>

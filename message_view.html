@@ -11,90 +11,99 @@
     <link href="css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
-<div class="panel panel-default">
-    <div id="ChatHeader" class="panel-heading">
-        <div style=" width: 50%; float: left;">
-            <a href="javascript:history.back()" style="text-decoration: none; color:inherit;">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="panel-title">Katze 1</span>
-            </a>
-        </div>
-        <div class="text-right">
-            <input class="form-control hidden" type="file" accept="image/*;capture=camera" id="cam">
-            <label for="cam">
-                <span class="glyphicon glyphicon-camera" aria-hidden="true" style="font-size: 1.5em"></span>
-            </label>
+<nav class="navbar navbar-transparent navbar-fixed-top ChatHeader">
+    <div class="container">
+        <div class="navbar-header">
+            <div style="margin-top: 15px; margin-right: 12px; float: right ">
+                <input class="form-control hidden" type="file" accept="image/*;capture=camera" id="cam">
+                <label for="cam">
+                    <span class="glyphicon glyphicon-camera" aria-hidden="true" style="font-size: 1.3em"></span>
+                </label>
+            </div>
+            <div class="navbar-brand row" style="font-size:1em; width: 90%">
+                <div class="text-left col-xs-4">
+                    <a href="javascript:history.back()" style="text-decoration: none; color:inherit;">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        Zurück
+                    </a>
+                </div>
+                <div class="text-right col-xs-8" style="text-align: center">
+                    <a href="userpanel_without_editing.html" style="text-decoration: none; color:inherit; font-weight: bold">
+                        Katze 1
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+</nav>
+<div class="ChatBody">
     <div class="arrow"></div>
-    <div class="panel-body" id="ChatBody">
-        <ul class="ChatLog">
-            <li class="ChatLog__entry">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
-                <p class="ChatLog__message">
-                    <b>Katze 1: </b><br/>
-                    Hi!
-                    <time class="ChatLog__timestamp">vor 6 Minuten</time>
-                </p>
-            </li>
-            <li class="ChatLog__entry">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
-                <p class="ChatLog__message">
-                    <b>Katze 1: </b><br/>
-                    Ich hab gesehen, du hast ein Iphone 5 gefunden? Ist vl meins.
-                    <time class="ChatLog__timestamp">vor 6 Minuten</time>
-                </p>
-            </li>
-            <li class="ChatLog__entry ChatLog__entry_mine">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/56/56"/>
-                <p class="ChatLog__message">
-                    <b>Du: </b><br/>
-                    Ja, stimmt!
-                    <time class="ChatLog__timestamp">vor 4 Minuten</time>
-                </p>
-            </li>
-            <li class="ChatLog__entry ChatLog__entry_mine">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/56/56"/>
-                <p class="ChatLog__message">
-                    <b>Du: </b><br/>
-                    Kannst du die Hülle beschreiben?
-                    <time class="ChatLog__timestamp">vor 4 Minuten</time>
-                </p>
-            </li>
-            <li class="ChatLog__entry">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
-                <p class="ChatLog__message">
-                    <b>Katze 1: </b><br/>
-                    Ja, wenns meins ist, hats so eine rosa HelloKitty Hülle
-                    <time class="ChatLog__timestamp">vor 3 Minuten</time>
-                </p>
-            </li>
-            <li class="ChatLog__entry ChatLog__entry_mine">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/56/56"/>
-                <p class="ChatLog__message">
-                    <b>Du: </b><br/>
-                    Ja, passt, dann ist es deins!
-                    <time class="ChatLog__timestamp">vor 2 Minuten</time>
-                </p>
-            </li>
-            <li class="ChatLog__entry ChatLog__entry_mine">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/56/56"/>
-                <p class="ChatLog__message">
-                    <b>Du: </b><br/>
-                    Treffen wir uns in 10 min beim Milchstand?
-                    <time class="ChatLog__timestamp">vor 2 Minuten</time>
-                </p>
-            </li>
-            <li class="ChatLog__entry">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
-                <p class="ChatLog__message">
-                    <b>Katze 1: </b><br/>
-                    Passt.
-                    <time class="ChatLog__timestamp">gerade eben</time>
-                </p>
-            </li>
-        </ul>
-    </div>
+    <ul class="ChatLog">
+        <li class="ChatLog__entry">
+            <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
+            <p class="ChatLog__message">
+                <b>Katze 1: </b><br/>
+                Hi!
+                <time class="ChatLog__timestamp">vor 6 Minuten</time>
+            </p>
+        </li>
+        <li class="ChatLog__entry">
+            <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
+            <p class="ChatLog__message">
+                <b>Katze 1: </b><br/>
+                Ich hab gesehen, du hast ein Iphone 5 gefunden? Ist vl meins.
+                <time class="ChatLog__timestamp">vor 6 Minuten</time>
+            </p>
+        </li>
+        <li class="ChatLog__entry ChatLog__entry_mine">
+            <img class="ChatLog__avatar" src="http://placekitten.com/g/56/56"/>
+            <p class="ChatLog__message">
+                <b>Du: </b><br/>
+                Ja, stimmt!
+                <time class="ChatLog__timestamp">vor 4 Minuten</time>
+            </p>
+        </li>
+        <li class="ChatLog__entry ChatLog__entry_mine">
+            <img class="ChatLog__avatar" src="http://placekitten.com/g/56/56"/>
+            <p class="ChatLog__message">
+                <b>Du: </b><br/>
+                Kannst du die Hülle beschreiben?
+                <time class="ChatLog__timestamp">vor 4 Minuten</time>
+            </p>
+        </li>
+        <li class="ChatLog__entry">
+            <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
+            <p class="ChatLog__message">
+                <b>Katze 1: </b><br/>
+                Ja, wenns meins ist, hats so eine rosa HelloKitty Hülle
+                <time class="ChatLog__timestamp">vor 3 Minuten</time>
+            </p>
+        </li>
+        <li class="ChatLog__entry ChatLog__entry_mine">
+            <img class="ChatLog__avatar" src="http://placekitten.com/g/56/56"/>
+            <p class="ChatLog__message">
+                <b>Du: </b><br/>
+                Ja, passt, dann ist es deins!
+                <time class="ChatLog__timestamp">vor 2 Minuten</time>
+            </p>
+        </li>
+        <li class="ChatLog__entry ChatLog__entry_mine">
+            <img class="ChatLog__avatar" src="http://placekitten.com/g/56/56"/>
+            <p class="ChatLog__message">
+                <b>Du: </b><br/>
+                Treffen wir uns in 10 min beim Milchstand?
+                <time class="ChatLog__timestamp">vor 2 Minuten</time>
+            </p>
+        </li>
+        <li class="ChatLog__entry">
+            <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
+            <p class="ChatLog__message">
+                <b>Katze 1: </b><br/>
+                Passt.
+                <time class="ChatLog__timestamp">gerade eben</time>
+            </p>
+        </li>
+    </ul>
 </div>
 <footer>
     <div class="input-group">
@@ -103,9 +112,9 @@
                 :)
             </button>
         </span>
-        <input type="text" class="form-control" placeholder="Message">
+        <input type="text" class="form-control" placeholder="Nachricht">
         <span class="input-group-btn">
-            <button class="btn btn-primary btn-block" type="button">
+            <button class="btn btn-primary btn-block" type="button" style="border-radius: 0">
                 <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
             </button>
         </span>

@@ -48,6 +48,19 @@
                 }).data('placepicker');
             });
 
+            $("#advanced-placepicker2").each(function () {
+                var target = this;
+                var $collapse = $(this).parents('.form-group').next('.collapse');
+                var $map = $collapse.find('.another-map-class');
+
+                var placepicker = $(this).placepicker({
+                    map: $map.get(0),
+                    placeChanged: function (place) {
+                        console.log("place changed: ", place.formatted_address, this.getLocation());
+                    }
+                }).data('placepicker');
+            });
+
 
             $('#label-switch').bootstrapSwitch('setOnClass', 'info');
             $('#label-switch').bootstrapSwitch('setOffClass', 'info');
@@ -74,12 +87,18 @@
                 document.getElementById('togglee').style.display = 'inline';
                 document.getElementById('toggleee').style.display = 'inline';
                 document.getElementById('toggleeee').style.display = 'inline';
+                document.getElementById('toggleeeee').style.display = 'inline';
+                document.getElementById('toggleeeee2').style.display = 'inline';
+                document.getElementById('toggleeeee3').style.display = 'inline';
                 document.getElementById('plusminus').className = "glyphicon glyphicon-minus";
                 document.getElementById('veranstaltungen').disabled = true;
             } else {
                 document.getElementById('togglee').style.display = 'none';
                 document.getElementById('toggleee').style.display = 'none';
                 document.getElementById('toggleeee').style.display = 'none';
+                document.getElementById('toggleeeee').style.display = 'none';
+                document.getElementById('toggleeeee2').style.display = 'none';
+                document.getElementById('toggleeeee3').style.display = 'none';
                 document.getElementById('veranstaltungen').disabled = false;
                 document.getElementById('plusminus').className = "glyphicon glyphicon-plus";
             }
@@ -109,6 +128,7 @@
                     <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
                     <span class="badge">1</span>
                 </button>
+                &nbsp;
                 <button type="button" class="navbar-toggle collapsed"
                         style="border-radius:10px solid;border-color:#D9853B;background-color:#D9853B"
                         data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -252,8 +272,8 @@
                                     bekommen.</h4>
                                 <form role="form" style="text-align:left;" action="objects.html" method="post">
                                     <div class="form-group" style="padding-top: 10px;">
-                                        <span>Ort*</span>
-                                        <input id="advanced-placepicker" class="form-control"
+                                        <label>Ort</label>
+                                        <input id="advanced-placepicker2" class="form-control"
                                                data-map-container-id="collapseTwo" required/>
                                     </div>
 
@@ -262,28 +282,33 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <span>Veranstaltung*</span></br>
+                                        <label>Veranstaltung*</label></br>
+                                        <div class="row" style="text-align:center">
+                                            <select id="veranstaltungen" class="form-control"
+                                                    style="width:80%;display:inline;" required>
+                                                <option value="one">Novarock - Rammstein</option>
+                                                <option value="two">Novarock - Linkin Park</option>
+                                                <option value="three">UMF - Martin Garrix</option>
+                                                <option value="four">Tomorrowland - Steve Aoki</option>
+                                            </select>
 
-                                        <select id="veranstaltungen" class="form-control"
-                                                style="width:80%;display:inline;" required>
-                                            <option value="one">Novarock - Rammstein</option>
-                                            <option value="two">Novarock - Linkin Park</option>
-                                            <option value="three">UMF - Martin Garrix</option>
-                                            <option value="four">Tomorrowland - Steve Aoki</option>
-                                        </select>
+                                            <button type="button" class="btn btn-default btn-xs" onclick="fasz();"
+                                                    style="height:34px;">
+                                                <span id="plusminus" class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                            </br>
+                                        </div>
 
-                                        <button type="button" class="btn btn-default btn-xs" onclick="fasz();"
-                                                style="height: 34px;">
-                                            <span id="plusminus" class="glyphicon glyphicon-plus"></span>
+                                        <label class="kaki" id="toggleeeee" style="display:none;padding-left:1px">Neue
+                                            Veranstaltung hinzuf&uuml;gen</label>
+                                        <input type="text" class="form-control kaki" id="toggleeeee2"
+                                               style="display:none;margin-left:1px"/>
+                                        <button class="btn btn-sm signIn-btn" href="#" id="toggleeeee3"
+                                                style="display:none;margin-top:5px">Speichern
                                         </button>
-                                        </br>
-
-                                        <span class="kaki" id="toggleee" style="display:none;">..neue Veranstaltung hinzufuegen</span>
-                                        <input type="text" class="form-control kaki" id="togglee"
-                                               style="display:none;"/>
 
                                     </div>
-                                    <span>Zeit*</span>
+                                    <label>Zeit</label>
                                     <div class="form-group">
                                         <div class='input-group date' id='datetimepicker'>
                                                     <span class="input-group-addon">
@@ -295,8 +320,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group" style="text-align: right;">
-                                        <button type="submit" class="btn btn-md signIn-btn">Finde posts!</button>
+                                    <div class="form-group" style="text-align: center;">
+                                        <button type="submit" class="btn btn-md signIn-btn">Zu den Ergebnissen</button>
                                     </div>
 
                                 </form>
@@ -309,7 +334,7 @@
 
         </div>
     </div>
-    <div class="sidebar-offcanvas" id="sidebar">
+    <div class="sidebar-offcanvas" id="sidebar" style="background-color:#558C89">
         <div class="list-group">
             <a href="message_view.html" class="list-group-item active">
                 <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>

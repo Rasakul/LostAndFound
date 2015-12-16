@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content="width=device-width, initial-scale=1"/>
+
+
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/cover.css" rel="stylesheet">
+    <link href="css/sign_in.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/userpanel.css" rel="stylesheet">
+    <link href="css/messages_offcanvas.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/iid3.js"></script>
+    <script src="js/lk_iid.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+
+    <script src="js/headroom.js"></script>
+    <script type="text/javascript" src="js/jQuery.headroom.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
+
+    <script src="js/offcanvas.js"></script>
+
+    <title>Lost and Found - Profil</title>
+</head>
+<body style="color:#ffffff;background-color:#74AFAD;">
+
+<div class="site-wrapper row-offcanvas row-offcanvas-right" style="background-color:#74AFAD;box-shadow:none">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="inner cover">
+                <div class="row">
+                    <div class="toppad">
+                        <div class="col-md-7 col-lg-10">
+                            <h1 style="color:#ffffff; width:50%; float:left">Profil</h1>
+                        </div>
+                    </div>
+                    <div class="toppad">
+                        <p>
+                            <a class="btn btn-md signIn-btn own-btn pull-right " data-toggle="collapse" id="moreBtn"
+                               data-target="#more" style="font-size:1em;">
+                                <i id="arrow" class="glyphicon glyphicon-triangle-bottom"></i>
+                            </a>
+                        </p>
+                        <p>
+                            <button type="button" class="btn btn-primary" data-toggle="offcanvas">
+                                Messages <span class="badge">1</span>
+                            </button>
+                        </p>
+                    </div>
+                </div>
+                <div id="more" class="collapse row" style="float: right;margin-bottom: 1em;">
+                    <a class="btn btn-md signIn-btn own-btn" href="lost_and_found.html"
+                       role="button" style="margin-top: 0.3em">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:1em"></span>
+                    </a>
+                    <a class="btn btn-md signIn-btn own-btn" id="logoutBtn" href="sign_in.html"
+                       role="button" style="margin-top: 0.3em">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em;"></span>
+                    </a>
+                    <br/>
+                </div>
+                <div id="myrow" class="row toppad" style="margin-top:3em;">
+                    <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
+                        <div class="background_wrapper">
+                            <img class="img-circle" src="img/testpic.png" alt="user Bild" width="140" height="140">
+
+                            <h3 id="username">bigDildo</h3>
+
+                            <div class="row" style="padding-left:0.5em">
+                                <div class="col-md-offset-1 col-md-1  ">
+                                    <h3>E-Mail:</h3>
+                                </div>
+                                <div class="col-md-offset-3 col-md-4 ">
+                                    <h3 id="email" style="color:#000000;">kalu_reg@gmx.at</h3>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-left:0.5em">
+                                <div class="col-md-offset-1 col-md-1 ">
+                                    <h3>Telefon:</h3>
+                                </div>
+                                <div class="col-md-offset-3 col-md-4  ">
+                                    <h3 id="phone" style="color:#000000;">0650 763 18 77</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="includedContent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-offcanvas" id="sidebar">
+        <div id="messages"></div>
+    </div>
+</div>
+<footer class="footer" style="background-color:#74AFAD;">
+    <div class="container">
+        <hr style="margin:0;border: 1px solid #558C89"/>
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="info.html" class="text-muted" style="text-shadow:none">Info</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="impressum.html" class="text-muted" style="text-shadow:none">Impressum</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="agb.html" class="text-muted" style="text-shadow:none">AGB</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    $(function () {
+        $("#messages").load("messages_overview.html");
+    });
+
+    $(document).ready(function () {
+        toggleMenu();
+
+        var username = getUrlParameter('username');
+        var email = getUrlParameter('email');
+        var phone = getUrlParameter('phone');
+
+        if (username !== undefined)
+            document.getElementById('username').innerHTML = username;
+
+        if (email !== undefined)
+            document.getElementById('email').innerHTML = email;
+
+        if (phone !== undefined)
+            document.getElementById('phone').innerHTML = phone;
+    });
+
+
+    $('#edit').click(function () {
+        var username = document.getElementById('username').innerHTML.trim();
+        var email = document.getElementById('email').innerHTML.trim();
+        var telephone = document.getElementById('phone').innerHTML.trim();
+        $('#edit').attr("href", "userpanel_edit.html?username=" + username + "&email=" + email + "&phone=" + telephone);
+    });
+</script>
+</body>
+</html>

@@ -39,14 +39,11 @@
                 maxDate: new Date(currentYear, currentMonth, currentDate)
             });
         });
-        
 
         $(document).ready(function () {
 
-$('#datetimepicker').on('dp.change', function(ev){
-   document.getElementById('filterButton').disabled = false;
-});
-            
+
+
             // Advanced usage
             $("#advanced-placepicker").each(function () {
                 var target = this;
@@ -60,7 +57,6 @@ $('#datetimepicker').on('dp.change', function(ev){
                     }
                 }).data('placepicker');
             });
-            
 
         }); // END document.ready
 
@@ -72,25 +68,16 @@ $('#datetimepicker').on('dp.change', function(ev){
                 document.getElementById('filterButton').disabled = true;
             }
         }
-        
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-        
-        function randomizePosts(){
-            var numberOfPosts = getRandomInt(1,4);
-            
-            $("#div1").hide();
-            $("#div2").hide();
-            $("#div3").hide();
-            $("#div4").hide();
 
-            for (var i = 0; i < numberOfPosts; i++){
-                $("#div" + getRandomInt(1,4)).show();
+        $('#datetimepicker').datetimepicker({
+            onChange: function (dateText) {
+                if (document.getElementById('advanced-placepicker').value.length != 0 || document.getElementById('dateTextField').value.length != 0) {
+                    document.getElementById('filterButton').disabled = false;
+                } else {
+                    document.getElementById('filterButton').disabled = true;
+                }
             }
-        }
-
-
+        });
     </script>
 
     <script src="js/offcanvas.js"></script>
@@ -119,13 +106,12 @@ $('#datetimepicker').on('dp.change', function(ev){
     </style>
 
 
-    <title>L&F - Gefundene Gegenst&auml;nde</title>
+    <title>L&F - Eignene Gegenst&auml;nde</title>
 </head>
 
 
 <body style="color:#ffffff;">
-<a href="#" class="back-to-top">Back to Top</a>
-<nav class="navbar navbar-transparent navbar-fixed-top" style="background-color:#558C89;margin-bottom:0px;">
+<nav class="navbar navbar-transparent navbar-fixed-top" style="background-color:#558C89;margin-bottom:0;">
     <div class="container">
         <div class="navbar-header">
             <div class="btn-group " role="group" style="float: right">
@@ -185,145 +171,93 @@ $('#datetimepicker').on('dp.change', function(ev){
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="inner cover">
-                <h3 style="padding-top:40px">Liste der gefundenen Gegenst&auml;nde</h3>
+                <h3 style="padding-top:40px">Eigene Gegenst&auml;nde</h3>
                 <div class="container">
                     <div class="row" id="objectsRow">
-                        <div class="col-xs-12 col-lg-12" style="border-radius:4px;">
-                            <div class="background-wrapper">
-                                <h4 style="padding: 10px 10px;padding-bottom:0px;">Vielleicht hat jemand schon Ihren
-                                    Gegenstand gefunden...</h4>
-                                <div class="panel-body" style="text-align:right;">
-                                    <div class="form-group" style="padding-top: 10px;">
-                                        <input onkeypress="checkFilter();" id="advanced-placepicker"
-                                               class="form-control" data-map-container-id="collapseTwo"/>
-                                    </div>
 
-                                    <div id="collapseTwo" class="collapse">
-                                        <div class="another-map-class thumbnail"></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class='input-group date' id='datetimepicker' style="color: black;">
-                                            <span class="input-group-addon">
-                                                 <span class="glyphicon glyphicon-calendar"></span>
-                                                </span>
-                                            <input onkeypress="checkFilter();" id="dateTextField" type='text'
-                                                   class="form-control" placeholder="Geben Sie das Datum an"/>
-                                        </div>
-
-
-                                    </div>
-                                    
-                                    <div style="text-align:center">
-                                        <button onclick="randomizePosts();" id="filterButton" type="button" class="btn btn-md signIn-btn" disabled>
-                                            Liste Filtern
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="div1" class="col-xs-12 col-lg-12" style="border-radius:4px;">
-                            <div class="background-wrapper">
-                                <h4 style="padding-top:10px">Armbanduhr</h4>
-                                <div style="padding: 0 10px">
-                                    <img src="img/uhr.jpg" class="img-responsive img-thumbnail imagge"/></div>
-                                <ul class="list-group" style="padding: 0 10px;padding-top:10px">
-                                    <li class="list-group-item xx" style="text-shadow:none">Kaum getragene Armbanduhr
+                        <div class="col-xs-12 col-lg-12" style="border-radius:4px;" id="ownObject1">
+                            <div class="background-wrapper" style="padding-bottom: 5px">
+                                <h4 style="padding-top:10px"><b>Gefunden:</b> Armbanduhr</h4>
+                                <ul class="list-group" style="padding: 10px 10px 0;text-shadow:none">
+                                    <li class="list-group-item xx">Kaum getragene Armbanduhr
                                         wurde gestern gefunden.
                                     </li>
-                                    <li class="list-group-item xx" style="text-shadow:none">9.6.2015</li>
-                                    <li class="list-group-item xx" style="text-shadow:none"> Novarock - Linkin Park</li>
-                                    <li class="list-group-item xx" style="text-shadow:none">Nickelsdorf, Österreich</li>
+                                    <li class="list-group-item xx">9.6.2015, Novarock, Nickelsdorf, Austria</li>
+                                    <li class="list-group-item xx">
+                                        <div id="ownObject1Status" class="alert alert-danger" style="margin-bottom: 0;">
+                                            Status: Offen
+                                        </div>
+                                    </li>
+                                    <li id="ownObject1Buttons" class="list-group-item xx">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-success" onclick="toggleDone(1)">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                </button>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-danger" onclick="toggleRemove(1)">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
-                                <button onclick="window.open('message_view.html', '_self');" type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
-                                    senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                </button>
                             </div>
                         </div>
 
 
-                        <div id="div2" class="col-xs-12 col-lg-12" style="border-radius:4px;">
-                            <div class="background-wrapper">
-                                <h4 style="padding-top:10px">Handy</h4>
-                                <div style="padding: 0 10px">
-                                    <img src="img/handy.jpg" class="img-responsive img-thumbnail imagge"/></div>
-                                <ul class="list-group" style="padding: 0 10px;padding-top:10px">
-                                    <li class="list-group-item xx" style="text-shadow:none">Brand new iPhone 5 während
-                                        dem Konzert gefunden.
+                        <div class="col-xs-12 col-lg-12" style="border-radius:4px;" id="ownObject2">
+                            <div class="background-wrapper" style="padding-bottom: 5px">
+                                <h4 style="padding-top:10px"><b>Gesucht:</b> Schlüssel</h4>
+                                <ul class="list-group" style="padding: 10px 10px 0;text-shadow:none">
+                                    <li class="list-group-item xx">Ich habe mein Schlüssel heute Nachmittag beim Steve
+                                        Aoki Konzert irgendwo
+                                        verloren. Bitte helft mir!
                                     </li>
-                                    <li class="list-group-item xx" style="text-shadow:none">9.6.2015</li>
-                                    <li class="list-group-item xx" style="text-shadow:none">Novarock - Rammstein</li>
-                                    <li class="list-group-item xx" style="text-shadow:none">Nickelsdorf, Österreich</li>
+                                    <li class="list-group-item xx">16.8.2015, Tomorrowland, Boom, Belgium</li>
+                                    <li class="list-group-item xx">
+                                        <div id="ownObject2Status" class="alert alert-danger" style="margin-bottom: 0;">
+                                            Status: Offen
+                                        </div>
+                                    </li>
+                                    <li id="ownObject2Buttons" class="list-group-item xx">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-success" onclick="toggleDone(2)">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                </button>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-danger" onclick="toggleRemove(2)">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
-                                <button onclick="window.open('message_view.html', '_self');" type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
-                                    senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                </button>
                             </div>
                         </div>
 
-
-                        <div id="div3" class="col-xs-12 col-lg-12" style="border-radius:4px;">
-                            <div class="background-wrapper">
-                                <h4 style="padding-top:10px">Geldb&ouml;rse</h4>
-                                <div style="padding: 0 10px">
-                                    <img src="img/geld.jpg" class="img-responsive img-thumbnail imagge"/></div>
-                                <ul class="list-group" style="padding: 0 10px;padding-top:10px">
-                                    <li class="list-group-item xx" style="text-shadow:none">Geldbörse mit viel Geld und
-                                        ohne Ausweis gefunden.
+                        <div class="col-xs-12 col-lg-12" style="border-radius:4px;">
+                            <div class="background-wrapper" style="padding-bottom: 5px">
+                                <h4 style="padding-top:10px"><b>Gefunden:</b> Schal</h4>
+                                <ul class="list-group" style="padding: 10px 10px 0;text-shadow:none">
+                                    <li class="list-group-item xx">Ich hab einen braunen Schal bei Campingplatz 3
+                                        gefunden.
                                     </li>
-                                    <li class="list-group-item xx" style="text-shadow:none">16.8.2015</li>
-                                    <li class="list-group-item xx" style="text-shadow:none">Tomorrowland - Steve Aoki
+                                    <li class="list-group-item xx">9.6.2015, Novarock, Nickelsdorf, Austria</li>
+                                    <li class="list-group-item xx">
+                                        <div class="alert alert-success" style="margin-bottom: 0;">
+                                            Status: Erledigt
+                                        </div>
                                     </li>
-                                    <li class="list-group-item xx" style="text-shadow:none">Boom, Belgium</li>
                                 </ul>
-                                <button onclick="window.open('message_view.html', '_self');" type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
-                                    senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div id="div4" class="col-xs-12 col-lg-12" style="border-radius:4px;">
-                            <div class="background-wrapper">
-                                <h4 style="padding-top:10px">Schlüssel</h4>
-                                <div style="padding: 0 10px">
-                                    <img src="img/schluessel.png" class="img-responsive img-thumbnail imagge"/></div>
-                                <ul class="list-group" style="padding: 0 10px;padding-top:10px">
-                                    <li class="list-group-item xx" style="text-shadow:none">Drei Schlüssel im Unicum-Zelt gefunden.
-                                    </li>
-                                    <li class="list-group-item xx" style="text-shadow:none">8.8.2015</li>
-                                    <li class="list-group-item xx" style="text-shadow:none">Sziget</li>
-                                    <li class="list-group-item xx" style="text-shadow:none">Budapest, Ungarn</li>
-                                </ul>
-                                <button onclick="window.open('message_view.html', '_self');" type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
-                                    senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                </button>
                             </div>
                         </div>
 
 
                     </div>
-                    <h3>Gesuchten Gegenstand nicht gefunden?</h3>
-                    <p class="lead">Geben Sie die Hoffnung nicht auf!</p>
-                    <div class="background-wrapper"
-                         style="padding: 10px 20px;padding-bottom:5px;background-color:#558C89;border-radius:10px;margin-bottom:30px">
-                        <form role="form" action="suchObjekts.html" method="post">
-                            <div class="form-group xx " style="text-align: left;">
-                                <label style="color:#FFFFFF">Titel*</label>
-                                <input class="form-control" required placeholder="Titel..."/>
-                            </div>
-                            <div class="form-group xx " style="text-align: left;">
-                                <label style="color:#FFFFFF">Beschreibung*</label>
-                                <input class="form-control" required placeholder="Beschreibung..."/>
-                            </div>
-
-
-                            <button type="submit" class="btn btn-md signIn-btn" style="margin-bottom:10px">Eintrag
-                                erstellen<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            </button>
-
-                        </form>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -391,21 +325,21 @@ $('#datetimepicker').on('dp.change', function(ev){
     </div>
 </footer>
 <script type="text/javascript">
-    var amountScrolled = 300;
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > amountScrolled) {
-            $('a.back-to-top').fadeIn('slow');
-        } else {
-            $('a.back-to-top').fadeOut('slow');
-        }
-    });
+    function toggleDone(id) {
+        $("#ownObject" + id + "Buttons").remove();
+        $("#ownObject" + id + "Status")
+                .addClass('alert-success')
+                .removeClass('alert-danger')
+                .text("Status: Erledigt");
+    }
+    function toggleRemove(id) {
+        $("#ownObject" + id + "Buttons").remove();
+        $("#ownObject" + id + "Status")
+                .addClass('alert-warning')
+                .removeClass('alert-danger')
+                .text("Status: Verworfen");
+    }
 
-    $('a.back-to-top').click(function () {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 700);
-        return false;
-    });
 </script>
 
 </body>

@@ -41,9 +41,9 @@
         });
 
         $(document).ready(function () {
-            $('#datetimepicker').on('dp.change', function(ev){
-   document.getElementById('filterButton').disabled = false;
-});
+            $('#datetimepicker').on('dp.change', function (ev) {
+                document.getElementById('filterButton').disabled = false;
+            });
 
             // Advanced usage
             $("#advanced-placepicker").each(function () {
@@ -69,25 +69,25 @@
                 document.getElementById('filterButton').disabled = true;
             }
         }
-        
+
         function getRandomInt(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-        
-function randomizePosts(){
+
+        function randomizePosts() {
             if (document.getElementById('advanced-placepicker').value.length == 0 && document.getElementById('dateTextField').value.length == 0) {
-                 $("#div1").show();
-                 $("#div2").show();
-                 $("#div3").show();
+                $("#div1").show();
+                $("#div2").show();
+                $("#div3").show();
             } else {
-                var numberOfPosts = getRandomInt(1,3);
-            
+                var numberOfPosts = getRandomInt(1, 3);
+
                 $("#div1").hide();
                 $("#div2").hide();
                 $("#div3").hide();
 
-                for (var i = 0; i < numberOfPosts; i++){
-                    $("#div" + getRandomInt(1,3)).show();
+                for (var i = 0; i < numberOfPosts; i++) {
+                    $("#div" + getRandomInt(1, 3)).show();
                 }
             }
         }
@@ -135,8 +135,7 @@ function randomizePosts(){
 
 
 <body style="color:#ffffff;">
-<a href="#" class="back-to-top">Back to Top</a>
-<nav class="navbar navbar-transparent navbar-fixed-top" style="background-color:#558C89;margin-bottom:0px;">
+<nav class="navbar navbar-transparent navbar-fixed-top" style="background-color:#558C89;margin-bottom:0;">
     <div class="container">
         <div class="navbar-header">
             <div class="btn-group " role="group" style="float: right">
@@ -163,7 +162,7 @@ function randomizePosts(){
                     <a href="lost_and_found.html" style="color:#FFFFFF">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"
                               style="font-size:1em;color:#FFFFFF"></span>
-                        Zentrale
+                        Home
                     </a>
                 </li>
                 <li class="active" style="float:left">
@@ -173,11 +172,18 @@ function randomizePosts(){
                         Profil
                     </a>
                 </li>
+                <li class="active" style="float:left">
+                    <a href="ownObjects.html" style="color:#FFFFFF">
+                        <span class="glyphicon glyphicon-briefcase" aria-hidden="true"
+                              style="font-size:1em;color:#FFFFFF"></span>
+                        Eigene
+                    </a>
+                </li>
                 <li style="float: right">
                     <a href="sign_in.html" style="color:#FFFFFF">
                         <span class="glyphicon glyphicon-off" aria-hidden="true"
                               style="font-size:1em"></span>
-                        Abmelden
+                        Exit
                     </a>
                 </li>
             </ul>
@@ -194,7 +200,8 @@ function randomizePosts(){
                     <div class="row" id="objectsRow">
                         <div class="col-xs-12 col-lg-12" style="border-radius:4px;">
                             <div class="background-wrapper">
-                                <h4 style="padding: 10px 10px;padding-bottom:0px;">Vielleicht sucht jemand schon diesen Gegenstand...</h4>
+                                <h4 style="padding: 10px 10px;padding-bottom:0px;">Vielleicht sucht jemand schon diesen
+                                    Gegenstand...</h4>
                                 <div class="panel-body" style="text-align:right;">
                                     <div class="form-group" style="padding-top: 10px;">
                                         <input onkeypress="checkFilter();" id="advanced-placepicker"
@@ -215,9 +222,10 @@ function randomizePosts(){
 
 
                                     </div>
-                                    
+
                                     <div style="text-align:center">
-                                        <button onclick="randomizePosts();" id="filterButton" type="button" class="btn btn-md signIn-btn" disabled>
+                                        <button onclick="randomizePosts();" id="filterButton" type="button"
+                                                class="btn btn-md signIn-btn" disabled>
                                             Liste Filtern
                                         </button>
                                     </div>
@@ -229,13 +237,15 @@ function randomizePosts(){
                             <div class="background-wrapper">
                                 <h4 style="padding-top:10px">Taschenmesser</h4>
                                 <ul class="list-group" style="padding: 0 10px;padding-top:10px">
-                                    <li class="list-group-item xx" style="text-shadow:none">Ich habe mein Taschenmesser beim Toten Hosen Konzert verloren. Ich würde es gerne wieder haben.
+                                    <li class="list-group-item xx" style="text-shadow:none">Ich habe mein Taschenmesser
+                                        beim Toten Hosen Konzert verloren. Ich würde es gerne wieder haben.
                                     </li>
                                     <li class="list-group-item xx" style="text-shadow:none">9.6.2015</li>
                                     <li class="list-group-item xx" style="text-shadow:none">Novarock</li>
                                     <li class="list-group-item xx" style="text-shadow:none">Nickelsdorf, Österreich</li>
                                 </ul>
-                                <button onclick="window.open('message_view.html', '_self');" type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
+                                <button onclick="window.open('message_view.html', '_self');" type="button"
+                                        class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
                                     senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 </button>
                             </div>
@@ -246,13 +256,15 @@ function randomizePosts(){
                             <div class="background-wrapper">
                                 <h4 style="padding-top:10px">Handy</h4>
                                 <ul class="list-group" style="padding: 0 10px;padding-top:10px">
-                                    <li class="list-group-item xx" style="text-shadow:none">Kaum gebrauchtes iPhone6 ist gestern Abend verloren worden. 100€ fürs Rückerstatten.
+                                    <li class="list-group-item xx" style="text-shadow:none">Kaum gebrauchtes iPhone6 ist
+                                        gestern Abend verloren worden. 100€ fürs Rückerstatten.
                                     </li>
                                     <li class="list-group-item xx" style="text-shadow:none">9.6.2015</li>
                                     <li class="list-group-item xx" style="text-shadow:none">Novarock - Rammstein</li>
                                     <li class="list-group-item xx" style="text-shadow:none">Nickelsdorf, Österreich</li>
                                 </ul>
-                                <button onclick="window.open('message_view.html', '_self');" type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
+                                <button onclick="window.open('message_view.html', '_self');" type="button"
+                                        class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
                                     senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 </button>
                             </div>
@@ -263,19 +275,21 @@ function randomizePosts(){
                             <div class="background-wrapper">
                                 <h4 style="padding-top:10px">Schlüssel</h4>
                                 <ul class="list-group" style="padding: 0 10px;padding-top:10px">
-                                    <li class="list-group-item xx" style="text-shadow:none">Ich habe mein Schlüssel heute Nachmittag beim Steve Aoki Konzert irgendwo verloren. Bitte um Hilfe!
+                                    <li class="list-group-item xx" style="text-shadow:none">Ich habe mein Schlüssel
+                                        heute Nachmittag beim Steve Aoki Konzert irgendwo verloren. Bitte um Hilfe!
                                     </li>
                                     <li class="list-group-item xx" style="text-shadow:none">16.8.2015</li>
                                     <li class="list-group-item xx" style="text-shadow:none">Tomorrowland - Steve Aoki
                                     </li>
                                     <li class="list-group-item xx" style="text-shadow:none">Boom, Belgium</li>
                                 </ul>
-                                <button onclick="window.open('message_view.html', '_self');" type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
+                                <button onclick="window.open('message_view.html', '_self');" type="button"
+                                        class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
                                     senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 </button>
                             </div>
                         </div>
-                        
+
                     </div>
                     <h3>Sucht noch niemand diesen Gegenstand?</h3>
                     <p class="lead">Wir helfen Ihnen. Erstellen Sie einen neuen Eintrag!</p>
@@ -290,17 +304,17 @@ function randomizePosts(){
                                 <label style="color:#FFFFFF">Beschreibung*</label>
                                 <input class="form-control" required placeholder="Beschreibung..."/>
                             </div>
-                                            <div class="form-group xx " style="text-align: left;">
-                    <a class="btn btn-xs signIn-btn" id="picinputt"
-                       role="button">Bild auswählen</a>
-                    <input type="file" name="file" style="display:none;" accept="image/*"/>
-                </div>
+                            <div class="form-group xx " style="text-align: left;">
+                                <a class="btn btn-xs signIn-btn" id="picinputt"
+                                   role="button">Bild auswählen</a>
+                                <input type="file" name="file" style="display:none;" accept="image/*"/>
+                            </div>
 
 
                             <button type="submit" class="btn btn-md signIn-btn" style="margin-bottom:10px">Eintrag
                                 erstellen<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                             </button>
-                            
+
 
                         </form>
                     </div>
@@ -309,20 +323,47 @@ function randomizePosts(){
             </div>
         </div>
     </div>
-    <div class="sidebar-offcanvas" id="sidebar" style="background-color:#558C89;margin-top:50px">
+    <div class="sidebar-offcanvas" id="sidebar" style="background-color:#558C89;margin-top:50px;padding: 10px 0">
         <div class="list-group">
             <a href="message_view.html" class="list-group-item active">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
-                <span class="badge">1</span>
-                Katze 1
+                <div class="row">
+                    <div class="col-xs-4">
+                        <img class="ChatLog__avatar" src="img/users/user1.jpg" width="60" height="60"/>
+                    </div>
+                    <div class="col-xs-8" style="padding-left: 20px">
+                        <div class="row">
+                            <div class="col-xs-12 text-left">malfoy-<br>THEdeatheater</div>
+                            <div class="col-xs-12 text-left">
+                                <span class="badge"
+                                      style="background-color: #FFFFFF; color: #777;;">1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </a>
             <a href="message_view.html" class="list-group-item">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
-                Katze 1
+                <div class="row">
+                    <div class="col-xs-4">
+                        <img class="ChatLog__avatar" src="img/users/user3.jpg" width="60" height="60"/>
+                    </div>
+                    <div class="col-xs-8" style="padding-left: 20px">
+                        <div class="row">
+                            <div class="col-xs-12 text-left">hermine</div>
+                        </div>
+                    </div>
+                </div>
             </a>
             <a href="message_view.html" class="list-group-item">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
-                Katze 1
+                <div class="row">
+                    <div class="col-xs-4">
+                        <img class="ChatLog__avatar" src="img/users/user4.jpg" width="60" height="60"/>
+                    </div>
+                    <div class="col-xs-8" style="padding-left: 20px">
+                        <div class="row">
+                            <div class="col-xs-12 text-left">ronald<br>weasley</div>
+                        </div>
+                    </div>
+                </div>
             </a>
         </div>
     </div>
@@ -361,7 +402,7 @@ function randomizePosts(){
         return false;
     });
 </script>
-    
+
 <script>
     var wrapper = $('<div/>').css({height: 0, width: 0, 'overflow': 'hidden'});
     var fileInput = $(':file').wrap(wrapper);

@@ -75,7 +75,7 @@
         }
         
 function randomizePosts(){
-            if (document.getElementById('advanced-placepicker').value.length != 0 && document.getElementById('dateTextField').value.length != 0) {
+            if (document.getElementById('advanced-placepicker').value.length == 0 && document.getElementById('dateTextField').value.length == 0) {
                  $("#div1").show();
                  $("#div2").show();
                  $("#div3").show();
@@ -95,7 +95,7 @@ function randomizePosts(){
 
         $('#datetimepicker').datetimepicker({
             onChange: function (dateText) {
-                if (document.getElementById('advanced-placepicker').value.length == 0 || document.getElementById('dateTextField').value.length == 0) {
+                if (document.getElementById('advanced-placepicker').value.length != 0 || document.getElementById('dateTextField').value.length != 0) {
                     document.getElementById('filterButton').disabled = false;
                 } else {
                     document.getElementById('filterButton').disabled = true;

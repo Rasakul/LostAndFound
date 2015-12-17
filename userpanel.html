@@ -29,32 +29,53 @@
     <title>Lost and Found - Profil</title>
 </head>
 <body style="color:#ffffff;background-color:#74AFAD;">
-
+<nav class="navbar navbar-transparent navbar-fixed-top" style="background-color:#558C89;margin-bottom:0px;">
+    <div class="container">
+        <div class="navbar-header">
+            <div class="btn-group " role="group" style="float: right">
+                <button type="button" class="btn btn-primary " data-toggle="offcanvas"
+                        style="border-radius:10px; margin: 8px 0 8px 15px ">
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    <span class="badge">1</span>
+                </button>
+                &nbsp;
+                <button type="button" class="navbar-toggle collapsed"
+                        style="border-radius:10px solid;border-color:#D9853B;background-color:#D9853B"
+                        data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" onclick="toggleNavbarIcon();">
+                    <span class="sr-only" style="background-color:#000000">Toggle navigation</span>
+                    <span id="iconBar1" class="icon-bar" style="background-color:#FFFFFF;"></span>
+                    <span id="iconBar2" class="icon-bar" style="background-color:#FFFFFF;"></span>
+                    <span id="iconBar3" class="icon-bar" style="background-color:#FFFFFF;"></span>
+                    <span id="navbarRemoveIcon"class="glyphicon glyphicon-remove" style="color:white;display:none;padding-left:4px;padding-right:4px"></span>
+                </button>
+            </div>
+            <a class="navbar-brand" href="#" style="font-size:1em;color:#FFFFFF">Lost and Found</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active" style="float: left">
+                    <a href="lost_and_found.html" style="color:#FFFFFF">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"
+                              style="font-size:1em;color:#FFFFFF"></span>
+                        Zentrale
+                    </a>
+                </li>
+                <li style="float: right">
+                    <a href="sign_in.html" style="color:#FFFFFF">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"
+                              style="font-size:1em"></span>
+                        Abmelden
+                    </a>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
 <div class="site-wrapper row-offcanvas row-offcanvas-right" style="background-color:#74AFAD;box-shadow:none">
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="inner cover">
-                <div class="row">
-                    <div class="toppad">
-                        <div class="col-md-7 col-lg-10">
-                            <h1 style="color:#ffffff; width:50%; float:left">Profil</h1>
-                        </div>
-                    </div>
-                    <div class="toppad">
-                        <p>
-                            <a class="btn btn-md signIn-btn own-btn pull-right " data-toggle="collapse" id="moreBtn"
-                               data-target="#more" style="font-size:1em;">
-                                <i id="arrow" class="glyphicon glyphicon-triangle-bottom"></i>
-                            </a>
-                        </p>
-
-                        <p>
-                            <button type="button" class="btn btn-primary" data-toggle="offcanvas">
-                                Messages <span class="badge">1</span>
-                            </button>
-                        </p>
-                    </div>
-                </div>
+                <h1 style="padding-top:40px">Profil</h1>
                 <div id="more" class="collapse row" style="float: right;margin-bottom: 1em;">
                     <a class="btn btn-md signIn-btn own-btn" href="lost_and_found.html"
                        role="button" style="margin-top: 0.3em">
@@ -112,7 +133,7 @@
             </div>
         </div>
     </div>
-    <div class="sidebar-offcanvas" id="sidebar">
+    <div class="sidebar-offcanvas" id="sidebar" style="background-color:#558C89;margin-top:50px;height:96%">
         <div id="messages"></div>
     </div>
 </div>
@@ -161,6 +182,21 @@
         var telephone = document.getElementById('phone').innerHTML.trim();
         $('#edit').attr("href", "userpanel_edit.html?username=" + username + "&email=" + email + "&phone=" + telephone);
     });
+
+    function toggleNavbarIcon(){
+        var removeIcon = document.getElementById('navbarRemoveIcon');
+        if(removeIcon.style.display == 'none'){
+            document.getElementById('iconBar1').style.display = "none";
+            document.getElementById('iconBar2').style.display = "none";
+            document.getElementById('iconBar3').style.display = "none";
+            removeIcon.style.display = 'block';
+        }else{
+            document.getElementById('iconBar1').style.display = "block";
+            document.getElementById('iconBar2').style.display = "block";
+            document.getElementById('iconBar3').style.display = "block";
+            removeIcon.style.display = 'none';
+        }
+    }
 </script>
 </body>
 </html>

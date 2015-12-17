@@ -15,6 +15,7 @@
     <link href="css/cover.css" rel="stylesheet">
     <link href="css/sign_in.css" rel="stylesheet" type="text/css">
     <link href="css/messages_offcanvas.css" rel="stylesheet">
+    <link href="css/userpanel.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -189,12 +190,12 @@
 </nav>
 
 <div class="site-wrapper row-offcanvas row-offcanvas-right"
-     style="background-color:#74AFAD;box-shadow:none;padding-bottom:60px">
+     style="background-color:#74AFAD;box-shadow:none">
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="inner cover">
                 <div class="row">
-                    <h2 id="hat" style="padding-top:40px;color:#FFFFFF">Willkommen, Mustermann!</h2>
+                    <h2 id="hat" style="padding-top:40px;color:#FFFFFF">Willkommen, Gryffindor_Seeker!</h2>
                 </div>
                 <div class="row" style="font-size:10px;padding-bottom:10px">
                     <div id="label-switch" class="make-switch switch-large "
@@ -204,19 +205,19 @@
                     </div>
                 </div>
             </div>
-            <div id="card">
+            <div id="card" class="row">
                 <div class="front" style="padding-left:5px;padding-right:5px">
                     <div id="details" class="container">
                         <div class="row">
                             <div class="col-xs-12 col-lg-12">
                                 <h4>Haben Sie etwas verloren? Wir helfen Ihnen es wieder zu finden.</h4>
+
                                 <form role="form" style="text-align:left;" action="objects.html" method="post">
                                     <div class="form-group" style="padding-top: 10px;">
                                         <label>Wo?</label>
                                         <input id="advanced-placepicker" class="form-control"
                                                data-map-container-id="collapseTwo"/>
                                     </div>
-
                                     <div id="collapseTwo" class="collapse">
                                         <div class="another-map-class thumbnail"></div>
                                     </div>
@@ -259,6 +260,7 @@
                                     </div>
 
                                     <label>Wann?</label>
+
                                     <div class="form-group">
                                         <div class='input-group date' id='datetimepicker'>
                                                     <span class="input-group-addon">
@@ -276,7 +278,6 @@
                                     </div>
 
                                 </form>
-
                             </div>
                         </div>
                     </div>
@@ -287,6 +288,7 @@
                             <div class="col-xs-12 col-lg-12">
                                 <h4>Haben Sie etwas gefunden? Helfen Sie den Eigent&uuml;mern ihre Gegenst&auml;nde zu
                                     bekommen.</h4>
+
                                 <form id="backFace" role="form" style="text-align:left;" action="suchObjekts.html"
                                       method="post">
                                     <div class="form-group" style="padding-top: 10px;">
@@ -337,6 +339,7 @@
 
                                     </div>
                                     <label>Wann?</label>
+
                                     <div class="form-group">
                                         <div class='input-group date' id='datetimepicker1'>
                                                     <span class="input-group-addon">
@@ -351,52 +354,37 @@
                                     <div class="form-group" style="text-align: center;">
                                         <button type="submit" class="btn btn-md signIn-btn">Zu den Ergebnissen</button>
                                     </div>
-
                                 </form>
-
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
+
+            </div>  <!-- end of card -->
+
+        </div> <!-- end of cove container -->
+
+
     </div>
     <div class="sidebar-offcanvas" id="sidebar" style="background-color:#558C89;margin-top:50px">
         <div class="list-group">
             <a href="message_view.html" class="list-group-item active">
-                <img class="ChatLog__avatar" src="img/users/user1.jpg" width="50" height="50" />
+                <img class="ChatLog__avatar" src="img/users/user1.jpg" width="50" height="50"/>
                 <span class="badge">1</span>
                 malfoyTHEdeatheater
             </a>
             <a href="message_view.html" class="list-group-item">
-                <img class="ChatLog__avatar" src="img/users/user1.jpg"width="50" height="50"/>
+                <img class="ChatLog__avatar" src="img/users/user1.jpg" width="50" height="50"/>
                 malfoyTHEdeatheater
             </a>
             <a href="message_view.html" class="list-group-item">
-                <img class="ChatLog__avatar" src="img/users/user1.jpg"width="50" height="50"/>
+                <img class="ChatLog__avatar" src="img/users/user1.jpg" width="50" height="50"/>
                 malfoyTHEdeatheater
             </a>
         </div>
     </div>
 </div>
-<footer class="footer" style="background-color:#74AFAD;">
-    <div class="container">
-        <hr style="margin:0;border: 1px solid #558C89"/>
-        <div class="row">
-            <div class="col-xs-4">
-                <a href="info.html" class="text-muted" style="text-shadow:none">Info</a>
-            </div>
-            <div class="col-xs-4">
-                <a href="impressum.html" class="text-muted" style="text-shadow:none">Impressum</a>
-            </div>
-            <div class="col-xs-4">
-                <a href="agb.html" class="text-muted" style="text-shadow:none">AGB</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
 
 </body>
 </html>

@@ -22,112 +22,208 @@
     <script type="text/javascript" src="js/jQuery.headroom.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
+    <script src="js/offcanvas.js"></script>
 
     <title>Userbereich - Bearbeitung</title>
 </head>
 <body style="color:#ffffff;background-color:#74AFAD;">
-
-<div class="site-wrapper" style="background-color:#74AFAD;box-shadow:none">
+<nav class="navbar navbar-transparent navbar-fixed-top" style="background-color:#558C89;margin-bottom:0px;">
+    <div class="container">
+        <div class="navbar-header">
+            <div class="btn-group " role="group" style="float: right">
+                <button type="button" class="btn btn-primary " data-toggle="offcanvas"
+                        style="border-radius:10px; margin: 8px 0 8px 15px ">
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    <span class="badge">1</span>
+                </button>
+                &nbsp;
+                <button type="button" class="navbar-toggle collapsed"
+                        style="border-radius:10px solid;border-color:#D9853B;background-color:#D9853B"
+                        data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+                        onclick="toggleNavbarIcon();">
+                    <span class="sr-only" style="background-color:#000000">Toggle navigation</span>
+                    <span id="iconBar1" class="icon-bar" style="background-color:#FFFFFF;"></span>
+                    <span id="iconBar2" class="icon-bar" style="background-color:#FFFFFF;"></span>
+                    <span id="iconBar3" class="icon-bar" style="background-color:#FFFFFF;"></span>
+                    <span id="navbarRemoveIcon" class="glyphicon glyphicon-remove"
+                          style="color:white;display:none;padding-left:4px;padding-right:4px"></span>
+                </button>
+            </div>
+            <a class="navbar-brand" href="#" style="font-size:1em;color:#FFFFFF">Lost and Found</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active" style="float: left">
+                    <a href="lost_and_found.html" style="color:#FFFFFF">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"
+                              style="font-size:1em;color:#FFFFFF"></span>
+                        Home
+                    </a>
+                </li>
+                <li class="active" style="float:left">
+                    <a href="userpanel.html" style="color:#FFFFFF">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"
+                              style="font-size:1em;color:#FFFFFF"></span>
+                        Profil
+                    </a>
+                </li>
+                <li class="active" style="float:left">
+                    <a href="ownObjects.html" style="color:#FFFFFF">
+                        <span class="glyphicon glyphicon-briefcase" aria-hidden="true"
+                              style="font-size:1em;color:#FFFFFF"></span>
+                        Eigene
+                    </a>
+                </li>
+                <li style="float: right">
+                    <a href="sign_in.html" style="color:#FFFFFF">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"
+                              style="font-size:1em"></span>
+                        Exit
+                    </a>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<div class="site-wrapper row-offcanvas row-offcanvas-right" style="background-color:#74AFAD;box-shadow:none">
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="inner cover">
-                <div class="inner cover">
-                    <div class="row">
-                        <div class="toppad">
-                            <div class="col-md-7 col-lg-10">
-                                <h1 style="color:#ffffff; width:50%; float:left">Profil</h1>
-                            </div>
-                        </div>
-                        <div class="toppad">
-                            <p>
-                                <a class="btn btn-md signIn-btn own-btn pull-right " data-toggle="collapse" id="moreBtn"
-                                   data-target="#more" style="font-size:1em;">
-                                    <i id="arrow" class="glyphicon glyphicon-triangle-bottom"></i>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                    <div id="more" class="collapse row" style="float: right;margin-bottom: 1em;">
-                        <a class="btn btn-md signIn-btn own-btn" href="lost_and_found.html"
-                           role="button" style="margin-top: 0.3em">
-                            <span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:1em"></span>
-                        </a>
-                        <a class="btn btn-md signIn-btn own-btn" id="logoutBtn" href="sign_in.html"
-                           role="button" style="margin-top: 0.3em">
-                            <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em;"></span>
-                        </a>
-                        <br/>
-                    </div>
-                    <div id="myrow" class="row toppad" style="padding-top:20px">
-                        <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
-                            <div class="background_wrapper">
-                                <img class="img-circle" src="img/users/user2.jpg" alt="user Bild" width="140" height="140">
+                <h1 style="padding-top:40px">Profil</h1>
 
-                                <div style="text-align: left" class="col-xs-offset-2">
-                                    <div class="row" style=" padding-top:1.5em;">
-                                        <div class="  col-lg-6 ">
-                                            <h4>Bild:</h4>
-                                        </div>
-                                        <div class=" col-lg-6">
-                                            <a class=" btn btn-md signIn-btn  " id="picinput"
-                                               role="button" style="width:90%;">
-                                                <div style="white-space: normal;">Durchsuchen</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="margin-top:1.5em;">
-                                        <div class=" col-lg-6 ">
-                                            <h4>Benutzername</h4>
-                                        </div>
-                                        <div class="owninput col-lg-6 ">
-                                            <input class="form-control" id="username" type="text"
-                                                   style="color:gray;margin-top:0.4em;"
-                                                   value="Gryffindor Seeker"/></div>
-                                    </div>
-                                    <div class="row" style="padding-top:1.5em;">
-                                        <div class=" col-lg-6 ">
-                                            <h4>E-Mail</h4>
-                                        </div>
-                                        <div class="owninput  col-lg-6 ">
-                                            <input id="email" type="email" value="harry@prophet.hgw" class="form-control"
-                                                   style="color:gray;margin-top:0.4em;"/>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="">
-                                        <div class=" col-lg-6 " style="padding-top:1.5em;">
-                                            <h4>Telefon</h4>
-                                        </div>
-                                        <div class="owninput  col-lg-6 ">
-                                            <input id="phone" type="tel" value="06507631880" class="form-control"
-                                                   style="color:gray;margin-top:0.4em;"/>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class=" col-lg-6 " style="padding-top:1.5em;">
-                                            <h4>Passwort</h4>
-                                        </div>
-                                        <div class="owninput  col-lg-6 ">
-                                            <input id="password" type="password" class="form-control"
-                                                   style="color:#000000;margin-top:0.4em;"/>
-                                        </div>
-                                    </div>
+                <div id="more" class="collapse row" style="float: right;margin-bottom: 1em;">
+                    <a class="btn btn-md signIn-btn own-btn" href="lost_and_found.html"
+                       role="button" style="margin-top: 0.3em">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:1em"></span>
+                    </a>
+                    <a class="btn btn-md signIn-btn own-btn" href="userpanel_edit.html"
+                       role="button" style="margin-top: 0.3em">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"
+                                      style="font-size:1em"></span>
+                    </a>
+                    <a class="btn btn-md signIn-btn own-btn" id="logoutBtn" href="sign_in.html"
+                       role="button" style="margin-top: 0.3em">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size:1em;"></span>
+                    </a>
+                    <br/>
+                </div>
+                <div id="myrow" class="row toppad" style="padding-top:20px">
+                    <div id="col1" class="col-md-12 col-xs-12 col-lg-12">
+                        <div class="background_wrapper">
+                            <img class="img-circle" src="img/users/user2.jpg" alt="user Bild" width="140" height="140">
 
+                            <div style="text-align: left; padding-left: 3em">
+                                <div class="row" style=" padding-top:1.5em;">
+                                    <div class="  col-lg-6 ">
+                                        <h4>Bild:</h4>
+                                    </div>
+                                    <div class=" col-lg-6">
+                                        <a class=" btn btn-md signIn-btn  " id="picinput"
+                                           role="button" style="width:90%;">
+                                            <div style="white-space: normal;">Durchsuchen</div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:1.5em;">
+                                    <div class=" col-lg-6 ">
+                                        <h4>Benutzername</h4>
+                                    </div>
+                                    <div class="owninput col-lg-6 ">
+                                        <input class="form-control" id="username" type="text"
+                                               style="color:gray;margin-top:0.4em;"
+                                               value="Gryffindor Seeker"/></div>
+                                </div>
+                                <div class="row" style="padding-top:1.5em;">
+                                    <div class=" col-lg-6 ">
+                                        <h4>E-Mail</h4>
+                                    </div>
+                                    <div class="owninput  col-lg-6 ">
+                                        <input id="email" type="email" value="harry@prophet.hgw" class="form-control"
+                                               style="color:gray;margin-top:0.4em;"/>
+                                    </div>
+                                </div>
+                                <div class="row" style="">
+                                    <div class=" col-lg-6 " style="padding-top:1.5em;">
+                                        <h4>Telefon</h4>
+                                    </div>
+                                    <div class="owninput  col-lg-6 ">
+                                        <input id="phone" type="tel" value="06507631880" class="form-control"
+                                               style="color:gray;margin-top:0.4em;"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class=" col-lg-6 " style="padding-top:1.5em;">
+                                        <h4>Passwort</h4>
+                                    </div>
+                                    <div class="owninput  col-lg-6 ">
+                                        <input id="password" type="password" class="form-control"
+                                               style="color:#000000;margin-top:0.4em;"/>
+                                    </div>
                                 </div>
 
                             </div>
-                            <a id='save' class="own-btn btn btn-lg signIn-btn btn-block" style="margin-top: 1em"
-                               role="button">Profil
-                                speichern</a>
+
                         </div>
+                        <a id='save' class="own-btn btn btn-lg signIn-btn btn-block" style="margin-top: 1em"
+                           role="button">Profil
+                            speichern</a>
+                        <input type="file" name="file" style="display:none;" accept="image/*"/>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+
+                        <div id="includedContent"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <input type="file" name="file" style="display:none;" accept="image/*"/>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+    </div>
+    <div class="sidebar-offcanvas" id="sidebar" style="background-color:#558C89;margin-top:50px;padding: 10px 0">
+        <div class="list-group">
+            <a href="message_view.html" class="list-group-item active">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <img class="ChatLog__avatar" src="img/users/user1.jpg" width="60" height="60"/>
+                    </div>
+                    <div class="col-xs-8" style="padding-left: 20px">
+                        <div class="row">
+                            <div class="col-xs-12 text-left">malfoy-<br>THEdeatheater</div>
+                            <div class="col-xs-12 text-left">
+                                <span class="badge"
+                                      style="background-color: #FFFFFF; color: #777;;">1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="message_view.html" class="list-group-item">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <img class="ChatLog__avatar" src="img/users/user1.jpg" width="60" height="60"/>
+                    </div>
+                    <div class="col-xs-8" style="padding-left: 20px">
+                        <div class="row">
+                            <div class="col-xs-12 text-left">malfoy-<br>THEdeatheater</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="message_view.html" class="list-group-item">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <img class="ChatLog__avatar" src="img/users/user1.jpg" width="60" height="60"/>
+                    </div>
+                    <div class="col-xs-8" style="padding-left: 20px">
+                        <div class="row">
+                            <div class="col-xs-12 text-left">malfoy-<br>THEdeatheater</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
+
+
 <footer class="footer" style="background-color:#74AFAD;height: 12%;">
-    <div class="container" >
+    <div class="container">
         <hr style="margin-bottom:0.5em;border: 1px solid #558C89"/>
         <div class="row">
             <div class="col-xs-4">
@@ -143,6 +239,10 @@
     </div>
 </footer>
 <script>
+    $(function () {
+        $("#messages").load("messages_overview.html");
+    });
+
     $(document).ready(function () {
 
         toggleMenu();
@@ -180,6 +280,21 @@
     $('#picinput').click(function () {
         fileInput.click();
     }).show();
+
+    function toggleNavbarIcon() {
+        var removeIcon = document.getElementById('navbarRemoveIcon');
+        if (removeIcon.style.display == 'none') {
+            document.getElementById('iconBar1').style.display = "none";
+            document.getElementById('iconBar2').style.display = "none";
+            document.getElementById('iconBar3').style.display = "none";
+            removeIcon.style.display = 'block';
+        } else {
+            document.getElementById('iconBar1').style.display = "block";
+            document.getElementById('iconBar2').style.display = "block";
+            document.getElementById('iconBar3').style.display = "block";
+            removeIcon.style.display = 'none';
+        }
+    }
 </script>
 </body>
 </html>

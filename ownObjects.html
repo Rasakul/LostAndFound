@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content="width=device-width, initial-scale=1"/>
+
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/cover.css" rel="stylesheet">
+    <link href="css/sign_in.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/userpanel.css" rel="stylesheet">
+    <link href="css/details.css" rel="stylesheet">
+
+    <link href="css/datepicker.css" rel="stylesheet">
+    <link href="css/messages_offcanvas.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/iid3.js"></script>
+    <script src="js/headroom.js"></script>
+    <script type="text/javascript" src="js/jQuery.headroom.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
+
+    <script src="js/Moment.js"></script>
+    <script src="js/jquery.placepicker.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
+    <script>
+        var date = new Date();
+        var currentMonth = date.getMonth();
+        var currentDate = date.getDate();
+        var currentYear = date.getFullYear();
+        $(function () {
+            $('#datetimepicker').datetimepicker({
+                format: 'DD/MM/YYYY',
+                maxDate: new Date(currentYear, currentMonth, currentDate)
+            });
+        });
+
+        $(document).ready(function () {
+
+
+
+            // Advanced usage
+            $("#advanced-placepicker").each(function () {
+                var target = this;
+                var $collapse = $(this).parents('.form-group').next('.collapse');
+                var $map = $collapse.find('.another-map-class');
+
+                var placepicker = $(this).placepicker({
+                    map: $map.get(0),
+                    placeChanged: function (place) {
+                        console.log("place changed: ", place.formatted_address, this.getLocation());
+                    }
+                }).data('placepicker');
+            });
+
+        }); // END document.ready
+
+        function checkFilter() {
+
+            if (document.getElementById('advanced-placepicker').value.length != 0 || document.getElementById('dateTextField').value.length != 0) {
+                document.getElementById('filterButton').disabled = false;
+            } else {
+                document.getElementById('filterButton').disabled = true;
+            }
+        }
+
+        $('#datetimepicker').datetimepicker({
+            onChange: function (dateText) {
+                if (document.getElementById('advanced-placepicker').value.length != 0 || document.getElementById('dateTextField').value.length != 0) {
+                    document.getElementById('filterButton').disabled = false;
+                } else {
+                    document.getElementById('filterButton').disabled = true;
+                }
+            }
+        });
+    </script>
+
+    <script src="js/offcanvas.js"></script>
+    <style type="text/css">
+        a.back-to-top {
+            display: none;
+            width: 40px;
+            height: 40px;
+            text-indent: -9999px;
+            position: fixed;
+            z-index: 999;
+            right: 10px;
+            bottom: 20px;
+            background: #D9853B url("img/up_arrow.png") no-repeat center center;
+            background-size: contain;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+        }
+
+        #objectsRow .background-wrapper {
+            background-color: #558C89;
+            border-radius: 10px;
+            padding: 0 0;
+        }
+    </style>
+
+
+    <title>L&F - Eignene Gegenst&auml;nde</title>
+</head>
+
+
+<body style="color:#ffffff;">
+<nav class="navbar navbar-transparent navbar-fixed-top" style="background-color:#558C89;margin-bottom:0;">
+    <div class="container">
+        <div class="navbar-header">
+            <div class="btn-group " role="group" style="float: right">
+                <button type="button" class="btn btn-primary " data-toggle="offcanvas"
+                        style="border-radius:10px; margin: 8px 0 8px 15px ">
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    <span class="badge">1</span>
+                </button>
+                &nbsp;
+                <button type="button" class="navbar-toggle collapsed"
+                        style="border-radius:10px solid;border-color:#D9853B;background-color:#D9853B"
+                        data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only" style="background-color:#000000">Toggle navigation</span>
+                    <span class="icon-bar" style="background-color:#FFFFFF;"></span>
+                    <span class="icon-bar" style="background-color:#FFFFFF;"></span>
+                    <span class="icon-bar" style="background-color:#FFFFFF;"></span>
+                </button>
+            </div>
+            <a class="navbar-brand" href="#" style="font-size:1em;color:#FFFFFF">Lost and Found</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active" style="float: left">
+                    <a href="lost_and_found.html" style="color:#FFFFFF">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"
+                              style="font-size:1em;color:#FFFFFF"></span>
+                        Zentrale
+                    </a>
+                </li>
+                <li class="active" style="float:left">
+                    <a href="userpanel.html" style="color:#FFFFFF">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"
+                              style="font-size:1em;color:#FFFFFF"></span>
+                        Profil
+                    </a>
+                </li>
+                <li style="float: right">
+                    <a href="sign_in.html" style="color:#FFFFFF">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"
+                              style="font-size:1em"></span>
+                        Abmelden
+                    </a>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="site-wrapper row-offcanvas row-offcanvas-right" id="howto" style="background-color:#74AFAD;box-shadow:none">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="inner cover">
+                <h3 style="padding-top:40px">Eigene Gegenst&auml;nde</h3>
+                <div class="container">
+                    <div class="row" id="objectsRow">
+
+                        <div class="col-xs-12 col-lg-12" style="border-radius:4px;" id="ownObject1">
+                            <div class="background-wrapper" style="padding-bottom: 5px">
+                                <h4 style="padding-top:10px"><b>Gefunden:</b> Armbanduhr</h4>
+                                <ul class="list-group" style="padding: 10px 10px 0;text-shadow:none">
+                                    <li class="list-group-item xx">Kaum getragene Armbanduhr
+                                        wurde gestern gefunden.
+                                    </li>
+                                    <li class="list-group-item xx">9.6.2015, Novarock, Nickelsdorf, Austria</li>
+                                    <li class="list-group-item xx">
+                                        <div id="ownObject1Status" class="alert alert-danger" style="margin-bottom: 0;">
+                                            Status: Offen
+                                        </div>
+                                    </li>
+                                    <li id="ownObject1Buttons" class="list-group-item xx">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-success" onclick="toggleDone(1)">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                </button>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-danger" onclick="toggleRemove(1)">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="col-xs-12 col-lg-12" style="border-radius:4px;" id="ownObject2">
+                            <div class="background-wrapper" style="padding-bottom: 5px">
+                                <h4 style="padding-top:10px"><b>Gesucht:</b> Schlüssel</h4>
+                                <ul class="list-group" style="padding: 10px 10px 0;text-shadow:none">
+                                    <li class="list-group-item xx">Ich habe mein Schlüssel heute Nachmittag beim Steve
+                                        Aoki Konzert irgendwo
+                                        verloren. Bitte helft mir!
+                                    </li>
+                                    <li class="list-group-item xx">16.8.2015, Tomorrowland, Boom, Belgium</li>
+                                    <li class="list-group-item xx">
+                                        <div id="ownObject2Status" class="alert alert-danger" style="margin-bottom: 0;">
+                                            Status: Offen
+                                        </div>
+                                    </li>
+                                    <li id="ownObject2Buttons" class="list-group-item xx">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-success" onclick="toggleDone(2)">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                </button>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-danger" onclick="toggleRemove(2)">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-lg-12" style="border-radius:4px;">
+                            <div class="background-wrapper" style="padding-bottom: 5px">
+                                <h4 style="padding-top:10px"><b>Gefunden:</b> Schal</h4>
+                                <ul class="list-group" style="padding: 10px 10px 0;text-shadow:none">
+                                    <li class="list-group-item xx">Ich hab einen braunen Schal bei Campingplatz 3
+                                        gefunden.
+                                    </li>
+                                    <li class="list-group-item xx">9.6.2015, Novarock, Nickelsdorf, Austria</li>
+                                    <li class="list-group-item xx">
+                                        <div class="alert alert-success" style="margin-bottom: 0;">
+                                            Status: Erledigt
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-offcanvas" id="sidebar" style="background-color:#558C89;margin-top:50px">
+        <div class="list-group">
+            <a href="message_view.html" class="list-group-item active">
+                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
+                <span class="badge">1</span>
+                Katze 1
+            </a>
+            <a href="message_view.html" class="list-group-item">
+                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
+                Katze 1
+            </a>
+            <a href="message_view.html" class="list-group-item">
+                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
+                Katze 1
+            </a>
+        </div>
+    </div>
+</div>
+
+<footer class="footer" style="background-color:#74AFAD;">
+    <div class="container">
+        <hr style="margin:0;border: 1px solid #558C89"/>
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="info.html" class="text-muted" style="text-shadow:none">Info</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="impressum.html" class="text-muted" style="text-shadow:none">Impressum</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="agb.html" class="text-muted" style="text-shadow:none">AGB</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript">
+    function toggleDone(id) {
+        $("#ownObject" + id + "Buttons").remove();
+        $("#ownObject" + id + "Status")
+                .addClass('alert-success')
+                .removeClass('alert-danger')
+                .text("Status: Erledigt");
+    }
+    function toggleRemove(id) {
+        $("#ownObject" + id + "Buttons").remove();
+        $("#ownObject" + id + "Status")
+                .addClass('alert-warning')
+                .removeClass('alert-danger')
+                .text("Status: Verworfen");
+    }
+
+</script>
+
+</body>
+</html>

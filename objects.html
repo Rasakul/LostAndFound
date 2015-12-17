@@ -39,11 +39,14 @@
                 maxDate: new Date(currentYear, currentMonth, currentDate)
             });
         });
+        
 
         $(document).ready(function () {
 
-
-
+$('#datetimepicker').on('dp.change', function(ev){
+   document.getElementById('filterButton').disabled = false;
+});
+            
             // Advanced usage
             $("#advanced-placepicker").each(function () {
                 var target = this;
@@ -57,6 +60,7 @@
                     }
                 }).data('placepicker');
             });
+            
 
         }); // END document.ready
 
@@ -68,16 +72,32 @@
                 document.getElementById('filterButton').disabled = true;
             }
         }
+        
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        
+        function randomizePosts(){
+            if (document.getElementById('advanced-placepicker').value.length == 0 && document.getElementById('dateTextField').value.length == 0) {
+                 $("#div1").show();
+                 $("#div2").show();
+                 $("#div3").show();
+                 $("#div4").show();
+            } else {
+                var numberOfPosts = getRandomInt(1,4);
+            
+                $("#div1").hide();
+                $("#div2").hide();
+                $("#div3").hide();
+                $("#div4").hide();
 
-        $('#datetimepicker').datetimepicker({
-            onChange: function (dateText) {
-                if (document.getElementById('advanced-placepicker').value.length != 0 || document.getElementById('dateTextField').value.length != 0) {
-                    document.getElementById('filterButton').disabled = false;
-                } else {
-                    document.getElementById('filterButton').disabled = true;
+                for (var i = 0; i < numberOfPosts; i++){
+                    $("#div" + getRandomInt(1,4)).show();
                 }
             }
-        });
+        }
+
+
     </script>
 
     <script src="js/offcanvas.js"></script>
@@ -139,7 +159,7 @@
                     <a href="lost_and_found.html" style="color:#FFFFFF">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"
                               style="font-size:1em;color:#FFFFFF"></span>
-                        Zentrale
+                        Home
                     </a>
                 </li>
                 <li class="active" style="float:left">
@@ -149,49 +169,24 @@
                         Profil
                     </a>
                 </li>
+                <li class="active" style="float:left">
+                    <a href="ownObjects.html" style="color:#FFFFFF">
+                        <span class="glyphicon glyphicon-briefcase" aria-hidden="true"
+                              style="font-size:1em;color:#FFFFFF"></span>
+                        Eigene
+                    </a>
+                </li>
                 <li style="float: right">
                     <a href="sign_in.html" style="color:#FFFFFF">
                         <span class="glyphicon glyphicon-off" aria-hidden="true"
                               style="font-size:1em"></span>
-                        Abmelden
+                        Exit
                     </a>
                 </li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-<!--
-<div class="panel panel-default" style="background-color:#74AFAD;">
-    <div class="panel-heading">
-        <h3 class="panel-title">Vielleicht hat jemand schon deinen Gegenstand gefunden...</h3>
-    </div>
-    <div class="panel panel-default" style="margin: 10px;">
-        <div class="panel-heading">
-            <h3 class="panel-title">Filtern</h3>
-        </div>
-        <div class="panel-body" style="text-align:right;">
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker'>
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                    <input onkeypress="checkFilter();" id="dateTextField" type='text' class="form-control" placeholder="Geben Sie das Datum an"/>
-                </div>
-                
-                
-            </div>
-            <div class="form-group" style="padding-top: 10px;">
-                <input onkeypress="checkFilter();" id="advanced-placepicker" class="form-control" data-map-container-id="collapseTwo"/>
-            </div>
-
-            <div id="collapseTwo" class="collapse">
-                <div class="another-map-class thumbnail"></div>
-            </div>
-            <button id="filterButton" type="button" class="btn btn-md signIn-btn" disabled>Filtern</button>
-        </div>
-    </div>
-</div>-->
-
 
 <div class="site-wrapper row-offcanvas row-offcanvas-right" id="howto" style="background-color:#74AFAD;box-shadow:none">
     <div class="site-wrapper-inner">
@@ -205,8 +200,16 @@
                                 <h4 style="padding: 10px 10px;padding-bottom:0px;">Vielleicht hat jemand schon Ihren
                                     Gegenstand gefunden...</h4>
                                 <div class="panel-body" style="text-align:right;">
+                                    <div class="form-group" style="padding-top: 10px;">
+                                        <input onkeypress="checkFilter();" id="advanced-placepicker"
+                                               class="form-control" data-map-container-id="collapseTwo"/>
+                                    </div>
+
+                                    <div id="collapseTwo" class="collapse">
+                                        <div class="another-map-class thumbnail"></div>
+                                    </div>
                                     <div class="form-group">
-                                        <div class='input-group date' id='datetimepicker'>
+                                        <div class='input-group date' id='datetimepicker' style="color: black;">
                                             <span class="input-group-addon">
                                                  <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -216,16 +219,9 @@
 
 
                                     </div>
-                                    <div class="form-group" style="padding-top: 10px;">
-                                        <input onkeypress="checkFilter();" id="advanced-placepicker"
-                                               class="form-control" data-map-container-id="collapseTwo"/>
-                                    </div>
-
-                                    <div id="collapseTwo" class="collapse">
-                                        <div class="another-map-class thumbnail"></div>
-                                    </div>
+                                    
                                     <div style="text-align:center">
-                                        <button id="filterButton" type="button" class="btn btn-md signIn-btn" disabled>
+                                        <button onclick="randomizePosts();" id="filterButton" type="button" class="btn btn-md signIn-btn" disabled>
                                             Liste Filtern
                                         </button>
                                     </div>
@@ -233,7 +229,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-lg-12" style="border-radius:4px;">
+                        <div id="div1" class="col-xs-12 col-lg-12" style="border-radius:4px;">
                             <div class="background-wrapper">
                                 <h4 style="padding-top:10px">Armbanduhr</h4>
                                 <div style="padding: 0 10px">
@@ -244,93 +240,16 @@
                                     </li>
                                     <li class="list-group-item xx" style="text-shadow:none">9.6.2015</li>
                                     <li class="list-group-item xx" style="text-shadow:none"> Novarock - Linkin Park</li>
-                                    <li class="list-group-item xx" style="text-shadow:none">Nickelsdorf, Austria</li>
+                                    <li class="list-group-item xx" style="text-shadow:none">Nickelsdorf, Österreich</li>
                                 </ul>
-                                <button type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
+                                <button onclick="window.open('message_view.html', '_self');" type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
                                     senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 </button>
-                                <!--
-                                <div class="panel panel-default" style="background-color:#74AFAD;">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">Gefundene Gegenstände</h3>
-                                      </div>
-                                    <div class="panel panel-default" style="margin: 10px;">
-                                      <div class="panel-heading">
-                                        <h3 class="panel-title">Armbanduhr</h3>
-                                      </div>
-                                      <div class="panel-body">
-                                        <img src="img/uhr.jpg" class="img-responsive img-thumbnail imagge" />
-                                          <ul class="list-group">
-                                              <li class="list-group-item xx">Kaum getragene Armbanduhr wurde gestern gefunden.</li>
-                                              <li class="list-group-item xx">9.6.2015</li>
-                                              <li class="list-group-item xx">Novarock - Linkin Park</li>
-                                              <li class="list-group-item xx">Nickelsdorf, Austria</li>
-                                            </ul>
-                                          <button type="button" class="btn btn-primary">Nachricht senden</button>
-                                      </div>
-                                    </div>
-
-                                    <div class="panel panel-default" style="margin: 10px;">
-                                      <div class="panel-heading">
-                                        <h3 class="panel-title">Handy</h3>
-                                      </div>
-                                      <div class="panel-body">
-                                        <img src="img/handy.jpg" class="img-responsive img-thumbnail imagge" />
-                                          <ul class="list-group">
-                                              <li class="list-group-item xx">Brand new iPhone 5 während dem Konzert gefunden.</li>
-                                              <li class="list-group-item xx">9.6.2015</li>
-                                              <li class="list-group-item xx">Novarock - Rammstein</li>
-                                              <li class="list-group-item xx">Nickelsdorf, Austria</li>
-                                            </ul>
-                                          <button type="button" class="btn btn-primary">Nachricht senden</button>
-                                      </div>
-                                    </div>
-                                    <div class="panel panel-default" style="margin: 10px;">
-                                      <div class="panel-heading">
-                                        <h3 class="panel-title">Geldbörse</h3>
-                                      </div>
-                                      <div class="panel-body">
-                                        <img src="img/geld.jpg" class="img-responsive img-thumbnail imagge" />
-                                          <ul class="list-group">
-                                              <li class="list-group-item xx">Geldbörse mit viel Geld und ohne Ausweis gefunden.</li>
-                                              <li class="list-group-item xx">16.8.2015</li>
-                                              <li class="list-group-item xx">Tomorrowland - Steve Aoki</li>
-                                              <li class="list-group-item xx">Boom, Belgium</li>
-                                            </ul>
-                                          <button type="button" class="btn btn-primary">Nachricht senden</button>
-                                      </div>
-                                    </div>
-
-                                    <div class="panel panel-default" style="margin: 10px;">
-                                      <div class="panel-heading">
-                                        <h3 class="panel-title">Neuen Eintrag erstellen</h3>
-                                      </div>
-                                      <div class="panel-body">
-                                          <form role="form"  action="objects.html" method="post">
-                                              <div class="form-group xx " style="text-align: left;">
-                                                 <span >Titel*</span>
-                                                    <input class="form-control" required placeholder="Titel..."/>
-                                             </div>
-                                             <div class="form-group xx " style="text-align: left;">
-                                                 <span >Beschreibung*</span>
-                                                    <input class="form-control" required placeholder="Beschreibung..."/>
-                                             </div>
-
-
-                                            <button type="button" class="btn btn-primary">Eintrag erstellen</button>
-
-                                       </form>
-
-
-                                      </div>
-                                    </div>
-
-                                </div>-->
                             </div>
                         </div>
 
 
-                        <div class="col-xs-12 col-lg-12" style="border-radius:4px;padding-top:30px">
+                        <div id="div2" class="col-xs-12 col-lg-12" style="border-radius:4px;">
                             <div class="background-wrapper">
                                 <h4 style="padding-top:10px">Handy</h4>
                                 <div style="padding: 0 10px">
@@ -341,16 +260,16 @@
                                     </li>
                                     <li class="list-group-item xx" style="text-shadow:none">9.6.2015</li>
                                     <li class="list-group-item xx" style="text-shadow:none">Novarock - Rammstein</li>
-                                    <li class="list-group-item xx" style="text-shadow:none">Nickelsdorf, Austria</li>
+                                    <li class="list-group-item xx" style="text-shadow:none">Nickelsdorf, Österreich</li>
                                 </ul>
-                                <button type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
+                                <button onclick="window.open('message_view.html', '_self');" type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
                                     senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 </button>
                             </div>
                         </div>
 
 
-                        <div class="col-xs-12 col-lg-12" style="border-radius:4px;padding-top:30px">
+                        <div id="div3" class="col-xs-12 col-lg-12" style="border-radius:4px;">
                             <div class="background-wrapper">
                                 <h4 style="padding-top:10px">Geldb&ouml;rse</h4>
                                 <div style="padding: 0 10px">
@@ -364,7 +283,25 @@
                                     </li>
                                     <li class="list-group-item xx" style="text-shadow:none">Boom, Belgium</li>
                                 </ul>
-                                <button type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
+                                <button onclick="window.open('message_view.html', '_self');" type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
+                                    senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div id="div4" class="col-xs-12 col-lg-12" style="border-radius:4px;">
+                            <div class="background-wrapper">
+                                <h4 style="padding-top:10px">Schlüssel</h4>
+                                <div style="padding: 0 10px">
+                                    <img src="img/schluessel.png" class="img-responsive img-thumbnail imagge"/></div>
+                                <ul class="list-group" style="padding: 0 10px;padding-top:10px">
+                                    <li class="list-group-item xx" style="text-shadow:none">Drei Schlüssel im Unicum-Zelt gefunden.
+                                    </li>
+                                    <li class="list-group-item xx" style="text-shadow:none">8.8.2015</li>
+                                    <li class="list-group-item xx" style="text-shadow:none">Sziget</li>
+                                    <li class="list-group-item xx" style="text-shadow:none">Budapest, Ungarn</li>
+                                </ul>
+                                <button onclick="window.open('message_view.html', '_self');" type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Nachricht
                                     senden<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 </button>
                             </div>
@@ -376,7 +313,7 @@
                     <p class="lead">Geben Sie die Hoffnung nicht auf!</p>
                     <div class="background-wrapper"
                          style="padding: 10px 20px;padding-bottom:5px;background-color:#558C89;border-radius:10px;margin-bottom:30px">
-                        <form role="form" action="objects.html" method="post">
+                        <form role="form" action="ownObjects.html" method="post">
                             <div class="form-group xx " style="text-align: left;">
                                 <label style="color:#FFFFFF">Titel*</label>
                                 <input class="form-control" required placeholder="Titel..."/>
@@ -387,7 +324,7 @@
                             </div>
 
 
-                            <button type="button" class="btn btn-md signIn-btn" style="margin-bottom:10px">Eintrag
+                            <button type="submit" class="btn btn-md signIn-btn" style="margin-bottom:10px">Eintrag
                                 erstellen<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                             </button>
 
@@ -398,20 +335,47 @@
             </div>
         </div>
     </div>
-    <div class="sidebar-offcanvas" id="sidebar" style="background-color:#558C89;margin-top:50px">
+    <div class="sidebar-offcanvas" id="sidebar" style="background-color:#558C89;margin-top:50px;padding: 10px 0">
         <div class="list-group">
             <a href="message_view.html" class="list-group-item active">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
-                <span class="badge">1</span>
-                Katze 1
+                <div class="row">
+                    <div class="col-xs-4">
+                        <img class="ChatLog__avatar" src="img/users/user1.jpg" width="60" height="60"/>
+                    </div>
+                    <div class="col-xs-8" style="padding-left: 20px">
+                        <div class="row">
+                            <div class="col-xs-12 text-left">malfoy-<br>THEdeatheater</div>
+                            <div class="col-xs-12 text-left">
+                                <span class="badge"
+                                      style="background-color: #FFFFFF; color: #777;;">1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </a>
             <a href="message_view.html" class="list-group-item">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
-                Katze 1
+                <div class="row">
+                    <div class="col-xs-4">
+                        <img class="ChatLog__avatar" src="img/users/user1.jpg" width="60" height="60"/>
+                    </div>
+                    <div class="col-xs-8" style="padding-left: 20px">
+                        <div class="row">
+                            <div class="col-xs-12 text-left">malfoy-<br>THEdeatheater</div>
+                        </div>
+                    </div>
+                </div>
             </a>
             <a href="message_view.html" class="list-group-item">
-                <img class="ChatLog__avatar" src="http://placekitten.com/g/50/50"/>
-                Katze 1
+                <div class="row">
+                    <div class="col-xs-4">
+                        <img class="ChatLog__avatar" src="img/users/user1.jpg" width="60" height="60"/>
+                    </div>
+                    <div class="col-xs-8" style="padding-left: 20px">
+                        <div class="row">
+                            <div class="col-xs-12 text-left">malfoy-<br>THEdeatheater</div>
+                        </div>
+                    </div>
+                </div>
             </a>
         </div>
     </div>

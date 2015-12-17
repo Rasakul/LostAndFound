@@ -42,7 +42,7 @@ footer {
 }
 
 .ChatLog .ChatLog__entry {
-    margin: .5em;
+    margin: .5em 50px .5em .5em;
 }
 
 .ChatLog__entry {
@@ -55,6 +55,7 @@ footer {
 .ChatLog__entry.ChatLog__entry_mine {
     flex-direction: row-reverse;
     align-items: flex-end;
+    margin: .5em .5em .5em 60px;
 }
 
 .ChatLog__avatar {

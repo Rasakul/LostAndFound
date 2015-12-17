@@ -41,6 +41,9 @@
         });
 
         $(document).ready(function () {
+            $('#datetimepicker').on('dp.change', function(ev){
+   document.getElementById('filterButton').disabled = false;
+});
 
             // Advanced usage
             $("#advanced-placepicker").each(function () {

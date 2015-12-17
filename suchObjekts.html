@@ -74,21 +74,28 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
         
-        function randomizePosts(){
-            var numberOfPosts = getRandomInt(1,3);
+function randomizePosts(){
+            if (document.getElementById('advanced-placepicker').value.length != 0 && document.getElementById('dateTextField').value.length != 0) {
+                 $("#div1").show();
+                 $("#div2").show();
+                 $("#div3").show();
+            } else {
+                var numberOfPosts = getRandomInt(1,3);
             
-            $("#div1").hide();
-            $("#div2").hide();
-            $("#div3").hide();
+                $("#div1").hide();
+                $("#div2").hide();
+                $("#div3").hide();
 
-            for (var i = 0; i < numberOfPosts; i++){
-                $("#div" + getRandomInt(1,3)).show();
+                for (var i = 0; i < numberOfPosts; i++){
+                    $("#div" + getRandomInt(1,3)).show();
+                }
             }
         }
 
+
         $('#datetimepicker').datetimepicker({
             onChange: function (dateText) {
-                if (document.getElementById('advanced-placepicker').value.length != 0 || document.getElementById('dateTextField').value.length != 0) {
+                if (document.getElementById('advanced-placepicker').value.length == 0 || document.getElementById('dateTextField').value.length == 0) {
                     document.getElementById('filterButton').disabled = false;
                 } else {
                     document.getElementById('filterButton').disabled = true;

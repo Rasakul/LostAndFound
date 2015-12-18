@@ -139,46 +139,47 @@
 <nav class="navbar navbar-transparent navbar-fixed-top" style="background-color:#558C89;margin-bottom:0px;">
     <div class="container">
         <div class="navbar-header" style="width: 100%;">
-                <button type="button" class="navbar-toggle collapsed c-hamburger c-hamburger--htx"
-                        style="float:left;margin-left:10px;margin-right:10px;margin-top:8px;border:2px solid;border-color:#FFFFFF;border-radius:8px"
-                        data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span>toggle menu</span>
-                </button>
+            <button type="button" class="navbar-toggle collapsed c-hamburger c-hamburger--htx"
+                    style="float:left;margin-left:10px;margin-right:10px;margin-top:8px;border:2px solid;border-color:#FFFFFF;border-radius:8px"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span>toggle menu</span>
+            </button>
 
 
-                <button type="button" class="btn btn-primary " data-toggle="offcanvas"
-                        style="border-radius:10px; margin: 8px -20px 0px 0px;float:right;padding-left:3px;padding-right:3px ">
-                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                    <span class="badge">1</span>
-                </button>
-                
-                <div class="container" style="text-align:center;margin-top:15px">
-            <a class="navbar-brand" href="#" style="font-size:1em;color:#FFFFFF;text-align:center;float:none">Lost and Found</a></div>
+            <button type="button" class="btn btn-primary " data-toggle="offcanvas"
+                    style="border-radius:10px; margin: 8px -20px 0px 0px;float:right;padding-left:3px;padding-right:3px ">
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                <span class="badge">1</span>
+            </button>
+
+            <div class="container" style="text-align:center;margin-top:15px">
+                <a class="navbar-brand" href="#" style="font-size:1em;color:#FFFFFF;text-align:center;float:none">Lost
+                    and Found</a></div>
         </div>
         <div id="navbar" class="navbar-collapse collapse" style="border-bottom: 1px solid #FFFFFF">
             <ul class="nav navbar-nav" style="text-align:left">
-                <li class="active" >
+                <li class="active">
                     <a href="lost_and_found.html" style="color:#FFFFFF">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"
                               style="font-size:1em;color:#FFFFFF"></span>
                         Zentrale
                     </a>
                 </li>
-                <li class="active" >
+                <li class="active">
                     <a href="userpanel.html" style="color:#FFFFFF">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"
                               style="font-size:1em;color:#FFFFFF"></span>
                         Profil
                     </a>
                 </li>
-                <li class="active" >
+                <li class="active">
                     <a href="ownObjects.html" style="color:#FFFFFF">
                         <span class="glyphicon glyphicon-briefcase" aria-hidden="true"
                               style="font-size:1em;color:#FFFFFF"></span>
                         Eigene
                     </a>
                 </li>
-                <li >
+                <li>
                     <a href="sign_in.html" style="color:#FFFFFF">
                         <span class="glyphicon glyphicon-off" aria-hidden="true"
                               style="font-size:1em"></span>
@@ -414,25 +415,26 @@
         fileInput.click();
     }).show();
 
-    (function() {
+    (function () {
 
-  "use strict";
+        "use strict";
 
-  var toggles = document.querySelectorAll(".c-hamburger");
+        var toggles = document.querySelectorAll(".c-hamburger");
 
-  for (var i = toggles.length - 1; i >= 0; i--) {
-    var toggle = toggles[i];
-    toggleHandler(toggle);
-  };
+        for (var i = toggles.length - 1; i >= 0; i--) {
+            var toggle = toggles[i];
+            toggleHandler(toggle);
+        }
+        ;
 
-  function toggleHandler(toggle) {
-    toggle.addEventListener( "click", function(e) {
-      e.preventDefault();
-      (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
-    });
-  }
+        function toggleHandler(toggle) {
+            toggle.addEventListener("click", function (e) {
+                e.preventDefault();
+                (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+            });
+        }
 
-})();
+    })();
 </script>
 
 </body>

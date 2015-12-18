@@ -31,7 +31,8 @@
     <script src="js/bootstrap-datepicker.js"></script>
 
     <script type="text/javascript">
-        var myClosed = true;
+        var myClosedOne = true;
+        var myClosedTwo = true;
         $(document).ready(function () {
             // Advanced usage
             $("#advanced-placepicker").each(function () {
@@ -132,6 +133,21 @@
 
 
         function flipPunci() {
+            var c = document.getElementById('label-switch').children;
+            if(c[0].getAttribute('class') == "switch-off switch-animate"){
+                if(!myClosedOne && myClosedTwo){
+                    document.getElementById('card').style.paddingBottom = "770px";
+                }else if(myClosedOne && !myClosedTwo){
+                    document.getElementById('card').style.paddingBottom = "450px";
+                }
+            }else if(c[0].getAttribute('class') == "switch-on switch-animate"){
+                if(!myClosedOne && myClosedTwo){
+                    document.getElementById('card').style.paddingBottom = "450px";
+                }else if(myClosedOne && !myClosedTwo){
+                    document.getElementById('card').style.paddingBottom = "770px";
+                }
+            }
+
             if (document.getElementById('toggleButton').checked == true) {
                 $("#card").flip(false);
                 $("#backFace").hide();
@@ -142,16 +158,23 @@
             }
         }
 
-        function addPadding(){
-            console.log(myClosed);
-            if(myClosed){
-                document.getElementById('card').style.paddingBottom = "770px";
-                console.log('add');
-                myClosed = false;
+        function addPadding(containerId){
+            if(containerId.id == "collapseTwo"){
+                if(myClosedTwo){
+                    document.getElementById('card').style.paddingBottom = "770px";
+                    myClosedTwo = false;
+                }else{
+                    document.getElementById('card').style.paddingBottom = "450px";
+                    myClosedTwo = true;
+                }
             }else{
-                document.getElementById('card').style.paddingBottom = "450px";
-                console.log('remove');
-                myClosed = true;
+                if(myClosedOne){
+                    document.getElementById('card').style.paddingBottom = "770px";
+                    myClosedOne = false;
+                }else{
+                    document.getElementById('card').style.paddingBottom = "450px";
+                    myClosedOne = true;
+                }
             }
         }
 
@@ -240,7 +263,7 @@
                                                     <div class="form-group" style="padding-top: 10px;">
                                                         <label>Wo?</label>
                                                         <input id="advanced-placepicker" class="form-control"
-                                                               data-map-container-id="collapseTwo" onchange="addPadding()"/>
+                                                               data-map-container-id="collapseTwo"/>
                                                     </div>
                                                     <div id="collapseTwo" class="collapse">
                                                         <div class="another-map-class thumbnail"></div>

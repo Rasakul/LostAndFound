@@ -26,20 +26,20 @@
             padding: 0 0;
         }
     </style>
+
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/iid3.js"></script>
+    <script src="js/headroom.js"></script>
+    <script type="text/javascript" src="js/jQuery.headroom.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
 
     <script src="js/Moment.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/headroom.js"></script>
-    <script src="js/jQuery.headroom.js" type="text/javascript"></script>
     <script src="js/jquery.placepicker.js"></script>
-    <script src="js/iid3.js"></script>
-    <script src="js/offcanvas.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
     <script>
         var date = new Date();
@@ -116,6 +116,31 @@
             }
         });
     </script>
+
+    <script src="js/offcanvas.js"></script>
+    <style type="text/css">
+        a.back-to-top {
+            display: none;
+            width: 40px;
+            height: 40px;
+            text-indent: -9999px;
+            position: fixed;
+            z-index: 999;
+            right: 10px;
+            bottom: 20px;
+            background: #D9853B url("img/up_arrow.png") no-repeat center center;
+            background-size: contain;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+        }
+
+        #objectsRow .background-wrapper {
+            background-color: #558C89;
+            border-radius: 10px;
+            padding: 0 0;
+        }
+    </style>
 </head>
 
 

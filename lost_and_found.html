@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" xmlns:width="http://www.w3.org/1999/xhtml">
+<html xmlns:width="http://www.w3.org/1999/xhtml" lang="de">
 <head>
     <meta charset="utf-8">
     <meta name='viewport' content="width=device-width, initial-scale=1"/>
@@ -28,6 +28,7 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
     <script src="js/offcanvas.js"></script>
+    <script src="js/iid3_copy.js.js"></script>
 
     <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
 
@@ -35,7 +36,6 @@
     <script type="text/javascript">
         var myClosed = true;
         $(document).ready(function () {
-
             // Advanced usage
             $("#advanced-placepicker").each(function () {
                 var target = this;
@@ -145,61 +145,61 @@
             }
         }
 
-        function addPadding(){
+        function addPadding() {
             console.log(myClosed);
-            if(myClosed){
+            if (myClosed) {
                 document.getElementById('card').style.paddingBottom = "770px";
                 console.log('add');
                 myClosed = false;
-            }else{
+            } else {
                 document.getElementById('card').style.paddingBottom = "450px";
                 console.log('remove');
                 myClosed = true;
             }
         }
 
-
-
     </script>
 
 </head>
-<body>
+<body style="color:#ffffff;">
+
 <nav class="navbar navbar-transparent navbar-fixed-top" style="background-color:#558C89;margin-bottom:0px;">
     <div class="container">
         <div class="navbar-header" style="width: 100%;">
-                <button type="button" class="navbar-toggle collapsed c-hamburger c-hamburger--htx"
-                        style="float:left;margin-left:10px;margin-right:10px;margin-top:8px;border:2px solid;border-color:#FFFFFF;border-radius:8px"
-                        data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span>toggle menu</span>
-                </button>
+            <button type="button" class="navbar-toggle collapsed c-hamburger c-hamburger--htx"
+                    style="float:left;margin-left:10px;margin-right:10px;margin-top:8px;border:2px solid;border-color:#FFFFFF;border-radius:8px"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span>toggle menu</span>
+            </button>
 
 
-                <button type="button" class="btn btn-primary " data-toggle="offcanvas"
-                        style="border-radius:10px; margin: 8px -20px 0px 0px;float:right;padding-left:3px;padding-right:3px ">
-                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                    <span class="badge">1</span>
-                </button>
-                
-                <div class="container" style="text-align:center;margin-top:15px">
-            <a class="navbar-brand" href="#" style="font-size:1em;color:#FFFFFF;text-align:center;float:none">Lost and Found</a></div>
+            <button type="button" class="btn btn-primary " data-toggle="offcanvas"
+                    style="border-radius:10px; margin: 8px -20px 0px 0px;float:right;padding-left:3px;padding-right:3px ">
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                <span class="badge">1</span>
+            </button>
+
+            <div class="container" style="text-align:center;margin-top:15px">
+                <a class="navbar-brand" href="#" style="font-size:1em;color:#FFFFFF;text-align:center;float:none">Lost
+                    and Found</a></div>
         </div>
         <div id="navbar" class="navbar-collapse collapse" style="border-bottom: 1px solid #FFFFFF">
             <ul class="nav navbar-nav" style="text-align:left">
-                <li class="active" >
+                <li class="active">
                     <a href="userpanel.html" style="color:#FFFFFF">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"
                               style="font-size:1em;color:#FFFFFF"></span>
                         Profil
                     </a>
                 </li>
-                <li class="active" >
+                <li class="active">
                     <a href="ownObjects.html" style="color:#FFFFFF">
                         <span class="glyphicon glyphicon-briefcase" aria-hidden="true"
                               style="font-size:1em;color:#FFFFFF"></span>
                         Eigene
                     </a>
                 </li>
-                <li >
+                <li>
                     <a href="sign_in.html" style="color:#FFFFFF">
                         <span class="glyphicon glyphicon-off" aria-hidden="true"
                               style="font-size:1em"></span>
@@ -216,176 +216,193 @@
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="inner cover">
-                <div class="row">
-                    <h2 id="hat" style="padding-top:40px;color:#FFFFFF">Willkommen, Gryffindor_Seeker!</h2>
-                </div>
-                <div class="row" style="font-size:10px;padding-bottom:10px">
-                    <div id="label-switch" class="make-switch switch-large "
-                         data-on="primary" data-off="primary"
-                         data-on-label="Verloren" data-off-label="Gefunden">
-                        <input id="toggleButton" onchange="flipPunci();" type="checkbox" checked>
+                <h2 style="padding-top:40px">Willkommen, Gryffindor_Seeker</h2>
+
+                <div class="container">
+                    <div class="row" style="font-size:10px;padding-bottom:10px">
+                        <div id="label-switch" class="make-switch switch-large "
+                             data-on="primary" data-off="primary"
+                             data-on-label="Verloren" data-off-label="Gefunden">
+                            <input id="toggleButton" onchange="flipPunci();" type="checkbox" checked>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div id="card">
-                <div class="front" style="padding-left:5px;padding-right:5px">
-                    <div id="details" class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-lg-12">
-                                <h4>Haben Sie etwas verloren? Wir helfen Ihnen es wieder zu finden.</h4>
-                                <form role="form" style="text-align:left;" action="objects.html" method="post">
-                                    <div class="form-group" style="padding-top: 10px;">
-                                        <label>Wo?</label>
-                                        <input id="advanced-placepicker" class="form-control"
-                                               data-map-container-id="collapseTwo"/>
-                                    </div>
+                    <div class="background-wrapper">
+                        <div id="card">
+                            <div class="row" id="objectsRow">
+                                <div class="col-xs-12 col-lg-12" style="border-radius:4px;">
+                                    <div class="front" style="padding-left:5px;padding-right:5px">
+                                        <div id="details">
+                                            <h4>Haben Sie etwas verloren? Wir helfen Ihnen es wieder zu
+                                                finden.</h4>
 
-                                    <div id="collapseTwo" class="collapse">
-                                        <div class="another-map-class thumbnail"></div>
-                                    </div>
+                                            <div class="panel-body" style="text-align:right;">
+                                                <form role="form" style="text-align:left;" action="objects.html"
+                                                      method="post">
+                                                    <div class="form-group" style="padding-top: 10px;">
+                                                        <label>Wo?</label>
+                                                        <input id="advanced-placepicker" class="form-control"
+                                                               data-map-container-id="collapseTwo"
+                                                               onChange="addPadding()"/>
+                                                    </div>
+                                                    <div id="collapseTwo" class="collapse">
+                                                        <div class="another-map-class thumbnail"></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Veranstaltung*</label></br>
+                                                        <div class="row" style="text-align:center">
+                                                            <select id="veranstaltungen" class="form-control"
+                                                                    style="width:80%;display:inline;" required>
+                                                                <option value="one">Novarock</option>
+                                                                <option value="two">Sziget</option>
+                                                                <option value="three">UMF</option>
+                                                                <option value="four">Tomorrowland</option>
+                                                            </select>
 
-                                    <div class="form-group">
-                                        <label>Veranstaltung*</label></br>
-                                        <div class="row" style="text-align:center">
-                                            <select id="veranstaltungen" class="form-control"
-                                                    style="width:80%;display:inline;" required>
-                                                <option value="one">Novarock</option>
-                                                <option value="two">Sziget</option>
-                                                <option value="three">UMF</option>
-                                                <option value="four">Tomorrowland</option>
-                                            </select>
+                                                            <button type="button" class="btn btn-default btn-xs"
+                                                                    onclick="fasz();"
+                                                                    style="height:34px;">
+                                                                <span id="plusminus"
+                                                                      class="glyphicon glyphicon-plus"></span>
+                                                            </button>
+                                                            </br>
+                                                        </div>
 
-                                            <button type="button" class="btn btn-default btn-xs" onclick="fasz();"
-                                                    style="height:34px;">
-                                                <span id="plusminus" class="glyphicon glyphicon-plus"></span>
-                                            </button>
-                                            </br>
-                                        </div>
+                                                        <label class="kaki" id="toggleee"
+                                                               style="display:none;padding-left:1px">Neue
+                                                            Veranstaltung hinzuf&uuml;gen</label>
+                                                        <input type="text" class="form-control kaki" id="togglee"
+                                                               style="display:none;margin-left:1px"/>
 
-                                        <label class="kaki" id="toggleee" style="display:none;padding-left:1px">Neue
-                                            Veranstaltung hinzuf&uuml;gen</label>
-                                        <input type="text" class="form-control kaki" id="togglee"
-                                               style="display:none;margin-left:1px"/>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Kategorie*</label></br>
 
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Kategorie*</label></br>
+                                                        <select class="form-control" required>
+                                                            <option value="one">Handy</option>
+                                                            <option value="two">Geldtasche</option>
+                                                            <option value="three">Schlüssel</option>
+                                                            <option value="four">Uhr</option>
+                                                            <option value="five">Anderes</option>
+                                                        </select>
 
-                                        <select class="form-control" required>
-                                            <option value="one">Handy</option>
-                                            <option value="two">Geldtasche</option>
-                                            <option value="three">Schlüssel</option>
-                                            <option value="four">Uhr</option>
-                                            <option value="five">Anderes</option>
-                                        </select>
+                                                    </div>
 
-                                    </div>
+                                                    <label>Wann?</label>
 
-                                    <label>Wann?</label>
-                                    <div class="form-group">
-                                        <div class='input-group date' id='datetimepicker' style="color: black;">
+                                                    <div class="form-group">
+                                                        <div class='input-group date' id='datetimepicker'
+                                                             style="color: black;">
                                                     <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
-                                            <input type='text' class="form-control"
-                                                   placeholder="Geben Sie das Datum an"/>
-                                        </div>
-                                    </div>
+                                                            <input type='text' class="form-control"
+                                                                   placeholder="Geben Sie das Datum an"/>
+                                                        </div>
+                                                    </div>
 
-                                    <div class="form-group" style="text-align: center;">
-                                        <button id="backButton" type="submit" class="btn btn-md signIn-btn">Zu den
-                                            Ergebnissen
-                                        </button>
-                                    </div>
+                                                    <div class="form-group" style="text-align: center;">
+                                                        <button id="backButton" type="submit"
+                                                                class="btn btn-md signIn-btn">Zu den
+                                                            Ergebnissen
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div> <!-- panels body -->
+                                        </div> <!-- details -->
+                                    </div> <!-- front -->
+                                    <div class="back" style="padding-left:5px;padding-right:5px">
+                                        <div id="details" class="container">
 
-                                </form>
+                                            <h4>Haben Sie etwas gefunden? Helfen Sie den Eigent&uuml;mern ihre Gegenst&auml;nde
+                                                zu
+                                                bekommen.</h4>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="back" style="padding-left:5px;padding-right:5px">
-                    <div id="details" class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-lg-12">
-                                <h4>Haben Sie etwas gefunden? Helfen Sie den Eigent&uuml;mern ihre Gegenst&auml;nde zu
-                                    bekommen.</h4>
-                                <form id="backFace" role="form" style="text-align:left;" action="suchObjekts.html"
-                                      method="post">
-                                    <div class="form-group" style="padding-top: 10px;">
-                                        <label>Wo?</label>
-                                        <input id="advanced-placepicker1" class="form-control"
-                                               data-map-container-id="collapseOne"/>
-                                    </div>
+                                            <div class="panel-body">
+                                                <form id="backFace" role="form" style="text-align:left;"
+                                                      action="suchObjekts.html"
+                                                      method="post">
+                                                    <div class="form-group" style="padding-top: 10px;">
+                                                        <label>Wo?</label>
+                                                        <input id="advanced-placepicker1" class="form-control"
+                                                               data-map-container-id="collapseOne"/>
+                                                    </div>
 
-                                    <div id="collapseOne" class="collapse">
-                                        <div class="another-map-class thumbnail"></div>
-                                    </div>
+                                                    <div id="collapseOne" class="collapse">
+                                                        <div class="another-map-class thumbnail"></div>
+                                                    </div>
 
-                                    <div class="form-group">
-                                        <label>Veranstaltung*</label></br>
-                                        <div class="row" style="text-align:center">
-                                            <select id="veranstaltungen1" class="form-control"
-                                                    style="width:80%;display:inline;" required>
-                                                <option value="one">Novarock</option>
-                                                <option value="two">Sziget</option>
-                                                <option value="three">UMF</option>
-                                                <option value="four">Tomorrowland</option>
-                                            </select>
+                                                    <div class="form-group">
+                                                        <label>Veranstaltung*</label></br>
+                                                        <div class="row" style="text-align:center">
+                                                            <select id="veranstaltungen1" class="form-control"
+                                                                    style="width:80%;display:inline;" required>
+                                                                <option value="one">Novarock</option>
+                                                                <option value="two">Sziget</option>
+                                                                <option value="three">UMF</option>
+                                                                <option value="four">Tomorrowland</option>
+                                                            </select>
 
-                                            <button type="button" class="btn btn-default btn-xs" onclick="fasz1();"
-                                                    style="height:34px;">
-                                                <span id="plusminus1" class="glyphicon glyphicon-plus"></span>
-                                            </button>
-                                            </br>
-                                        </div>
+                                                            <button type="button" class="btn btn-default btn-xs"
+                                                                    onclick="fasz1();"
+                                                                    style="height:34px;">
+                                                            <span id="plusminus1"
+                                                                  class="glyphicon glyphicon-plus"></span>
+                                                            </button>
+                                                            </br>
+                                                        </div>
 
-                                        <label class="kaki" id="toggleee1" style="display:none;padding-left:1px">Neue
-                                            Veranstaltung hinzuf&uuml;gen</label>
-                                        <input type="text" class="form-control kaki" id="togglee1"
-                                               style="display:none;margin-left:1px"/>
+                                                        <label class="kaki" id="toggleee1"
+                                                               style="display:none;padding-left:1px">Neue
+                                                            Veranstaltung hinzuf&uuml;gen</label>
+                                                        <input type="text" class="form-control kaki" id="togglee1"
+                                                               style="display:none;margin-left:1px"/>
 
 
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Kategorie*</label></br>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Kategorie*</label></br>
 
-                                        <select class="form-control" required>
-                                            <option value="one">Handy</option>
-                                            <option value="two">Geldtasche</option>
-                                            <option value="three">Schlüssel</option>
-                                            <option value="four">Uhr</option>
-                                            <option value="five">Anderes</option>
-                                        </select>
+                                                        <select class="form-control" required>
+                                                            <option value="one">Handy</option>
+                                                            <option value="two">Geldtasche</option>
+                                                            <option value="three">Schlüssel</option>
+                                                            <option value="four">Uhr</option>
+                                                            <option value="five">Anderes</option>
+                                                        </select>
 
-                                    </div>
-                                    <label>Wann?</label>
-                                    <div class="form-group">
-                                        <div class='input-group date' id='datetimepicker1' style="color: black;">
+                                                    </div>
+                                                    <label>Wann?</label>
+
+                                                    <div class="form-group">
+                                                        <div class='input-group date' id='datetimepicker1'
+                                                             style="color: black;">
                                                     <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
-                                            <input type='text' class="form-control"
-                                                   placeholder="Geben Sie das Datum an"/>
+                                                            <input type='text' class="form-control"
+                                                                   placeholder="Geben Sie das Datum an"/>
 
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group" style="text-align: center;">
-                                        <button type="submit" class="btn btn-md signIn-btn">Zu den Ergebnissen</button>
-                                    </div>
-
-                                </form>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="sidebar-offcanvas" id="sidebar" style="background-color:#558C89;margin-top:40px;padding: 10px 0">Du
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="text-align: center;">
+                                                        <button type="submit" class="btn btn-md signIn-btn">Zu den
+                                                            Ergebnissen
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div> <!-- panel body-->
+                                        </div> <!-- details -->
+                                    </div> <!-- back -->
+                                </div> <!-- col xs12 -->
+                            </div><!-- row -->
+                        </div> <!-- card end -->
+                    </div> <!-- bg wrapper -->
+                </div> <!-- container -->
+            </div> <!-- inner cover -->
+        </div> <!-- cover-container-->
+    </div> <!-- site wrapper-inner -->
+    <div class="sidebar-offcanvas" id="sidebar"
+         style="background-color:#558C89;margin-top:50px;padding: 10px 0">
         <div class="list-group">
             <a href="message_view.html" class="list-group-item active">
                 <div class="row">
@@ -429,7 +446,8 @@
             </a>
         </div>
     </div>
-</div>
+</div> <!-- site-wrapper -->
+
 <footer class="footer" style="background-color:#74AFAD;">
     <div class="container">
         <hr style="margin:0;border: 1px solid #558C89"/>
@@ -447,26 +465,27 @@
     </div>
 </footer>
 <script type="text/javascript">
-    
-    (function() {
 
-  "use strict";
+    (function () {
 
-  var toggles = document.querySelectorAll(".c-hamburger");
+        "use strict";
 
-  for (var i = toggles.length - 1; i >= 0; i--) {
-    var toggle = toggles[i];
-    toggleHandler(toggle);
-  };
+        var toggles = document.querySelectorAll(".c-hamburger");
 
-  function toggleHandler(toggle) {
-    toggle.addEventListener( "click", function(e) {
-      e.preventDefault();
-      (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
-    });
-  }
+        for (var i = toggles.length - 1; i >= 0; i--) {
+            var toggle = toggles[i];
+            toggleHandler(toggle);
+        }
+        ;
 
-})();
+        function toggleHandler(toggle) {
+            toggle.addEventListener("click", function (e) {
+                e.preventDefault();
+                (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+            });
+        }
+
+    })();
 </script>
 
 </body>

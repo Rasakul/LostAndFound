@@ -8,24 +8,16 @@
 
     <!-- Styles -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <link href="css/datepicker.css" rel="stylesheet">
-    <link href="css/messages_offcanvas.css" rel="stylesheet">
-    <link href="css/closeBtn.css" rel="stylesheet" type="text/css">
     <link href="css/cover.css" rel="stylesheet">
     <link href="css/sign_in.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="css/userpanel.css" rel="stylesheet">
     <link href="css/details.css" rel="stylesheet">
 
-    <style type="text/css">
-        #objectsRow .background-wrapper {
-            background-color: #558C89;
-            border-radius: 10px;
-            padding: 0 0;
-        }
-    </style>
+    <link href="css/datepicker.css" rel="stylesheet">
+    <link href="css/messages_offcanvas.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/closeBtn.css">
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -39,9 +31,9 @@
     <script src="js/Moment.js"></script>
     <script src="js/jquery.placepicker.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places" type="text/javascript"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
-    <script>
+   <script>
         var date = new Date();
         var currentMonth = date.getMonth();
         var currentDate = date.getDate();
@@ -115,6 +107,29 @@
         }
     </script>
     <script src="js/offcanvas.js"></script>
+    <style type="text/css">
+        a.back-to-top {
+            display: none;
+            width: 40px;
+            height: 40px;
+            text-indent: -9999px;
+            position: fixed;
+            z-index: 999;
+            right: 10px;
+            bottom: 20px;
+            background: #D9853B url("img/up_arrow.png") no-repeat center center;
+            background-size: contain;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+        }
+
+        #objectsRow .background-wrapper {
+            background-color: #558C89;
+            border-radius: 10px;
+            padding: 0 0;
+        }
+    </style>
 </head>
 
 

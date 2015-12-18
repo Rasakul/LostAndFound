@@ -1,7 +1,6 @@
 var atSignin = false;       // flag to indicate if user is in the sign in form area
 var is_chrome;              // flag to indicate if chrome is used - will likely by deleted
 var hasBeenViewed = false;  // helper flag to indicate if header must be animated or not
-
 /* Scrolls to the form section (sign in, register)
  * Will automatically called when the sign in button on header is pressed.*/
 function scrollToSignIn() {

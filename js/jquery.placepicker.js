@@ -41,7 +41,7 @@
             var templateString =
                 "<div class=\"input-group\">" +
                 "<span class=\"input-group-btn\">" +
-                "<button data-toggle=\"collapse\" href=\"#" + options.mapContainerId + "\" class=\"btn btn-default\">" +
+                "<button data-toggle=\"collapse\" href=\"#" + options.mapContainerId + "\" class=\"btn btn-default\"onclick=\"addPadding();\">" +
                 "<span class=\"glyphicon glyphicon-globe\"></span>" +
                 "</button>" +
                 "</span>" +
